@@ -1,7 +1,499 @@
-<!D0CTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 · 游戏开发 / 算法</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #12161f;
+    --panel-line: #1f2530;
+    --text: #e4e7ec;
+    --text-dim: #7c8494;
+    --accent: #ff9d4d;      /* ember amber — 粒子/火花 */
+    --accent-soft: #ffb877;
+    --data: #5eead4;        /* 冷色数据/代码高亮 */
+    --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection { background: var(--accent); color: #0b0e14; }
+
+  /* ---------- 顶部导航 ---------- */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 5vw;
+    background: linear-gradient(to bottom, rgba(11,14,20,0.9), transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+  }
+  .logo span { color: var(--accent); }
+
+  nav { display: flex; gap: 28px; font-family: var(--mono); font-size: 13px; }
+  nav a { color: var(--text-dim); transition: color .2s; }
+  nav a:hover, nav a:focus-visible { color: var(--accent); outline: none; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
+  }
+
+  #particleCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(36px, 7vw, 84px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.05;
+    max-width: 16ch;
+  }
+  h1 .fade { color: var(--text-dim); }
+
+  .hero-sub {
+    margin-top: 22px;
+    max-width: 46ch;
+    color: var(--text-dim);
+    font-size: 17px;
+  }
+
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    pointer-events: auto;
+  }
+  .hero-meta div span { display: block; color: var(--text); font-size: 15px; margin-top: 4px; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px; left: 5vw;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 24px;
+    background: linear-gradient(var(--text-dim), transparent);
+    animation: scrollpulse 1.8s infinite;
+  }
+  @keyframes scrollpulse { 0%,100%{opacity:.2} 50%{opacity:1} }
+
+  /* ---------- Section 通用 ---------- */
+  section { padding: 110px 5vw; position: relative; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--panel-line);
+    padding-bottom: 20px;
+    margin-bottom: 56px;
+  }
+  .section-head h2 {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .section-head .tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* ---------- 项目卡片 ---------- */
+  .projects { display: flex; flex-direction: column; gap: 2px; }
+
+  .project {
+    display: grid;
+    grid-template-columns: 100px 1fr 220px;
+    gap: 32px;
+    padding: 36px 28px;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 4px;
+    transition: border-color .25s, transform .25s;
+  }
+  .project:hover { border-color: var(--accent); transform: translateX(4px); }
+
+  .project .build-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    align-self: start;
+  }
+  .project .build-tag small { display:block; color: var(--text-dim); margin-top: 4px; }
+
+  .project h3 { font-size: 22px; margin-bottom: 10px; }
+  .project p { color: var(--text-dim); font-size: 14.5px; max-width: 60ch; }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .stack span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--data);
+    border: 1px solid rgba(94,234,212,0.3);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .project .links {
+    align-self: start;
+    justify-self: end;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .project .links a {
+    display: block;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    border-bottom: 1px solid transparent;
+  }
+  .project .links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- 算法 / CP 板块 ---------- */
+  .cp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--panel-line);
+    border: 1px solid var(--panel-line);
+  }
+  .cp-stat {
+    background: var(--bg);
+    padding: 28px 22px;
+  }
+  .cp-stat .num {
+    font-family: var(--mono);
+    font-size: 32px;
+    color: var(--accent);
+  }
+  .cp-stat .label {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  /* ---------- About / Contact ---------- */
+  .about {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+  }
+  .about p { color: var(--text-dim); max-width: 56ch; }
+  .about .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .about .skills span {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border: 1px solid var(--panel-line);
+    border-radius: 3px;
+    color: var(--text);
+  }
+
+  .contact-box {
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .contact-box .label { font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin-bottom: 6px; }
+  .contact-box a.big {
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 22px;
+    word-break: break-all;
+  }
+  .contact-box .socials { display: flex; gap: 18px; margin-top: 10px; }
+  .contact-box .socials a { font-family: var(--mono); font-size: 13px; color: var(--text-dim); }
+  .contact-box .socials a:hover { color: var(--accent); }
+
+  footer {
+    padding: 30px 5vw;
+    border-top: 1px solid var(--panel-line);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .project { grid-template-columns: 1fr; }
+    .project .links { justify-self: start; text-align: left; margin-top: 12px; }
+    .about { grid-template-columns: 1fr; }
+    .hero-meta { flex-wrap: wrap; gap: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-hint::after { animation: none; }
+  }
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>FUCK SONY</p>
+
+<header>
+  <div class="logo">DEV<span>_</span>PORTFOLIO</div>
+  <nav>
+    <a href="#projects">项目</a>
+    <a href="#cp">算法</a>
+    <a href="#about">关于</a>
+    <a href="#contact">联系</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <canvas id="particleCanvas"></canvas>
+  <div class="hero-content">
+    <div class="eyebrow">GAME DEV / SYSTEMS PROGRAMMING</div>
+    <h1>你的名字<br><span class="fade">用代码构建可玩的世界</span></h1>
+    <p class="hero-sub">专注游戏底层系统与效果实现 —— 从 Unity 战斗机制到 DirectX 11 自定义渲染管线，也在算法竞赛中打磨解题直觉。</p>
+    <div class="hero-meta">
+      <div>ENGINES<span>Unity · DirectX 11</span></div>
+      <div>LANGUAGES<span>C# · C++</span></div>
+      <div>FOCUS<span>Combat / VFX / Rendering</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<section id="projects">
+  <div class="section-head">
+    <h2>项目</h2>
+    <div class="tag">3 BUILDS</div>
+  </div>
+  <div class="projects">
+
+    <div class="project">
+      <div class="build-tag">BUILD.01<small>DirectX11</small></div>
+      <div>
+        <h3>Hit Particle · 多阶段粒子效果系统</h3>
+        <p>自定义 C++ / DirectX 11 粒子引擎，实现命中反馈的多阶段效果分层（爆发、拖尾、余烬），从零搭建渲染管线与效果编排逻辑。</p>
+        <div class="stack"><span>C++</span><span>DirectX 11</span><span>HLSL</span><span>VFX 编排</span></div>
+      </div>
+      <div class="links">
+        <a href="#">查看代码 →</a>
+        <a href="#">效果演示 →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="build-tag">BUILD.02<small>Unity</small></div>
+      <div>
+        <h3>MechGame · Boss 战斗与敌人机制</h3>
+        <p>Unity C# 开发的战斗系统，包含 Boss 多阶段行为状态机、敌人 AI 与技能连招设计。</p>
+        <div class="stack"><span>C#</span><span>Unity</span><span>状态机</span><span>战斗系统</span></div>
+      </div>
+      <div class="links">
+        <a href="#">查看代码 →</a>
+        <a href="#">效果演示 →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="build-tag">BUILD.03<small>Unity 2D</small></div>
+      <div>
+        <h3>2D 横版平台游戏</h3>
+        <p>Unity 2D 横版过关游戏，实现地面检测、地形生成与 UI 系统。</p>
+        <div class="stack"><span>C#</span><span>Unity 2D</span><span>地形生成</span><span>UI</span></div>
+      </div>
+      <div class="links">
+        <a href="#">查看代码 →</a>
+        <a href="#">效果演示 →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="cp">
+  <div class="section-head">
+    <h2>算法 / 竞赛</h2>
+    <div class="tag">PRACTICE LOG</div>
+  </div>
+  <div class="cp-grid">
+    <div class="cp-stat"><div class="num">--</div><div class="label">已解决题目数</div></div>
+    <div class="cp-stat"><div class="num">--</div><div class="label">常用平台</div></div>
+    <div class="cp-stat"><div class="num">--</div><div class="label">擅长专题</div></div>
+    <div class="cp-stat"><div class="num">--</div><div class="label">最高评级</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-head">
+    <h2>关于我</h2>
+    <div class="tag">PROFILE</div>
+  </div>
+  <div class="about">
+    <div>
+      <p>在这里写一段简短自我介绍：你如何进入游戏开发 / 编程的，擅长的方向，以及你在做的东西背后的思考方式。两三句话即可，不用堆砌形容词。</p>
+      <div class="skills">
+        <span>C# / Unity</span>
+        <span>C++ / DirectX 11</span>
+        <span>渲染管线</span>
+        <span>游戏 AI</span>
+        <span>算法 & 数据结构</span>
+      </div>
+    </div>
+    <div class="contact-box" id="contact">
+      <div class="label">EMAIL</div>
+      <a class="big" href="mailto:you@example.com">you@example.com</a>
+      <div class="label">FIND ME</div>
+      <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">itch.io</a>
+        <a href="#">Codeforces</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 —— 用真实项目素材替换本模板即可</div>
+  <div>BUILT WITH HTML / CSS / CANVAS</div>
+</footer>
+
+<script>
+  // 首屏真实粒子系统 —— 呼应 Hit Particle 项目本身
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function spawnBurst(x, y, count) {
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.6 + Math.random() * 2.2;
+      particles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 0.4,
+        life: 1,
+        decay: 0.006 + Math.random() * 0.01,
+        size: 1 + Math.random() * 2.4,
+        hue: Math.random() > 0.5 ? '255,157,77' : '94,234,212'
+      });
+    }
+  }
+
+  let t = 0;
+  function tick() {
+    t++;
+    ctx.clearRect(0, 0, w, h);
+
+    if (!reduceMotion && t % 26 === 0) {
+      spawnBurst(w * (0.15 + Math.random() * 0.7), h * (0.2 + Math.random() * 0.6), 22);
+    }
+
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.012;
+      p.life -= p.decay;
+      if (p.life > 0) {
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(${p.hue}, ${p.life})`;
+        ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+    particles = particles.filter(p => p.life > 0);
+
+    // 静态网格背景，呼应“调试/引擎”气质
+    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+    ctx.lineWidth = 1;
+    const gap = 44;
+    for (let x = 0; x < w; x += gap) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+    }
+    for (let y = 0; y < h; y += gap) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+    }
+
+    requestAnimationFrame(tick);
+  }
+  tick();
+</script>
+
 </body>
 </html>
