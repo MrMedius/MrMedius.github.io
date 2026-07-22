@@ -131,6 +131,7 @@
     gap: 24px;
     align-items: center;
     padding: 24px 28px;
+    cursor: pointer;
   }
 
   .thumb {
@@ -146,7 +147,6 @@
     color: var(--text-dim);
     text-align: center;
     padding: 6px;
-    cursor: pointer;
     overflow: hidden;
   }
   .thumb.has-image { border-style: solid; padding: 0; }
@@ -200,9 +200,10 @@
   .side .toggle-btn:hover { color: var(--text); }
   .side .toggle-btn .expand-icon {
     display: inline-block;
+    transform: rotate(0deg);
     transition: transform .3s;
   }
-  .project.open .side .toggle-btn .expand-icon { transform: rotate(180deg); }
+  .project.open .side .toggle-btn .expand-icon { transform: rotate(90deg); }
 
   .project-body {
     max-height: 0;
@@ -223,13 +224,25 @@
   }
 
   footer {
-    padding: 26px 5vw;
+    padding: 30px 5vw;
     border-top: 1px solid var(--panel-line);
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-dim);
     text-align: center;
   }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: var(--text-dim);
+    border-bottom: 1px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .footer-links a:hover { color: var(--accent); border-color: var(--accent); }
 
   @media (max-width: 700px) {
     .project-head { grid-template-columns: 64px 1fr; grid-template-areas: "thumb info" "side side"; }
@@ -260,11 +273,19 @@ I enjoy the processes of development and design, and I have an aversion to disor
 
   <div class="section-head">
     <h2 data-i18n="sectionTitle">Projects</h2>
-    <div class="tag" data-i18n="sectionTag">3 BUILDS</div>
+    <div class="tag" data-i18n="sectionTag">6 BUILDS</div>
   </div>
 
   <div class="projects" id="projectList"></div>
 </main>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/MrMedius" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://mrmedius.itch.io" target="_blank" rel="noopener">itch.io</a>
+    <a href="https://unityroom.com/users/8nt1hmy2icl0eka4bj3z" target="_blank" rel="noopener">unityroom</a>
+  </div>
+</footer>
 
 <script>
 const translations = {
@@ -273,7 +294,7 @@ const translations = {
     name: "Mr.Medius",
     bio: "致力于制作有趣的游戏和便利的开发工具。\n享受开发和规划的过程，对不成体系的系统过敏。",
     sectionTitle: "项目",
-    sectionTag: "3 BUILDS",
+    sectionTag: "6 BUILDS",
     thumbAlt: "缩略图",
     toggleOpen: "概述",
     toggleClose: "收起",
@@ -291,20 +312,51 @@ const translations = {
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "Unity",
-        title: "MechGame · Boss 战斗与敌人机制",
-        desc: "Unity C# 开发的战斗系统，包含 Boss 多阶段行为状态机、敌人 AI 与技能连招设计。",
-        overview: "在这里写更详细的项目概述：状态机设计方式、Boss 各阶段的行为切换逻辑、以及调试战斗手感时遇到的问题和解法。",
-        stack: ["C#", "Unity", "状态机", "战斗系统"],
-        hasDetail: false,
-        detailHref: null
+        tag: "BUILD.02", sub: "DirectX11",
+        title: "流沙长方体",
+        desc: "将相同颜色从左到右连通起来。",
+        overview: "使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。\n加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。\n利用像素搭建一套简单光照模型系统和像素字体系统。",
+        stack: ["C++", "DirectX 11"],
+        hasDetail: true,
+        detailHref: "build-02.html",
+        thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity 2D",
-        title: "2D 横版平台游戏",
-        desc: "Unity 2D 横版过关游戏，实现地面检测、地形生成与 UI 系统。",
-        overview: "在这里写更详细的项目概述：地形生成算法的思路、地面检测的实现方式，以及 UI 系统的交互设计。",
-        stack: ["C#", "Unity 2D", "地形生成", "UI"],
+        tag: "BUILD.03", sub: "Unity",
+        title: "点柴",
+        desc: "一款使用各种枪械同时点燃所有柴火的游戏。",
+        overview: "设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-03.html",
+        thumbSrc: "asset/light_p_1.png"
+      },
+      {
+        tag: "BUILD.04", sub: "OpenGL",
+        title: "奔跑吧！魔法师！",
+        desc: "使用各种技能组合，从地图的最左侧跑酷到最右侧。",
+        overview: "核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。\n设计建议的有限状态机(FSM)系统。\n确保地图要素的独立性，方便量产关卡。",
+        stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
+        hasDetail: true,
+        detailHref: "build-04.html",
+        thumbSrc: "asset/runner_p_1.png"
+      },
+      {
+        tag: "BUILD.05", sub: "Unity",
+        title: "冲 & 转",
+        desc: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
+        overview: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/dash_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "引擎/平台",
+        title: "项目名称",
+        desc: "一句话简介，会显示在卡片上。",
+        overview: "展开后显示的详细概述，可以写设计思路、技术难点等，想换行就用 \\n。",
+        stack: ["技术标签1", "技术标签2"],
         hasDetail: false,
         detailHref: null
       }
@@ -315,7 +367,7 @@ const translations = {
     name: "Mr.Medius",
     bio: "Dedicated to creating entertaining games and convenient development tools.\nI enjoy the processes of development and design, and I have an aversion to disorganized systems.",
     sectionTitle: "Projects",
-    sectionTag: "3 BUILDS",
+    sectionTag: "6 BUILDS",
     thumbAlt: "Thumbnail",
     toggleOpen: "Overview",
     toggleClose: "Close",
@@ -325,28 +377,59 @@ const translations = {
       {
         tag: "BUILD.01", sub: "DirectX11",
         title: "Primary",
-        desc: "Accumate energy through combos and expand it to execute further combo moves.",
-        overview: "Utilize a custom code framework featuring a logic layer that integrates object pool with a Finite State Machine (FSM) system, alongside a presentation layer with a strictly defined rendering pipeline.\nEmploy global singletons to minimize performance overhead and streamline method calls.",
+        desc: "Build up energy through combo attacks, then spend it to unleash even more powerful combo moves.",
+        overview: "Built on a custom code framework: a logic layer that combines object pooling with a Finite State Machine (FSM) system, paired with a presentation layer governed by a strictly defined rendering pipeline.\nGlobal singletons are used throughout to minimize performance overhead and reduce friction in method calls.",
         stack: ["C++", "DirectX 11", "HLSL", "Aseprite"],
         hasDetail: true,
         detailHref: "build-01.html",
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "Unity",
-        title: "MechGame · Boss Combat & Enemy Systems",
-        desc: "A Unity C# combat system featuring a multi-phase boss behavior state machine, enemy AI, and skill-combo design.",
-        overview: "Write a more detailed overview here: how the state machine was structured, the phase-transition logic for the boss, and issues you ran into while tuning combat feel.",
-        stack: ["C#", "Unity", "State Machine", "Combat System"],
-        hasDetail: false,
-        detailHref: null
+        tag: "BUILD.02", sub: "DirectX11",
+        title: "Sandify The Cuboid",
+        desc: "Connect matching colors from left to right.",
+        overview: "Uses DirectX 11 to set up a rendering canvas for color output, while all other logic runs on the CPU to keep performance stable.\nAdds a quicksand-style drawing mechanic and a leaderboard system to extend replayability.\nBuilds a simple pixel-based lighting model and a custom pixel font system from scratch.",
+        stack: ["C++", "DirectX 11"],
+        hasDetail: true,
+        detailHref: "build-02.html",
+        thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity 2D",
-        title: "2D Side-Scrolling Platformer",
-        desc: "A Unity 2D platformer implementing ground detection, terrain generation, and UI systems.",
-        overview: "Write a more detailed overview here: the terrain generation approach, how ground detection was implemented, and the UI interaction design.",
-        stack: ["C#", "Unity 2D", "Terrain Generation", "UI"],
+        tag: "BUILD.03", sub: "Unity",
+        title: "Light the Firewood",
+        desc: "A game about igniting all the firewood piles simultaneously using various weapons.",
+        overview: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-03.html",
+        thumbSrc: "asset/light_p_1.png"
+      },
+      {
+        tag: "BUILD.04", sub: "OpenGL",
+        title: "Runner Wizard",
+        desc: "Combine your skills to parkour from the far left of the map all the way to the far right.",
+        overview: "The core design concept ensures synergy between all skills, linking the entire skill framework through a mechanism that refreshes usage counts.\nImplemented a simple Finite State Machine (FSM) system.\nEnsures the independence of map elements to facilitate efficient level creation.",
+        stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
+        hasDetail: true,
+        detailHref: "build-04.html",
+        thumbSrc: "asset/runner_p_1.png"
+      },
+      {
+        tag: "BUILD.05", sub: "Engine/Platform",
+        title: "Dash & Spin",
+        desc: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
+        overview: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/dash_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "Engine/Platform",
+        title: "Project Name",
+        desc: "One-line description shown on the card.",
+        overview: "Detailed overview shown when expanded — design notes, technical challenges, etc. Use \\n for line breaks.",
+        stack: ["Tech Tag 1", "Tech Tag 2"],
         hasDetail: false,
         detailHref: null
       }
@@ -357,7 +440,7 @@ const translations = {
     name: "Mr.Medius",
     bio: "楽しいゲームや便利な開発ツールの制作に情熱を注いでいます。\n開発や設計のプロセスそのものを楽しむ一方で、無秩序あるいは体系化されていないシステムを嫌います。",
     sectionTitle: "プロジェクト",
-    sectionTag: "3 BUILDS",
+    sectionTag: "6 BUILDS",
     thumbAlt: "サムネイル",
     toggleOpen: "概要",
     toggleClose: "閉じる",
@@ -367,28 +450,59 @@ const translations = {
       {
         tag: "BUILD.01", sub: "DirectX11",
         title: "プライマリー",
-        desc: "コンボでエネルギーを蓄積し、それでさらなるコンボ技を繰り出す。",
-        overview: "オブジェクトプーリングと有限状態機械（FSM）システムを統合したロジック層と、厳密に定義されたレンダリングパイプラインを備えたプレゼンテーション層を特徴とするカスタムコードフレームワークを活用する。\nグローバルシングルトンを用いることで、パフォーマンスオーバーヘッドを最小限に抑え、メソッド呼び出しを効率化する。",
+        desc: "コンボによってエネルギーを蓄積し、それを消費してさらなるコンボ技を繰り出す。",
+        overview: "オブジェクトプーリングと有限状態機械（FSM）を組み合わせたロジック層と、厳密に定義されたレンダリングパイプラインによるプレゼンテーション層からなる、自作のコードフレームワーク上に構築。\nグローバルシングルトンを随所で用いることで、パフォーマンスオーバーヘッドとメソッド呼び出し時の手間を最小限に抑えている。",
         stack: ["C++", "DirectX 11", "HLSL", "Aseprite"],
         hasDetail: true,
         detailHref: "build-01.html",
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "Unity",
-        title: "MechGame・ボス戦闘と敵AIシステム",
-        desc: "Unity C# で開発した戦闘システム。ボスの多段階ステートマシン、敵AI、スキルコンボ設計を含む。",
-        overview: "ここに詳細な概要を書いてください：ステートマシンの設計方法、ボスの段階遷移ロジック、戦闘感覚を調整する際に直面した課題など。",
-        stack: ["C#", "Unity", "ステートマシン", "戦闘システム"],
-        hasDetail: false,
-        detailHref: null
+        tag: "BUILD.02", sub: "DirectX11",
+        title: "流砂の直方体",
+        desc: "同じ色を左から右へとつなげよう。",
+        overview: "DirectX 11 で描画用キャンバスを構築しつつ、その他のロジックはすべてCPUで処理することで、安定したパフォーマンスを確保しています。\n「流砂（クイックサンド）」のような描画メカニズムやリーダーボード機能を導入し、ゲームプレイをより魅力的なものにしています。\nピクセル単位で描画するシンプルなライティングモデルと、独自のピクセルフォントシステムを実装しています。",
+        stack: ["C++", "DirectX 11"],
+        hasDetail: true,
+        detailHref: "build-02.html",
+        thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity 2D",
-        title: "2D 横スクロールプラットフォーマー",
-        desc: "地面検知、地形生成、UIシステムを実装した Unity 2D 横スクロールゲーム。",
-        overview: "ここに詳細な概要を書いてください：地形生成のアルゴリズム、地面検知の実装方法、UIのインタラクション設計など。",
-        stack: ["C#", "Unity 2D", "地形生成", "UI"],
+        tag: "BUILD.03", sub: "Unity",
+        title: "薪を灯す",
+        desc: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
+        overview: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-03.html",
+        thumbSrc: "asset/light_p_1.png"
+      },
+      {
+        tag: "BUILD.04", sub: "OpenGL",
+        title: "ランナー魔法使い",
+        desc: "様々なスキルを組み合わせて、マップの左端から右端までパルクールで駆け抜けよう。",
+        overview: "すべてのスキル間にコンビネーションがあるし、使用回数が回復するメカニズムを通じてスキル体系全体を連携させています。\n簡略化された有限状態機械（FSM）システムを実装しています。\nマップ要素の独立性を確保し、効率的なレベル制作を可能にしています。",
+        stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
+        hasDetail: true,
+        detailHref: "build-04.html",
+        thumbSrc: "asset/runner_p_1.png"
+      },
+      {
+        tag: "BUILD.05", sub: "エンジン/プラットフォーム",
+        title: "ダッシュ＆スピン",
+        desc: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！ ",
+        overview: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
+        stack: ["C#", "Unity", "Aseprite"],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/dash_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "エンジン/プラットフォーム",
+        title: "プロジェクト名",
+        desc: "カードに表示される一言紹介文。",
+        overview: "展開時に表示される詳細な概要。設計意図や技術的な課題などを書きます。改行したい場合は \\n を使ってください。",
+        stack: ["技術タグ1", "技術タグ2"],
         hasDetail: false,
         detailHref: null
       }
@@ -416,8 +530,8 @@ function buildCard(p, i, t) {
 
   card.innerHTML = `
     <div class="project-head">
-      <div class="${thumbClass}" data-toggle>${thumbContent}</div>
-      <div class="info" data-toggle>
+      <div class="${thumbClass}">${thumbContent}</div>
+      <div class="info">
         <div class="build-tag">${p.tag}<small>${p.sub}</small></div>
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
@@ -427,7 +541,7 @@ function buildCard(p, i, t) {
         ${sideLink}
         <button class="toggle-btn" type="button" aria-expanded="${openSet.has(i)}">
           <span data-toggle-label>${openSet.has(i) ? t.toggleClose : t.toggleOpen}</span>
-          <span class="expand-icon">▾</span>
+          <span class="expand-icon">▸</span>
         </button>
       </div>
     </div>
@@ -441,6 +555,7 @@ function buildCard(p, i, t) {
   const body = card.querySelector('.project-body');
   const toggleBtn = card.querySelector('.toggle-btn');
   const toggleLabel = card.querySelector('[data-toggle-label]');
+  const projectHead = card.querySelector('.project-head');
 
   function setOpen(open) {
     if (open) {
@@ -461,8 +576,11 @@ function buildCard(p, i, t) {
 
   function toggle() { setOpen(!card.classList.contains('open')); }
 
-  toggleBtn.addEventListener('click', toggle);
-  card.querySelectorAll('[data-toggle]').forEach(el => el.addEventListener('click', toggle));
+  // 整个 project-head 都是热区；只有点在“完整项目页”这个真正的链接上时才放行，让它正常跳转
+  projectHead.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    toggle();
+  });
 
   // 语言切换后如果本来是展开状态，直接同步高度（无需动画）
   if (openSet.has(i)) {
