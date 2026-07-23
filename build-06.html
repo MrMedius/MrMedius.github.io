@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-title>项目详情</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #12161f;
+    --panel-line: #1f2530;
+    --text: #e4e7ec;
+    --text-dim: #7c8494;
+    --accent: #ff9d4d;
+    --data: #5eead4;
+    --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.7;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: #0b0e14; }
+
+  header {
+    position: sticky;
+    top: 0; z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 5vw;
+    background: rgba(11,14,20,0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--panel-line);
+  }
+
+  .back-link {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .lang-switch { display: flex; gap: 4px; font-family: var(--mono); font-size: 12px; }
+  .lang-switch button {
+    background: transparent;
+    border: 1px solid var(--panel-line);
+    color: var(--text-dim);
+    width: 68px;
+    padding: 6px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s;
+    text-align: center;
+  }
+  .lang-switch button:hover { color: var(--text); border-color: var(--text-dim); }
+  .lang-switch button.active { color: var(--accent); border-color: var(--accent); }
+
+  main { max-width: 960px; margin: 0 auto; padding: 60px 5vw 120px; }
+
+  .build-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+  .build-tag small { color: var(--text-dim); margin-left: 10px; }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .lede {
+    color: var(--text-dim);
+    font-size: 17px;
+    max-width: 68ch;
+    margin-bottom: 30px;
+  }
+
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 50px; }
+  .stack span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--data);
+    border: 1px solid rgba(94,234,212,0.3);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  /* ---------- Gallery (Steam 式媒体展示) ---------- */
+  .gallery { margin-bottom: 20px; }
+
+  .gallery-main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-main video,
+  .gallery-main img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .gallery-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .gallery-thumbs::-webkit-scrollbar { height: 4px; }
+  .gallery-thumbs::-webkit-scrollbar-thumb { background: var(--panel-line); border-radius: 2px; }
+
+  .thumb-btn {
+    flex: 0 0 auto;
+    width: 108px;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--panel-line);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--panel);
+    position: relative;
+    padding: 0;
+  }
+  .thumb-btn img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .55; transition: opacity .2s; }
+  .thumb-btn:hover img { opacity: .85; }
+  .thumb-btn.active { border-color: var(--accent); }
+  .thumb-btn.active img { opacity: 1; }
+  .thumb-btn .play-icon {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: #fff;
+    background: rgba(0,0,0,0.28);
+  }
+
+  /* ---------- Info panel: 类型 / 制作者 / 标签 ---------- */
+  .info-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 32px 0;
+    margin: 50px 0 56px;
+    border-top: 1px solid var(--panel-line);
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .info-block .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .info-block .value { font-size: 14.5px; color: var(--text); }
+  .info-block .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .info-block .tags span {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--data);
+    border: 1px solid rgba(94,234,212,0.3);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  /* ---------- 技术目标（编号） ---------- */
+  .tech-goals-heading {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--panel-line);
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+  }
+  .tech-goal {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .tech-goal .num {
+    font-family: var(--mono);
+    font-size: 20px;
+    color: var(--accent);
+  }
+  .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
+  .tech-goal p { color: var(--text-dim); font-size: 14px; white-space: pre-line; }
+
+  #techGoals { margin-bottom: 52px; }
+
+  section.block { margin-bottom: 52px; }
+  section.block h2 {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--panel-line);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  section.block p { color: var(--text); white-space: pre-line; }
+
+  .links-row {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 13px;
+    margin-top: 52px;
+    padding-top: 32px;
+    border-top: 1px solid var(--panel-line);
+  }
+  .links-row a { color: var(--text-dim); border-bottom: 1px solid transparent; }
+  .links-row a:hover { color: var(--accent); border-color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .info-panel { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="index.html" data-i18n="back">← 返回项目列表</a>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button data-lang="zh" class="active">中文</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="ja">日本語</button>
+  </div>
+</header>
+
+<main>
+  <div class="build-tag">BUILD.06<small>Unity</small></div>
+  <h1 data-i18n="title">黄昏森林</h1>
+  <p class="lede" data-i18n="lede">战斗、探索、生存，战胜最终Boss逃出生天！</p>
+
+  <div class="stack">
+    <span>Unity</span><span>Visual Scripting</span><span>Aseprite</span>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-main" id="galleryMain"></div>
+    <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+
+  <div class="info-panel">
+    <div class="info-block">
+      <div class="label" data-i18n="genreLabel">作品类型</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+    </div>
+    <div class="info-block">
+      <div class="label" data-i18n="creatorLabel">制作者信息</div>
+      <div class="value" data-i18n="creatorValue">个人开发</div>
+    </div>
+    <div class="info-block">
+      <div class="label" data-i18n="tagsLabel">游戏标签</div>
+      <div class="tags" id="tagsList"></div>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2 data-i18n="h1">概述</h2>
+    <p data-i18n="p1">制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。</p>
+  </section>
+
+  <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
+  <div id="techGoals"></div>
+
+  <section class="block">
+    <h2 data-i18n="h4">成果</h2>
+    <p data-i18n="p4">第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。</p>
+  </section>
+</main>
+
+<script>
+// ---------- 媒体素材：第一项是视频，之后是截图 ----------
+// 把文件放进 asset 文件夹后，把下面的路径换成你自己的文件名即可
+const mediaItems = [
+  { type: 'video', src: 'asset/dusk_v.mp4', poster: 'asset/dusk_p_0.png' },
+  { type: 'image', src: 'asset/dusk_p_1.png' },
+  { type: 'image', src: 'asset/dusk_p_2.png' },
+  { type: 'image', src: 'asset/dusk_p_3.png' }
+];
+
+const translations = {
+  zh: {
+    pageTitle: "黄昏森林 · 项目详情",
+    back: "← 返回项目列表",
+    title: "黄昏森林",
+    lede: "战斗、探索、生存，战胜最终Boss逃出生天！",
+    genreLabel: "作品类型",
+    genreValue: "游戏类 · 策划向",
+    creatorLabel: "制作者信息",
+    creatorValue: "个人开发",
+    tagsLabel: "游戏标签",
+    tags: ["射击", "像素风", "2D"],
+    h1: "概述",
+    p1: "制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。",
+    techGoalsHeading: "技术目标",
+    techGoals: [
+      { title: "最初的作品", desc: "在正式开始接触编程前，使用可视化工具来撰写代码逻辑。" },
+      { title: "使用Animator制作动画", desc: "尝试用Blend Tree来制作八个方向的移动动画。" },
+      { title: "地图资源最大化", desc: "利用路线引导，先让玩家向上移动，然后利用任务引导玩家向下移动，最后把出口设置在上方。\n如此一来简单的地图就在无形中被重复利用了两次。" },
+      { title: "Boss制作", desc: "制作了一个拥有两个阶段的Boss战。" }
+
+    ],
+    h4: "成果",
+    p4: "第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。"
+  },
+  en: {
+    pageTitle: "Dusk Forest · Project Detail",
+    back: "← Back to projects",
+    title: "Dusk Forest",
+    lede: "Combat, exploration, and survival—defeat the final boss and escape!",
+    genreLabel: "Genre",
+    genreValue: "Game Project · Design-Focused",
+    creatorLabel: "Creator",
+    creatorValue: "Solo Development",
+    tagsLabel: "Tags",
+    tags: ["Shooting", "Pixel Art", "2D"],
+    h1: "Overview",
+    p1: "Built two levels.\nFirst, put together a full questline.\nSecond, created a two-phase boss fight.",
+    techGoalsHeading: "Technical Goals",
+    techGoals: [
+      { title: "First Real Project", desc: "Before formally learning to code, used a visual scripting tool to write out the game logic." },
+      { title: "Animating with Animator", desc: "Experimented with Blend Trees to create eight-directional movement animations." },
+      { title: "Getting the Most Out of the Map", desc: "Used route guidance to first send the player upward, then used the questline to guide them back down, and finally placed the exit up top.\nThat way, a simple map ends up being reused twice without the player noticing." },
+      { title: "Boss Design", desc: "Built a two-phase boss fight." }
+    ],
+    h4: "Outcome",
+    p4: "My first solo-developed game. The character system and the Animator techniques I picked up here gave me a lot to carry into later projects."
+  },
+  ja: {
+    pageTitle: "ダスク フォレスト・プロジェクト詳細",
+    back: "← プロジェクト一覧に戻る",
+    title: "ダスク フォレスト",
+    lede: "戦闘・探索・サバイバル――ラスボスを倒して脱出しよう！",
+    genreLabel: "作品の種類",
+    genreValue: "ゲーム制作 · 企画重視",
+    creatorLabel: "制作者情報",
+    creatorValue: "個人開発",
+    tagsLabel: "ゲームタグ",
+    tags: ["シューティング", "ドット絵", "2D"],
+    h1: "概要",
+    p1: "2つのレベルを開発。\n1つ目は、一連のクエストを実装。\n2つ目は、2段階のフェーズを持つボスを作成。",
+    techGoalsHeading: "技術目標",
+    techGoals: [
+      { title: "最初の本格的な作品", desc: "本格的にプログラミングを学ぶ前に、ビジュアルスクリプティングツールを使ってゲームロジックを組みました。" },
+      { title: "Animatorによるアニメーション制作", desc: "Blend Treeを使い、8方向移動のアニメーションを作成しました。" },
+      { title: "マップ素材の使い回し", desc: "まずルート誘導でプレイヤーを上へ進ませ、次にクエストで下へと誘導し、最後に出口を上部に配置しました。\nこうすることで、シンプルなマップをプレイヤーに気づかれずに2回使い回しています。" },
+      { title: "ボス制作", desc: "2段階のフェーズを持つボス戦を制作しました。" }
+    ],
+    h4: "成果",
+    p4: "初めて一人で開発したゲームで、ここで得たキャラクターシステムやAnimatorの使い方は、その後の開発に大いに役立ちました。"
+  }
+};
+
+let currentLang = localStorage.getItem('site-lang') || 'en';
+let activeMediaIndex = 0;
+
+function showMediaItem(index) {
+  activeMediaIndex = index;
+  const item = mediaItems[index];
+  const main = document.getElementById('galleryMain');
+  main.innerHTML = item.type === 'video'
+    ? `<video controls poster="${item.poster}" src="${item.src}"></video>`
+    : `<img src="${item.src}" alt="">`;
+  document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
+}
+
+function renderGallery() {
+  const thumbs = document.getElementById('galleryThumbs');
+  thumbs.innerHTML = '';
+  mediaItems.forEach((item, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'thumb-btn' + (i === activeMediaIndex ? ' active' : '');
+    const thumbSrc = item.type === 'video' ? item.poster : item.src;
+    btn.innerHTML = `<img src="${thumbSrc}" alt="">` + (item.type === 'video' ? '<span class="play-icon">▶</span>' : '');
+    btn.addEventListener('click', () => showMediaItem(i));
+    thumbs.appendChild(btn);
+  });
+  showMediaItem(activeMediaIndex);
+}
+
+function renderTags(tags) {
+  document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
+}
+
+function renderTechGoals(goals) {
+  const wrap = document.getElementById('techGoals');
+  wrap.innerHTML = goals.map((g, i) => `
+    <div class="tech-goal">
+      <div class="num">${String(i + 1).padStart(2, '0')}</div>
+      <div>
+        <h3>${g.title}</h3>
+        <p>${g.desc}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+function render() {
+  const t = translations[currentLang];
+  document.title = t.pageTitle;
+  document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : currentLang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === currentLang);
+  });
+
+  renderTags(t.tags);
+  renderTechGoals(t.techGoals);
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = btn.dataset.lang;
+    localStorage.setItem('site-lang', currentLang);
+    render();
+  });
+});
+
+renderGallery();
+render();
+</script>
+
+</body>
+</html>

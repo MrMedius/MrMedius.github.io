@@ -213,7 +213,7 @@
     color: var(--accent);
   }
   .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
-  .tech-goal p { color: var(--text-dim); font-size: 14px; }
+  .tech-goal p { color: var(--text-dim); font-size: 14px; white-space: pre-line; }
 
   #techGoals { margin-bottom: 52px; }
 
@@ -259,9 +259,9 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.03<small>Unity</small></div>
-  <h1 data-i18n="title">点柴</h1>
-  <p class="lede" data-i18n="lede">一款使用各种枪械同时点燃所有柴火的游戏。</p>
+  <div class="build-tag">BUILD.05<small>Unity</small></div>
+  <h1 data-i18n="title">冲 & 转</h1>
+  <p class="lede" data-i18n="lede">冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！</p>
 
   <div class="stack">
     <span>C#</span><span>Unity</span><span>Aseprite</span>
@@ -275,7 +275,7 @@
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 技术向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
@@ -289,7 +289,7 @@
 
   <section class="block">
     <h2 data-i18n="h1">概述</h2>
-    <p data-i18n="p1">使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。\n使用全局单例来降低性能开销以及调用方法时的障碍。</p>
+    <p data-i18n="p1">挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。</p>
   </section>
 
   <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
@@ -297,7 +297,7 @@
 
   <section class="block">
     <h2 data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个流程大约5-10分钟的游戏，包含教程、生存和Boss战三个阶段，玩家可以自由切换状态和使用技能改变场景布局，并积攒能量开出隐藏变身。\n此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。</p>
+    <p data-i18n="p4">一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。</p>
   </section>
 
   <div class="links-row">
@@ -345,52 +345,52 @@ const translations = {
     unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
-    pageTitle: "Light the Firewood · Project Detail",
+    pageTitle: "Dash & Spin · Project Detail",
     back: "← Back to projects",
-    title: "Light the Firewood",
-    lede: "A game about igniting all the firewood piles simultaneously using various weapons.",
+    title: "Dash & Spin",
+    lede: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
     genreLabel: "Genre",
     genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Pixel Art", "2D", "Level-Based"],
+    tags: ["Jump", "Pixel Art", "2D"],
     h1: "Overview",
-    p1: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
+    p1: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Base Class / Subclass Hierarchy", desc: "Improves code readability and makes future expansion significantly easier." },
-      { title: "Fully Independent Prefabs", desc: "Keeps every prefab self-contained, making unified management and level assembly far more efficient." },
-      { title: "Object Pool System", desc: "Reuses already-instantiated prefabs, such as bullets, instead of creating new ones, cutting down performance overhead." },
-      { title: "Visual Tutorial", desc: "Uses simple animated hints and on-screen text to let players work out the game's mechanics on their own." }
+      { title: "24-Hour Dev Challenge", desc: "Designed a whole set of mechanics built entirely around a single action: jumping." },
+      { title: "Keeping Things Fresh", desc: "Forces the player to keep changing colors, so their brain never settles into a fixed color pattern." },
+      { title: "Crafting a Sense of Flow", desc: "Tracks the color currently carried by the player, so landing in the right spot naturally chains into a combo." },
+      { title: "Pressure Mechanic", desc: "Score multipliers and time bonuses can only be triggered by keeping the combo alive." }
     ],
     h4: "Outcome",
-    p4: "Shipped a simple puzzle game made up of 15 levels, roughly half an hour long from start to finish.\nImplemented a working object pool system that can now be reused in future projects built on my own framework.\nReleased on public platforms like unityroom, where it's already been played by several hundred people.",
+    p4: "A fairly polished entry, complete with an online leaderboard built on unityroom.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
     itchLink: "Play on itch.io →",
     unityroomLink: "Play on unityroom →"
   },
   ja: {
-    pageTitle: "薪を灯す・プロジェクト詳細",
+    pageTitle: "ダッシュ＆スピン・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "薪を灯す",
-    lede: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
+    title: "ダッシュ＆スピン",
+    lede: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["パズル", "ドット絵", "2D", "レベル制"],
+    tags: ["ジャンプ", "ドット絵", "2D"],
     h1: "概要",
-    p1: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
+    p1: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "基底クラス・サブクラス構成", desc: "コードの可読性を高めるだけでなく、今後の機能拡張の難易度も下げられます。" },
-      { title: "プレハブの独立性を確保", desc: "統一的な管理がしやすくなり、レベルを組み立てる際の効率も向上します。" },
-      { title: "オブジェクトプールシステム", desc: "生成済みの弾などのプレハブを使い回すことで、パフォーマンスオーバーヘッドを抑えています。" },
-      { title: "ビジュアルチュートリアル", desc: "シンプルなアニメーションとテキストのヒントを用いて、プレイヤー自身にゲームの設計意図を理解してもらう仕組みです。" }
+      { title: "24時間開発チャレンジ", desc: "ジャンプという一つのアクションだけを軸に、一連の遊び方を設計しました。" },
+      { title: "プレイヤーに新鮮さを保たせる", desc: "プレイヤーに色を変え続けることを強制し、脳が元の色に慣れてしまわないようにしています。" },
+      { title: "爽快感の演出", desc: "プレイヤーが今どの色を持っているかを判定し、正しい位置に着地すれば自然とコンボにつながるようにしています。" },
+      { title: "プレッシャー機構", desc: "スコア倍率やタイムボーナスは、コンボを維持し続けることでしか発動しません。" }
     ],
     h4: "成果",
-    p4: "15のステージからなる、全体で30分程度のシンプルなパズルゲームを完成させました。\nオブジェクトプール機能を実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nunityroomなどの公開プラットフォームで公開し、すでに数百人にプレイされています。",
+    p4: "完成度の高い作品に仕上げ、unityroom上にはウェブ版のリーダーボードも用意しました。\nunityroomなどの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
     itchLink: "itch.io でプレイ →",
     unityroomLink: "unityroom でプレイ →"
   }
