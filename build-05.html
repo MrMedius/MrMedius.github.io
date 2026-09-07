@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-title>项目详情</title>
+<title>DANger · Project Detail</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -102,7 +102,6 @@
     border-radius: 3px;
   }
 
-  /* ---------- Gallery (Steam 式媒体展示) ---------- */
   .gallery { margin-bottom: 20px; }
 
   .gallery-main {
@@ -160,7 +159,6 @@
     background: rgba(0,0,0,0.28);
   }
 
-  /* ---------- Info panel: 类型 / 制作者 / 标签 ---------- */
   .info-panel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -189,7 +187,6 @@
     border-radius: 3px;
   }
 
-  /* ---------- 技术目标（编号） ---------- */
   .tech-goals-heading {
     font-family: var(--mono);
     font-size: 13px;
@@ -252,20 +249,18 @@
 <header>
   <a class="back-link" href="index.html" data-i18n="back">← 返回项目列表</a>
   <div class="lang-switch" role="group" aria-label="Language">
-    <button data-lang="zh" class="active">中文</button>
-    <button data-lang="en">EN</button>
+    <button data-lang="zh">中文</button>
+    <button data-lang="en" class="active">EN</button>
     <button data-lang="ja">日本語</button>
   </div>
 </header>
 
 <main>
-  <div class="build-tag">BUILD.05<small>Unity</small></div>
-  <h1 data-i18n="title">冲 & 转</h1>
-  <p class="lede" data-i18n="lede">冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！</p>
+  <div class="build-tag">BUILD.05</div>
+  <h1 data-i18n="title">弹 · 反弹</h1>
+  <p class="lede" data-i18n="lede"></p>
 
-  <div class="stack">
-    <span>C#</span><span>Unity</span><span>Aseprite</span>
-  </div>
+  <div class="stack"></div>
 
   <div class="gallery">
     <div class="gallery-main" id="galleryMain"></div>
@@ -275,11 +270,11 @@
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+      <div class="value" data-i18n="genreValue"></div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">个人开发</div>
+      <div class="value" data-i18n="creatorValue"></div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -289,7 +284,7 @@
 
   <section class="block">
     <h2 data-i18n="h1">概述</h2>
-    <p data-i18n="p1">挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。</p>
+    <p data-i18n="p1"></p>
   </section>
 
   <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
@@ -297,108 +292,84 @@
 
   <section class="block">
     <h2 data-i18n="h4">成果</h2>
-    <p data-i18n="p4">一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。</p>
+    <p data-i18n="p4"></p>
   </section>
-
-  <div class="links-row">
-    <a href="https://mrmedius.itch.io/dash-spin" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-    <a href="https://unityroom.com/games/dashspin" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
-  </div>
 </main>
 
 <script>
-// ---------- 媒体素材：第一项是视频，之后是截图 ----------
-// 把文件放进 asset 文件夹后，把下面的路径换成你自己的文件名即可
+/** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/dash_v.mp4', poster: 'asset/dash_p_0.png' },
-  { type: 'image', src: 'asset/dash_p_1.png' },
-  { type: 'image', src: 'asset/dash_p_2.png' },
-  { type: 'image', src: 'asset/dash_p_3.png' },
-  { type: 'image', src: 'asset/dash_p_4.png' },
-  { type: 'image', src: 'asset/dash_p_5.png' }
+  { type: 'video', src: 'asset/danger_v.mp4', poster: 'asset/danger_p_0.png' },
+  { type: 'image', src: 'asset/danger_p_1.png' },
+  { type: 'image', src: 'asset/danger_p_2.png' },
+  { type: 'image', src: 'asset/danger_p_3.png' },
+  { type: 'image', src: 'asset/danger_p_4.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "冲 & 转 · 项目详情",
+    pageTitle: "弹 · 反弹 · 项目详情",
     back: "← 返回项目列表",
-    title: "冲 & 转",
-    lede: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
+    title: "弹 · 反弹",
+    lede: "",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 策划向",
+    genreValue: "",
     creatorLabel: "制作者信息",
-    creatorValue: "个人开发",
+    creatorValue: "",
     tagsLabel: "游戏标签",
-    tags: ["跳跃", "像素风", "2D"],
+    tags: [],
     h1: "概述",
-    p1: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
+    p1: "",
     techGoalsHeading: "技术目标",
-    techGoals: [
-      { title: "24小时开发挑战", desc: "围绕跳跃这一个机制设计一系列玩法。" },
-      { title: "保持玩家的新鲜感", desc: "强迫玩家修改颜色，不让玩家的脑子习惯原来的颜色。" },
-      { title: "爽感塑造", desc: "识别玩家身上的颜色，让玩家在位置正确的时候可以自然而然地达到连击。" },
-      { title: "压力机制", desc: "只有通过连击来激发得分倍率和时间奖励。" }
-    ],
+    techGoals: [],
     h4: "成果",
-    p4: "一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。",
-    itchLink: "在 itch.io 试玩 →",
-    unityroomLink: "在 unityroom 试玩 →"
+    p4: ""
   },
   en: {
-    pageTitle: "Dash & Spin · Project Detail",
+    pageTitle: "DANger · Project Detail",
     back: "← Back to projects",
-    title: "Dash & Spin",
-    lede: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
+    title: "DANger",
+    lede: "",
     genreLabel: "Genre",
-    genreValue: "Game Project · Design-Focused",
+    genreValue: "",
     creatorLabel: "Creator",
-    creatorValue: "Solo Development",
+    creatorValue: "",
     tagsLabel: "Tags",
-    tags: ["Jump", "Pixel Art", "2D"],
+    tags: [],
     h1: "Overview",
-    p1: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
+    p1: "",
     techGoalsHeading: "Technical Goals",
-    techGoals: [
-      { title: "24-Hour Dev Challenge", desc: "Designed a whole set of mechanics built entirely around a single action: jumping." },
-      { title: "Keeping Things Fresh", desc: "Forces the player to keep changing colors, so their brain never settles into a fixed color pattern." },
-      { title: "Crafting a Sense of Flow", desc: "Tracks the color currently carried by the player, so landing in the right spot naturally chains into a combo." },
-      { title: "Pressure Mechanic", desc: "Score multipliers and time bonuses can only be triggered by keeping the combo alive." }
-    ],
+    techGoals: [],
     h4: "Outcome",
-    p4: "A fairly polished entry, complete with an online leaderboard built on unityroom.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
-    itchLink: "Play on itch.io →",
-    unityroomLink: "Play on unityroom →"
+    p4: ""
   },
   ja: {
-    pageTitle: "ダッシュ＆スピン・プロジェクト詳細",
+    pageTitle: "弾 · リバウンド・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ダッシュ＆スピン",
-    lede: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
+    title: "弾 · リバウンド",
+    lede: "",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 企画重視",
+    genreValue: "",
     creatorLabel: "制作者情報",
-    creatorValue: "個人開発",
+    creatorValue: "",
     tagsLabel: "ゲームタグ",
-    tags: ["ジャンプ", "ドット絵", "2D"],
+    tags: [],
     h1: "概要",
-    p1: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
+    p1: "",
     techGoalsHeading: "技術目標",
-    techGoals: [
-      { title: "24時間開発チャレンジ", desc: "ジャンプという一つのアクションだけを軸に、一連の遊び方を設計しました。" },
-      { title: "プレイヤーに新鮮さを保たせる", desc: "プレイヤーに色を変え続けることを強制し、脳が元の色に慣れてしまわないようにしています。" },
-      { title: "爽快感の演出", desc: "プレイヤーが今どの色を持っているかを判定し、正しい位置に着地すれば自然とコンボにつながるようにしています。" },
-      { title: "プレッシャー機構", desc: "スコア倍率やタイムボーナスは、コンボを維持し続けることでしか発動しません。" }
-    ],
+    techGoals: [],
     h4: "成果",
-    p4: "完成度の高い作品に仕上げ、unityroom上にはウェブ版のリーダーボードも用意しました。\nunityroomなどの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
-    itchLink: "itch.io でプレイ →",
-    unityroomLink: "unityroom でプレイ →"
+    p4: ""
   }
 };
 
 let currentLang = localStorage.getItem('site-lang') || 'en';
 let activeMediaIndex = 0;
 
+/**
+ * 在主展示区切换到指定媒体。
+ * @param {number} index 媒体列表下标
+ */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -409,6 +380,7 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
+/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -424,10 +396,16 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
+/**
+ * @param {string[]} tags
+ */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
+/**
+ * @param {{title: string, desc: string}[]} goals
+ */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -441,6 +419,7 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
+/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;
@@ -448,7 +427,7 @@ function render() {
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) el.textContent = t[key];
+    if (Object.prototype.hasOwnProperty.call(t, key)) el.textContent = t[key];
   });
 
   document.querySelectorAll('.lang-switch button').forEach(btn => {

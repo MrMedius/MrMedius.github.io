@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-title>项目详情</title>
+<title>项目详情</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -252,19 +252,19 @@
 <header>
   <a class="back-link" href="index.html" data-i18n="back">← 返回项目列表</a>
   <div class="lang-switch" role="group" aria-label="Language">
-    <button data-lang="zh" class="active">中文</button>
-    <button data-lang="en">EN</button>
+    <button data-lang="zh">中文</button>
+    <button data-lang="en" class="active">EN</button>
     <button data-lang="ja">日本語</button>
   </div>
 </header>
 
 <main>
   <div class="build-tag">BUILD.06<small>Unity</small></div>
-  <h1 data-i18n="title">黄昏森林</h1>
-  <p class="lede" data-i18n="lede">战斗、探索、生存，战胜最终Boss逃出生天！</p>
+  <h1 data-i18n="title">冲 & 转</h1>
+  <p class="lede" data-i18n="lede">冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！</p>
 
   <div class="stack">
-    <span>Unity</span><span>Visual Scripting</span><span>Aseprite</span>
+    <span>C#</span><span>Unity</span><span>Aseprite</span>
   </div>
 
   <div class="gallery">
@@ -289,7 +289,7 @@
 
   <section class="block">
     <h2 data-i18n="h1">概述</h2>
-    <p data-i18n="p1">制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。</p>
+    <p data-i18n="p1">挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。</p>
   </section>
 
   <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
@@ -297,90 +297,102 @@
 
   <section class="block">
     <h2 data-i18n="h4">成果</h2>
-    <p data-i18n="p4">第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。</p>
+    <p data-i18n="p4">一款完成度较高的作品，并且在unityroom上制作了网页排行榜。
+在unityroom等公共平台上发布后已经有上百人体验过。</p>
   </section>
+
+  <div class="links-row">
+    <a href="https://mrmedius.itch.io/dash-spin" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://unityroom.com/games/dashspin" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+  </div>
 </main>
 
 <script>
-// ---------- 媒体素材：第一项是视频，之后是截图 ----------
-// 把文件放进 asset 文件夹后，把下面的路径换成你自己的文件名即可
+/** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/dusk_v.mp4', poster: 'asset/dusk_p_0.png' },
-  { type: 'image', src: 'asset/dusk_p_1.png' },
-  { type: 'image', src: 'asset/dusk_p_2.png' },
-  { type: 'image', src: 'asset/dusk_p_3.png' }
+  { type: 'video', src: 'asset/dash_v.mp4', poster: 'asset/dash_p_0.png' },
+  { type: 'image', src: 'asset/dash_p_1.png' },
+  { type: 'image', src: 'asset/dash_p_2.png' },
+  { type: 'image', src: 'asset/dash_p_3.png' },
+  { type: 'image', src: 'asset/dash_p_4.png' },
+  { type: 'image', src: 'asset/dash_p_5.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "黄昏森林 · 项目详情",
+    pageTitle: "冲 & 转 · 项目详情",
     back: "← 返回项目列表",
-    title: "黄昏森林",
-    lede: "战斗、探索、生存，战胜最终Boss逃出生天！",
+    title: "冲 & 转",
+    lede: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
     genreLabel: "作品类型",
     genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["射击", "像素风", "2D"],
+    tags: ["跳跃", "像素风", "2D"],
     h1: "概述",
-    p1: "制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。",
+    p1: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "最初的作品", desc: "在正式开始接触编程前，使用可视化工具来撰写代码逻辑。" },
-      { title: "使用Animator制作动画", desc: "尝试用Blend Tree来制作八个方向的移动动画。" },
-      { title: "地图资源最大化", desc: "利用路线引导，先让玩家向上移动，然后利用任务引导玩家向下移动，最后把出口设置在上方。\n如此一来简单的地图就在无形中被重复利用了两次。" },
-      { title: "Boss制作", desc: "制作了一个拥有两个阶段的Boss战。" }
-
+      { title: "24小时开发挑战", desc: "围绕跳跃这一个机制设计一系列玩法。" },
+      { title: "保持玩家的新鲜感", desc: "强迫玩家修改颜色，不让玩家的脑子习惯原来的颜色。" },
+      { title: "爽感塑造", desc: "识别玩家身上的颜色，让玩家在位置正确的时候可以自然而然地达到连击。" },
+      { title: "压力机制", desc: "只有通过连击来激发得分倍率和时间奖励。" }
     ],
     h4: "成果",
-    p4: "第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。"
+    p4: "一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。",
+    itchLink: "在 itch.io 试玩 →",
+    unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
-    pageTitle: "Dusk Forest · Project Detail",
+    pageTitle: "Dash & Spin · Project Detail",
     back: "← Back to projects",
-    title: "Dusk Forest",
-    lede: "Combat, exploration, and survival—defeat the final boss and escape!",
+    title: "Dash & Spin",
+    lede: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
     genreLabel: "Genre",
     genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Shooting", "Pixel Art", "2D"],
+    tags: ["Jump", "Pixel Art", "2D"],
     h1: "Overview",
-    p1: "Built two levels.\nFirst, put together a full questline.\nSecond, created a two-phase boss fight.",
+    p1: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "First Real Project", desc: "Before formally learning to code, used a visual scripting tool to write out the game logic." },
-      { title: "Animating with Animator", desc: "Experimented with Blend Trees to create eight-directional movement animations." },
-      { title: "Getting the Most Out of the Map", desc: "Used route guidance to first send the player upward, then used the questline to guide them back down, and finally placed the exit up top.\nThat way, a simple map ends up being reused twice without the player noticing." },
-      { title: "Boss Design", desc: "Built a two-phase boss fight." }
+      { title: "24-Hour Dev Challenge", desc: "Designed a whole set of mechanics built entirely around a single action: jumping." },
+      { title: "Keeping Things Fresh", desc: "Forces the player to keep changing colors, so their brain never settles into a fixed color pattern." },
+      { title: "Crafting a Sense of Flow", desc: "Tracks the color currently carried by the player, so landing in the right spot naturally chains into a combo." },
+      { title: "Pressure Mechanic", desc: "Score multipliers and time bonuses can only be triggered by keeping the combo alive." }
     ],
     h4: "Outcome",
-    p4: "My first solo-developed game. The character system and the Animator techniques I picked up here gave me a lot to carry into later projects."
+    p4: "A fairly polished entry, complete with an online leaderboard built on unityroom.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
+    itchLink: "Play on itch.io →",
+    unityroomLink: "Play on unityroom →"
   },
   ja: {
-    pageTitle: "ダスク フォレスト・プロジェクト詳細",
+    pageTitle: "ダッシュ＆スピン・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ダスク フォレスト",
-    lede: "戦闘・探索・サバイバル――ラスボスを倒して脱出しよう！",
+    title: "ダッシュ＆スピン",
+    lede: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["シューティング", "ドット絵", "2D"],
+    tags: ["ジャンプ", "ドット絵", "2D"],
     h1: "概要",
-    p1: "2つのレベルを開発。\n1つ目は、一連のクエストを実装。\n2つ目は、2段階のフェーズを持つボスを作成。",
+    p1: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "最初の本格的な作品", desc: "本格的にプログラミングを学ぶ前に、ビジュアルスクリプティングツールを使ってゲームロジックを組みました。" },
-      { title: "Animatorによるアニメーション制作", desc: "Blend Treeを使い、8方向移動のアニメーションを作成しました。" },
-      { title: "マップ素材の使い回し", desc: "まずルート誘導でプレイヤーを上へ進ませ、次にクエストで下へと誘導し、最後に出口を上部に配置しました。\nこうすることで、シンプルなマップをプレイヤーに気づかれずに2回使い回しています。" },
-      { title: "ボス制作", desc: "2段階のフェーズを持つボス戦を制作しました。" }
+      { title: "24時間開発チャレンジ", desc: "ジャンプという一つのアクションだけを軸に、一連の遊び方を設計しました。" },
+      { title: "プレイヤーに新鮮さを保たせる", desc: "プレイヤーに色を変え続けることを強制し、脳が元の色に慣れてしまわないようにしています。" },
+      { title: "爽快感の演出", desc: "プレイヤーが今どの色を持っているかを判定し、正しい位置に着地すれば自然とコンボにつながるようにしています。" },
+      { title: "プレッシャー機構", desc: "スコア倍率やタイムボーナスは、コンボを維持し続けることでしか発動しません。" }
     ],
     h4: "成果",
-    p4: "初めて一人で開発したゲームで、ここで得たキャラクターシステムやAnimatorの使い方は、その後の開発に大いに役立ちました。"
+    p4: "完成度の高い作品に仕上げ、unityroom上にはウェブ版のリーダーボードも用意しました。\nunityroomなどの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
+    itchLink: "itch.io でプレイ →",
+    unityroomLink: "unityroom でプレイ →"
   }
 };
 
@@ -436,7 +448,7 @@ function render() {
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) el.textContent = t[key];
+    if (Object.prototype.hasOwnProperty.call(t, key)) el.textContent = t[key];
   });
 
   document.querySelectorAll('.lang-switch button').forEach(btn => {

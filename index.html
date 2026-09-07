@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-title>Portfolio · Projects</title>
+<title>Portfolio · Projects</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -47,8 +47,6 @@
     letter-spacing: 1px;
     color: var(--text-dim);
   }
-  .logo span { color: var(--accent); }
-
   .lang-switch { display: flex; gap: 4px; font-family: var(--mono); font-size: 12px; }
   .lang-switch button {
     background: transparent;
@@ -324,7 +322,7 @@
 <main>
   <section class="intro">
     <div class="eyebrow" data-i18n="eyebrow">GAME DEV / SYSTEMS PROGRAMMING</div>
-    <h1 data-i18n="name">Your Name</h1>
+    <h1 data-i18n="name">Mr.Medius</h1>
     <p class="bio" data-i18n="bio">Dedicated to creating entertaining games and convenient development tools.<br>
 I enjoy the processes of development and design, and I have an aversion to disorganized systems.</p>
   </section>
@@ -358,7 +356,7 @@ I enjoy the processes of development and design, and I have an aversion to disor
 
   <div class="section-head">
     <h2 data-i18n="sectionTitle">Projects</h2>
-    <div class="tag" data-i18n="sectionTag">7 BUILDS</div>
+    <div class="tag" data-i18n="sectionTag">9 BUILDS</div>
   </div>
 
   <div class="projects" id="projectList"></div>
@@ -380,7 +378,7 @@ const translations = {
     bio: "致力于制作有趣的游戏和便利的开发工具。\n享受开发和规划的过程，对不成体系的系统过敏。",
     techStackHeading: "技术栈",
     sectionTitle: "项目",
-    sectionTag: "7 BUILDS",
+    sectionTag: "9 BUILDS",
     thumbAlt: "缩略图",
     toggleOpen: "概述",
     toggleClose: "收起",
@@ -428,27 +426,47 @@ const translations = {
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unity",
+        tag: "BUILD.05", sub: "",
+        title: "弹 · 反弹",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/danger_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "Unity",
         title: "冲 & 转",
         desc: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
         overview: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "",
+        title: "都市淘金",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-07.html",
+        thumbSrc: "asset/city_p_1.png"
+      },
+      {
+        tag: "BUILD.08", sub: "Unity",
         title: "黄昏森林",
         desc: "战斗、探索、生存，战胜最终Boss逃出生天！",
         overview: "制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。",
         stack: ["Unity", "Visual Scripting",  "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/dusk_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "DirectX11",
+        tag: "BUILD.09", sub: "DirectX11",
         title: "炼 · 核（制作中）",
         desc: "类幸存者玩法搭配可视化编程。",
         overview: "选用自制引擎开发。\n打算不用美术素材，尽可能用几何体和着色器完成整个游戏。",
@@ -464,7 +482,7 @@ const translations = {
     bio: "Dedicated to creating entertaining games and convenient development tools.\nI enjoy the processes of development and design, and I have an aversion to disorganized systems.",
     techStackHeading: "Tech Stack",
     sectionTitle: "Projects",
-    sectionTag: "7 BUILDS",
+    sectionTag: "9 BUILDS",
     thumbAlt: "Thumbnail",
     toggleOpen: "Overview",
     toggleClose: "Close",
@@ -512,27 +530,47 @@ const translations = {
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unity",
+        tag: "BUILD.05", sub: "",
+        title: "DANger",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/danger_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "Unity",
         title: "Dash & Spin",
         desc: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
         overview: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "",
+        title: "City's Gold Rush",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-07.html",
+        thumbSrc: "asset/city_p_1.png"
+      },
+      {
+        tag: "BUILD.08", sub: "Unity",
         title: "Dusk Forest",
         desc: "Combat, exploration, and survival—defeat the final boss and escape!",
         overview: "Developed two levels.\nFirst, completed a questline.\nSecond, created a two-phase boss.",
         stack: ["Unity", "Visual Scripting",  "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/dusk_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "DirectX11",
+        tag: "BUILD.09", sub: "DirectX11",
         title: "Core Refiner（In production）",
         desc: "Survivor-style gameplay combined with visual programming.",
         overview: "Developed using a custom engine. \nThe plan is to forgo traditional art assets and build the entire game using only geometric primitives and shaders.",
@@ -548,7 +586,7 @@ const translations = {
     bio: "楽しいゲームや便利な開発ツールの制作に情熱を注いでいます。\n開発や設計のプロセスそのものを楽しむ一方で、無秩序あるいは体系化されていないシステムを嫌います。",
     techStackHeading: "技術スタック",
     sectionTitle: "プロジェクト",
-    sectionTag: "7 BUILDS",
+    sectionTag: "9 BUILDS",
     thumbAlt: "サムネイル",
     toggleOpen: "概要",
     toggleClose: "閉じる",
@@ -596,27 +634,47 @@ const translations = {
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unity",
+        tag: "BUILD.05", sub: "",
+        title: "弾 · リバウンド",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-05.html",
+        thumbSrc: "asset/danger_p_1.png"
+      },
+      {
+        tag: "BUILD.06", sub: "Unity",
         title: "ダッシュ＆スピン",
         desc: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
         overview: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "",
+        title: "町のゴールドラッシュ",
+        desc: "",
+        overview: "",
+        stack: [],
+        hasDetail: true,
+        detailHref: "build-07.html",
+        thumbSrc: "asset/city_p_1.png"
+      },
+      {
+        tag: "BUILD.08", sub: "Unity",
         title: "ダスク フォレスト",
         desc: "戦闘・探索・サバイバル――ラスボスを倒して脱出しよう！",
         overview: "2つのレベルを開発。\n1つ目は、一連のクエストを実装。\n2つ目は、2段階のフェーズを持つボスを作成。",
         stack: ["Unity", "Visual Scripting",  "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/dusk_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "DirectX11",
+        tag: "BUILD.09", sub: "DirectX11",
         title: "煉 · 核（製作中）",
         desc: "サバイバー系ゲームプレイとビジュアルプログラミングの融合。",
         overview: "独自エンジンを使用して開発。\n従来のアートアセットは使用せず、幾何学プリミティブとシェーダーのみでゲーム全体を構築する方針。",
@@ -631,8 +689,16 @@ const translations = {
 const pageTitles = { zh: "作品集 · 项目", en: "Portfolio · Projects", ja: "ポートフォリオ・プロジェクト" };
 
 let currentLang = localStorage.getItem('site-lang') || 'en';
-let openSet = new Set(); // 记录当前展开的项目 index，跨语言切换保持
+/** 记录当前展开的项目 index，跨语言切换保持 */
+let openSet = new Set();
 
+/**
+ * 生成一张项目卡片。
+ * @param {object} p 当前语言下的项目数据
+ * @param {number} i 项目下标
+ * @param {object} t 当前语言文案
+ * @returns {HTMLElement}
+ */
 function buildCard(p, i, t) {
   const card = document.createElement('div');
   card.className = 'project' + (openSet.has(i) ? ' open' : '');
@@ -650,7 +716,7 @@ function buildCard(p, i, t) {
     <div class="project-head">
       <div class="${thumbClass}">${thumbContent}</div>
       <div class="info">
-        <div class="build-tag">${p.tag}<small>${p.sub}</small></div>
+        <div class="build-tag">${p.tag}${p.sub ? `<small>${p.sub}</small>` : ''}</div>
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
         <div class="stack">${stackHtml}</div>
@@ -694,13 +760,13 @@ function buildCard(p, i, t) {
 
   function toggle() { setOpen(!card.classList.contains('open')); }
 
-  // 整个 project-head 都是热区；只有点在“完整项目页”这个真正的链接上时才放行，让它正常跳转
+  /** 整个 project-head 都是热区；点在「完整项目页」链接上时放行跳转。 */
   projectHead.addEventListener('click', (e) => {
     if (e.target.closest('a')) return;
     toggle();
   });
 
-  // 语言切换后如果本来是展开状态，直接同步高度（无需动画）
+  /** 语言切换后如果本来是展开状态，直接同步高度（无需动画）。 */
   if (openSet.has(i)) {
     requestAnimationFrame(() => { body.style.maxHeight = body.scrollHeight + 'px'; });
   }
@@ -708,6 +774,7 @@ function buildCard(p, i, t) {
   return card;
 }
 
+/** 按当前语言刷新整页文案并重建项目列表。 */
 function render() {
   const t = translations[currentLang];
   document.title = pageTitles[currentLang];
@@ -715,7 +782,7 @@ function render() {
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key]) el.textContent = t[key];
+    if (Object.prototype.hasOwnProperty.call(t, key)) el.textContent = t[key];
   });
 
   document.querySelectorAll('.lang-switch button').forEach(btn => {
