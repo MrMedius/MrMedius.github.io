@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>City's Gold Rush · Project Detail</title>
+<title>项目详情</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -103,6 +103,7 @@
     border-radius: 3px;
   }
 
+  /* ---------- Gallery (Steam 式媒体展示) ---------- */
   .gallery { margin-bottom: 20px; }
 
   .gallery-main {
@@ -160,6 +161,7 @@
     background: rgba(0,0,0,0.28);
   }
 
+  /* ---------- Info panel: 类型 / 制作者 / 标签 ---------- */
   .info-panel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -178,7 +180,12 @@
     text-transform: uppercase;
     margin-bottom: 10px;
   }
-  .info-block .value { font-size: 14.5px; color: var(--text); }
+  .info-block .value {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.7;
+  }
   .info-block .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .info-block .tags span {
     font-family: var(--mono);
@@ -189,6 +196,7 @@
     border-radius: 3px;
   }
 
+  /* ---------- 技术目标（编号） ---------- */
   .section-heading {
     font-family: var(--heading);
     font-size: 13px;
@@ -249,11 +257,13 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.07</div>
+  <div class="build-tag">BUILD.07<small>Unity</small></div>
   <h1 data-i18n="title">都市淘金</h1>
-  <p class="lede" data-i18n="lede"></p>
+  <p class="lede" data-i18n="lede">破坏！破坏！破坏！别让自己停下来！</p>
 
-  <div class="stack"></div>
+  <div class="stack">
+    <span>C#</span><span>Unity</span>
+  </div>
 
   <div class="gallery">
     <div class="gallery-main" id="galleryMain"></div>
@@ -263,11 +273,11 @@
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue"></div>
+      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue"></div>
+      <div class="value" data-i18n="creatorValue">个人开发</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -277,7 +287,8 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1"></p>
+    <p data-i18n="p1">初学Unity程序开发后，第一次尝试独立制作的小游戏。
+参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。</p>
   </section>
 
   <section class="block">
@@ -287,8 +298,14 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4"></p>
+    <p data-i18n="p4">对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。
+在unityroom等公共平台上发布后已经有上百人体验过。</p>
   </section>
+
+  <div class="links-row">
+    <a href="https://mrmedius.itch.io/citys-gold-rush" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://unityroom.com/games/citysgoldrush" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+  </div>
 </main>
 
 <script>
@@ -306,55 +323,76 @@ const translations = {
     pageTitle: "都市淘金 · 项目详情",
     back: "← 返回项目列表",
     title: "都市淘金",
-    lede: "",
+    lede: "破坏！破坏！破坏！别让自己停下来！",
     genreLabel: "作品类型",
-    genreValue: "",
+    genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
-    creatorValue: "",
+    creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: [],
+    tags: ["TPS", "生存", "3D"],
     h1: "概述",
-    p1: "",
+    p1: "初学Unity程序开发后，第一次尝试独立制作的小游戏。\n参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。",
     techGoalsHeading: "技术目标",
-    techGoals: [],
+    techGoals: [
+      { title: "游玩动力——破坏（杀手型玩家）", desc: "对，就是单纯的破坏欲，爆炸、混乱和冲撞。甚至持续的破坏还能获得时间奖励，激励他们延长这次狂欢。" },
+      { title: "游玩动力——都市破坏率（探索型玩家）", desc: "左上角的分数和都市破坏率就是他们获得正反馈的最佳来源，尤其是那些对于全收集有着极强欲望的玩家。" },
+      { title: "游玩动力——游戏内排名（成就型玩家）", desc: "游戏结束后给出的排名是玩家最初的目标，如果能升到第一名，这类玩家应该会很有成就感。" },
+      { title: "游玩动力——游戏外排名（社交型玩家）", desc: "目前只有 unityroom 有在线排名功能，看到自己的名次超越了其他玩家，这类玩家应该会很高兴。" }
+    ],
     h4: "成果",
-    p4: ""
+    p4: "对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。\n在unityroom等公共平台上发布后已经有上百人体验过。",
+    itchLink: "在 itch.io 试玩 →",
+    unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
     pageTitle: "City's Gold Rush · Project Detail",
     back: "← Back to projects",
     title: "City's Gold Rush",
-    lede: "",
+    lede: "Destroy! Destroy! Destroy! Don't you dare stop!",
     genreLabel: "Genre",
-    genreValue: "",
+    genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
-    creatorValue: "",
+    creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: [],
+    tags: ["TPS", "Survival", "3D"],
     h1: "Overview",
-    p1: "",
+    p1: "After first learning Unity programming, this was my first attempt at making a mini-game on my own.\nDrawing on Richard Bartle's player taxonomy, I thought about what would keep people playing.",
     techGoalsHeading: "Technical Goals",
-    techGoals: [],
+    techGoals: [
+      { title: "Play Motivation — Destruction (Killers)", desc: "That's right: the urge to smash things. Explosions, chaos, collisions. Keep wrecking and you even get a time bonus, so the rampage lasts longer." },
+      { title: "Play Motivation — City Destruction Rate (Explorers)", desc: "The score and city destruction rate in the top-left are their best source of feedback—especially for players with a strong urge to 100% everything." },
+      { title: "Play Motivation — In-Game Rank (Achievers)", desc: "The rank shown when the run ends is their first goal. Hitting #1 should feel like a real accomplishment for this type." },
+      { title: "Play Motivation — External Leaderboard (Socializers)", desc: "Right now only unityroom has an online leaderboard. Seeing their name climb past other players should make this type happy." }
+    ],
     h4: "Outcome",
-    p4: ""
+    p4: "A fairly meaningful experiment for me—it was designed from theory I'd studied, not just because it seemed fun.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
+    itchLink: "Play on itch.io →",
+    unityroomLink: "Play on unityroom →"
   },
   ja: {
     pageTitle: "町のゴールドラッシュ・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
     title: "町のゴールドラッシュ",
-    lede: "",
+    lede: "破壊！破壊！破壊！止まるな！",
     genreLabel: "作品の種類",
-    genreValue: "",
+    genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
-    creatorValue: "",
+    creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: [],
+    tags: ["TPS", "サバイバル", "3D"],
     h1: "概要",
-    p1: "",
+    p1: "Unityのプログラム開発を学び始めたあと、初めて一人で作ったミニゲーム。\nリチャード・バートルのプレイヤータイプ論を参考に、プレイヤーが遊び続けられる動機を考えた。",
     techGoalsHeading: "技術目標",
-    techGoals: [],
+    techGoals: [
+      { title: "プレイ動機——破壊（キラー型プレイヤー）", desc: "そう、ただ壊したいという欲求だ。爆発、混乱、衝突。破壊を続ければタイムボーナスまで入り、この狂騒を長引かせる。" },
+      { title: "プレイ動機——都市破壊率（エクスプローラー型プレイヤー）", desc: "左上のスコアと都市破壊率が、彼らにとって最大の正のフィードバックになる。とくにコンプリート欲の強いプレイヤーには刺さる。" },
+      { title: "プレイ動機——ゲーム内ランク（アチーバー型プレイヤー）", desc: "プレイ終了時に出る順位が最初の目標になる。1位まで上がれたら、このタイプは達成感を得やすい。" },
+      { title: "プレイ動機——ゲーム外ランキング（ソーシャライザー型プレイヤー）", desc: "現状、オンライン順位があるのは unityroom だけだ。自分の順位が他プレイヤーを追い越すのを見れば、このタイプは喜ぶはずだ。" }
+    ],
     h4: "成果",
-    p4: ""
+    p4: "自分にとっては意味のある試みだった。面白いから作ったのではなく、学んだ理論に基づいて設計したからだ。\nunityroom などの公開プラットフォームで公開し、すでに100人以上にプレイされている。",
+    itchLink: "itch.io でプレイ →",
+    unityroomLink: "unityroom でプレイ →"
   }
 };
 

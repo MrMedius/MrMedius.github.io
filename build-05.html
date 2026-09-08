@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DANger · Project Detail</title>
+<title>项目详情</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -103,6 +103,7 @@
     border-radius: 3px;
   }
 
+  /* ---------- Gallery (Steam 式媒体展示) ---------- */
   .gallery { margin-bottom: 20px; }
 
   .gallery-main {
@@ -160,6 +161,7 @@
     background: rgba(0,0,0,0.28);
   }
 
+  /* ---------- Info panel: 类型 / 制作者 / 标签 ---------- */
   .info-panel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -178,7 +180,12 @@
     text-transform: uppercase;
     margin-bottom: 10px;
   }
-  .info-block .value { font-size: 14.5px; color: var(--text); }
+  .info-block .value {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    color: var(--text);
+    line-height: 1.7;
+  }
   .info-block .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .info-block .tags span {
     font-family: var(--mono);
@@ -189,6 +196,7 @@
     border-radius: 3px;
   }
 
+  /* ---------- 技术目标（编号） ---------- */
   .section-heading {
     font-family: var(--heading);
     font-size: 13px;
