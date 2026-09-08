@@ -14,6 +14,7 @@
     --accent: #ff9d4d;
     --data: #5eead4;
     --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --heading: var(--mono), 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
     --sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
   }
 
@@ -169,8 +170,9 @@
     border-bottom: 1px solid var(--panel-line);
   }
   .info-block .label {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-family: var(--heading);
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -187,15 +189,16 @@
     border-radius: 3px;
   }
 
-  .tech-goals-heading {
-    font-family: var(--mono);
+  .section-heading {
+    font-family: var(--heading);
     font-size: 13px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
     border-bottom: 1px solid var(--panel-line);
     padding-bottom: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
   .tech-goal {
     display: grid;
@@ -212,19 +215,9 @@
   .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
   .tech-goal p { color: var(--text-dim); font-size: 14px; white-space: pre-line; }
 
-  #techGoals { margin-bottom: 52px; }
+  #techGoals { margin-bottom: 0; }
 
   section.block { margin-bottom: 52px; }
-  section.block h2 {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--panel-line);
-    padding-bottom: 14px;
-    margin-bottom: 20px;
-  }
   section.block p { color: var(--text); white-space: pre-line; }
 
   .links-row {
@@ -283,15 +276,17 @@
   </div>
 
   <section class="block">
-    <h2 data-i18n="h1">概述</h2>
+    <h2 class="section-heading" data-i18n="h1">概述</h2>
     <p data-i18n="p1"></p>
   </section>
 
-  <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
-  <div id="techGoals"></div>
+  <section class="block">
+    <h2 class="section-heading" data-i18n="techGoalsHeading">技术目标</h2>
+    <div id="techGoals"></div>
+  </section>
 
   <section class="block">
-    <h2 data-i18n="h4">成果</h2>
+    <h2 class="section-heading" data-i18n="h4">成果</h2>
     <p data-i18n="p4"></p>
   </section>
 </main>

@@ -14,6 +14,7 @@
     --accent: #ff9d4d;
     --data: #5eead4;
     --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --heading: var(--mono), 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
     --sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
   }
 
@@ -171,8 +172,9 @@
     border-bottom: 1px solid var(--panel-line);
   }
   .info-block .label {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-family: var(--heading);
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -190,15 +192,16 @@
   }
 
   /* ---------- 技术目标（编号） ---------- */
-  .tech-goals-heading {
-    font-family: var(--mono);
+  .section-heading {
+    font-family: var(--heading);
     font-size: 13px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
     border-bottom: 1px solid var(--panel-line);
     padding-bottom: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
   .tech-goal {
     display: grid;
@@ -215,19 +218,9 @@
   .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
   .tech-goal p { color: var(--text-dim); font-size: 14px; }
 
-  #techGoals { margin-bottom: 52px; }
+  #techGoals { margin-bottom: 0; }
 
   section.block { margin-bottom: 52px; }
-  section.block h2 {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--panel-line);
-    padding-bottom: 14px;
-    margin-bottom: 20px;
-  }
   section.block p { color: var(--text); white-space: pre-line; }
 
   .links-row {
@@ -288,17 +281,19 @@
   </div>
 
   <section class="block">
-    <h2 data-i18n="h1">概述</h2>
+    <h2 class="section-heading" data-i18n="h1">概述</h2>
     <p data-i18n="p1">使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。
 加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。
 利用像素搭建一套简单光照模型系统和像素字体系统。</p>
   </section>
 
-  <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
-  <div id="techGoals"></div>
+  <section class="block">
+    <h2 class="section-heading" data-i18n="techGoalsHeading">技术目标</h2>
+    <div id="techGoals"></div>
+  </section>
 
   <section class="block">
-    <h2 data-i18n="h4">成果</h2>
+    <h2 class="section-heading" data-i18n="h4">成果</h2>
     <p data-i18n="p4">完成了一个流程大约3-5分钟的益智游戏，通过周围的交互UI来代替教程，让玩家一目了然。
 通过绘画模式和排行榜系统展示自己在有限条件下将一个机制尽可能丰富化的能力。
 通过展览模式介绍了我对光照模型阶段性的学习成果。</p>

@@ -14,6 +14,7 @@
     --accent: #ff9d4d;
     --data: #5eead4;
     --mono: 'JetBrains Mono', 'Consolas', monospace;
+    --heading: var(--mono), 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
     --sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', sans-serif;
   }
 
@@ -169,8 +170,9 @@
     border-bottom: 1px solid var(--panel-line);
   }
   .info-block .label {
-    font-family: var(--mono);
-    font-size: 11px;
+    font-family: var(--heading);
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -187,15 +189,16 @@
     border-radius: 3px;
   }
 
-  .tech-goals-heading {
-    font-family: var(--mono);
+  .section-heading {
+    font-family: var(--heading);
     font-size: 13px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     color: var(--text-dim);
     text-transform: uppercase;
     border-bottom: 1px solid var(--panel-line);
     padding-bottom: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
   }
   .tech-goal {
     display: grid;
@@ -212,19 +215,9 @@
   .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
   .tech-goal p { color: var(--text-dim); font-size: 14px; white-space: pre-line; }
 
-  #techGoals { margin-bottom: 52px; }
+  #techGoals { margin-bottom: 0; }
 
   section.block { margin-bottom: 52px; }
-  section.block h2 {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--panel-line);
-    padding-bottom: 14px;
-    margin-bottom: 20px;
-  }
   section.block p { color: var(--text); white-space: pre-line; }
 
   .links-row {
@@ -256,11 +249,13 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.05</div>
+  <div class="build-tag">BUILD.05<small>Unreal Engine</small></div>
   <h1 data-i18n="title">弹 · 反弹</h1>
-  <p class="lede" data-i18n="lede"></p>
+  <p class="lede" data-i18n="lede">在枪林弹雨中夹缝求生，然后以牙还牙！</p>
 
-  <div class="stack"></div>
+  <div class="stack">
+    <span>C++</span><span>UE5</span>
+  </div>
 
   <div class="gallery">
     <div class="gallery-main" id="galleryMain"></div>
@@ -270,11 +265,11 @@
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue"></div>
+      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue"></div>
+      <div class="value" data-i18n="creatorValue">个人开发</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -283,17 +278,26 @@
   </div>
 
   <section class="block">
-    <h2 data-i18n="h1">概述</h2>
-    <p data-i18n="p1"></p>
+    <h2 class="section-heading" data-i18n="h1">概述</h2>
+    <p data-i18n="p1">「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。
+也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。</p>
   </section>
-
-  <div class="tech-goals-heading" data-i18n="techGoalsHeading">技术目标</div>
-  <div id="techGoals"></div>
 
   <section class="block">
-    <h2 data-i18n="h4">成果</h2>
-    <p data-i18n="p4"></p>
+    <h2 class="section-heading" data-i18n="techGoalsHeading">技术目标</h2>
+    <div id="techGoals"></div>
   </section>
+
+  <section class="block">
+    <h2 class="section-heading" data-i18n="h4">成果</h2>
+    <p data-i18n="p4">作为UE5的初学者，我对这款作品还是比较满意的。
+个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。
+但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。</p>
+  </section>
+
+  <div class="links-row">
+    <a href="https://mrmedius.itch.io/danger" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+  </div>
 </main>
 
 <script>
@@ -311,55 +315,73 @@ const translations = {
     pageTitle: "弹 · 反弹 · 项目详情",
     back: "← 返回项目列表",
     title: "弹 · 反弹",
-    lede: "",
+    lede: "在枪林弹雨中夹缝求生，然后以牙还牙！",
     genreLabel: "作品类型",
-    genreValue: "",
+    genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
-    creatorValue: "",
+    creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: [],
+    tags: ["动作", "生存", "3D"],
     h1: "概述",
-    p1: "",
+    p1: "「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。\n也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。",
     techGoalsHeading: "技术目标",
-    techGoals: [],
+    techGoals: [
+      { title: "24小时开发挑战", desc: "围绕主题构思玩法并制作，「だん」的话可以是「弾丸」也可以是「弾性」。\n最后为了点题，标题再使用「DANger」。" },
+      { title: "符合参赛作品的玩法", desc: "因为评审需要阅览成百上千的参赛作品，所以玩法必须易于理解，但又不乏趣味性；而且画面也要尽量做到精致但不繁琐。" },
+      { title: "核心机制", desc: "夹缝求生——玩家必须保持移动，否则不仅会被敌人的子弹攻击，也会被脚底的地砖偷袭。\n以牙还牙——玩家可以用面前的挡板反弹敌人的「红」子弹，然后变成自己的「绿」子弹，从而击杀敌人。" },
+      { title: "出其不意的正反馈", desc: "因为与「绿」子弹碰撞的「红」子弹也会被变成「绿」子弹，所以随着局面越加复杂，玩家虽然疲于躲避危险，但不知不觉中也会积累下很多积分和连击，并且看到和听见预料之外的敌人被击中，变成碎块。" }
+    ],
     h4: "成果",
-    p4: ""
+    p4: "作为UE5的初学者，我对这款作品还是比较满意的。\n个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。\n但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。",
+    itchLink: "在 itch.io 试玩 →"
   },
   en: {
     pageTitle: "DANger · Project Detail",
     back: "← Back to projects",
     title: "DANger",
-    lede: "",
+    lede: "Survive the hail of bullets in the gaps—then give as good as you get!",
     genreLabel: "Genre",
-    genreValue: "",
+    genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
-    creatorValue: "",
+    creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: [],
+    tags: ["Action", "Survival", "3D"],
     h1: "Overview",
-    p1: "",
+    p1: "An entry for the 26th UE5 Petit Contest (第26回UE5ぷちコン), built around the theme 「だん」.\nAlso my first 24-hour mini-game challenge, after about a month of learning UE5 programming.",
     techGoalsHeading: "Technical Goals",
-    techGoals: [],
+    techGoals: [
+      { title: "24-Hour Dev Challenge", desc: "Designed the gameplay around the contest theme. 「だん」 can read as 「弾丸」 (bullet) or 「弾性」 (elasticity / bounce).\nTo land the pun, the title became 「DANger」." },
+      { title: "Gameplay Fit for a Contest", desc: "Judges have to look through hundreds or thousands of entries, so the game had to be easy to grasp without going dull—and the visuals as polished as possible without getting busy." },
+      { title: "Core Mechanics", desc: "Survive in the gaps — keep moving, or you'll take hits from enemy bullets and from the tiles under your feet.\nTit for tat — bounce enemy \"red\" bullets off the barrier in front of you; they turn into your \"green\" bullets and can take enemies down." },
+      { title: "Unexpected Positive Feedback", desc: "Red bullets that hit a green one also turn green. As the screen gets messier, you're busy dodging—but score and combos pile up without you noticing, and enemies you never aimed at shatter in ways you can see and hear." }
+    ],
     h4: "Outcome",
-    p4: ""
+    p4: "As a UE5 beginner, I'm fairly happy with how this one turned out.\nI think anyone can get the hang of it in one or two runs, with no text tutorial.\nScoring high is another matter—so it still has room to poke at a player's competitive streak.",
+    itchLink: "Play on itch.io →"
   },
   ja: {
     pageTitle: "弾 · リバウンド・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
     title: "弾 · リバウンド",
-    lede: "",
+    lede: "弾雨の隙間を縫って生き延び、牙には牙で報いよ！",
     genreLabel: "作品の種類",
-    genreValue: "",
+    genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
-    creatorValue: "",
+    creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: [],
+    tags: ["アクション", "サバイバル", "3D"],
     h1: "概要",
-    p1: "",
+    p1: "「第26回UE5ぷちコン」の応募作品。お題は「だん」。\nUE5のプログラム開発を学び始めて約1ヶ月で、初めて24時間のミニゲーム制作に挑戦した作品でもある。",
     techGoalsHeading: "技術目標",
-    techGoals: [],
+    techGoals: [
+      { title: "24時間開発チャレンジ", desc: "お題に沿って遊びを考え、作り切ること。「だん」は「弾丸」にも「弾性」にも取れる。\n最後に題へ寄せて、タイトルを「DANger」にした。" },
+      { title: "コンテスト作品としての遊び", desc: "審査員は数百〜数千の応募作に目を通す必要がある。だから遊びは一目で分かること、それでいて面白さを欠かないこと。画面も、丁寧だが煩雑にならないことを目指した。" },
+      { title: "コアメカニクス", desc: "止まればやられる — 動き続けなければ、敵の弾だけでなく足元の床タイルにも襲われる。\n敵の弾で撃ち返せ — 眼前の盾で敵の「赤」弾を跳ね返すと、自分の「緑」弾に変わり、敵を倒せる。" },
+      { title: "予想外の正のフィードバック", desc: "「緑」弾に当たった「赤」弾も「緑」に変わる。局面が荒れるほど危険を避けるのに必死なのに、いつの間にかスコアとコンボが貯まり、狙ってもいない敵が砕け散る絵と音が入ってくる。" }
+    ],
     h4: "成果",
-    p4: ""
+    p4: "UE5の初心者として、この作品にはそれなりに満足している。\n文字の説明なしで、1〜2回遊べば誰でも操作を掴めるゲームだと思う。\n高得点を狙うとなると話は別なので、プレイヤーの負けず嫌いを刺激する余地はある。",
+    itchLink: "itch.io でプレイ →"
   }
 };
 
