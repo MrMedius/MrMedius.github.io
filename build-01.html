@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,7 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
+    font-size: 18px;
     line-height: 1.7;
   }
 
@@ -45,7 +46,7 @@
 
   .back-link {
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-dim);
     display: flex;
     align-items: center;
@@ -54,12 +55,12 @@
   }
   .back-link:hover { color: var(--accent); }
 
-  .lang-switch { display: flex; gap: 4px; font-family: var(--mono); font-size: 12px; }
+  .lang-switch { display: flex; gap: 4px; font-family: var(--mono); font-size: 14px; }
   .lang-switch button {
     background: transparent;
     border: 1px solid var(--panel-line);
     color: var(--text-dim);
-    width: 68px;
+    width: 80px;
     padding: 6px 0;
     border-radius: 3px;
     cursor: pointer;
@@ -73,7 +74,7 @@
 
   .build-tag {
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 15px;
     color: var(--accent);
     letter-spacing: 1px;
     margin-bottom: 18px;
@@ -82,14 +83,14 @@
 
   h1 {
     font-family: var(--mono);
-    font-size: clamp(28px, 5vw, 44px);
+    font-size: clamp(32px, 5vw, 48px);
     line-height: 1.2;
     margin-bottom: 18px;
   }
 
   .lede {
     color: var(--text-dim);
-    font-size: 17px;
+    font-size: 19px;
     max-width: 68ch;
     margin-bottom: 30px;
   }
@@ -97,7 +98,7 @@
   .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 50px; }
   .stack span {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 13px;
     color: var(--data);
     border: 1px solid rgba(94,234,212,0.3);
     padding: 4px 10px;
@@ -105,7 +106,7 @@
   }
 
   /* ---------- Gallery (Steam 式媒体展示) ---------- */
-  .gallery { margin-bottom: 20px; }
+  .gallery { margin-bottom: 12px; }
 
   .gallery-main {
     position: relative;
@@ -158,7 +159,7 @@
   .thumb-btn .play-icon {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
-    font-size: 16px; color: #fff;
+    font-size: 18px; color: #fff;
     background: rgba(0,0,0,0.28);
   }
 
@@ -168,13 +169,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     padding: 32px 0;
-    margin: 50px 0 56px;
+    margin: 32px 0 56px;
     border-top: 1px solid var(--panel-line);
     border-bottom: 1px solid var(--panel-line);
   }
   .info-block .label {
     font-family: var(--heading);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     letter-spacing: 1.5px;
     color: var(--text-dim);
@@ -183,14 +184,14 @@
   }
   .info-block .value {
     font-family: var(--sans);
-    font-size: 14.5px;
+    font-size: 16.5px;
     color: var(--text);
     line-height: 1.7;
   }
   .info-block .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .info-block .tags span {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 13px;
     color: var(--data);
     border: 1px solid rgba(94,234,212,0.3);
     padding: 3px 8px;
@@ -200,7 +201,7 @@
   /* ---------- 技术目标（编号） ---------- */
   .section-heading {
     font-family: var(--heading);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1.5px;
     color: var(--text-dim);
@@ -218,27 +219,31 @@
   }
   .tech-goal .num {
     font-family: var(--mono);
-    font-size: 20px;
+    font-size: 22px;
     color: var(--accent);
   }
-  .tech-goal h3 { font-size: 16px; margin-bottom: 8px; }
-  .tech-goal p { color: var(--text-dim); font-size: 14px; white-space: pre-line; }
+  .tech-goal h3 { font-size: 18px; margin-bottom: 8px; }
+  .tech-goal p { color: var(--text-dim); font-size: 16px; white-space: pre-line; }
 
   #techGoals { margin-bottom: 0; }
 
   section.block { margin-bottom: 52px; }
-  section.block p { color: var(--text); white-space: pre-line; }
+  section.block p { color: var(--text); font-size: 18px; white-space: pre-line; }
 
   .links-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 28px;
     font-family: var(--mono);
-    font-size: 13px;
-    margin-top: 52px;
-    padding-top: 32px;
-    border-top: 1px solid var(--panel-line);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 16px 0 8px;
   }
-  .links-row a { color: var(--text-dim); border-bottom: 1px solid transparent; }
+  .links-row a {
+    color: var(--text);
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+  }
   .links-row a:hover { color: var(--accent); border-color: var(--accent); }
 
   @media (max-width: 640px) {
@@ -252,8 +257,8 @@
   <a class="back-link" href="index.html" data-i18n="back">← 返回项目列表</a>
   <div class="lang-switch" role="group" aria-label="Language">
     <button data-lang="zh">中文</button>
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="ja">日本語</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="ja" class="active">日本語</button>
   </div>
 </header>
 
@@ -269,6 +274,10 @@
   <div class="gallery">
     <div class="gallery-main" id="galleryMain"></div>
     <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+
+  <div class="links-row">
+    <a href="https://github.com/MrMedius/RIXIS" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
   </div>
 
   <div class="info-panel">
@@ -293,6 +302,15 @@
   </section>
 
   <section class="block">
+    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
+    <p data-i18n="pContrib">以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。
+制作了角色状态机工具，并开发了玩家角色和六种基础敌人。
+完成了影子和天空盒的变化特效的开发工作。
+参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。
+最终将所有程序代码合到一起。</p>
+  </section>
+
+  <section class="block">
     <h2 class="section-heading" data-i18n="techGoalsHeading">技术目标</h2>
     <div id="techGoals"></div>
   </section>
@@ -303,9 +321,6 @@
 此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。</p>
   </section>
 
-  <div class="links-row">
-    <a href="https://github.com/MrMedius/RIXIS" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
-  </div>
 </main>
 
 <script>
@@ -315,7 +330,8 @@ const mediaItems = [
   { type: 'image', src: 'asset/primary_p_1.png' },
   { type: 'image', src: 'asset/primary_p_2.png' },
   { type: 'image', src: 'asset/primary_p_3.png' },
-  { type: 'image', src: 'asset/primary_p_4.png' }
+  { type: 'image', src: 'asset/primary_p_4.png' },
+  { type: 'image', src: 'asset/primary_p_5.png' }
 ];
 
 const translations = {
@@ -332,6 +348,8 @@ const translations = {
     tags: ["动作", "Combo 系统", "3D", "变身", "快节奏"],
     h1: "概述",
     p1: "使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。\n使用全局单例来降低性能开销以及调用方法时的障碍。",
+    contribHeading: "个人贡献",
+    pContrib: "以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。\n制作了角色状态机工具，并开发了玩家角色和六种基础敌人。\n完成了影子和天空盒的变化特效的开发工作。\n参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。\n最终将所有程序代码合到一起。",
     techGoalsHeading: "技术目标",
     techGoals: [
       { title: "自定义渲染管线", desc: "基于 DirectX 11 从零搭建渲染流程，尽可能完整地实现透视投影、碰撞检测、光照和阴影贴图等必要的3D游戏元素。" },
@@ -357,6 +375,8 @@ const translations = {
     tags: ["Action", "Combo System", "3D", "Transformation", "Fast-paced"],
     h1: "Overview",
     p1: "Built on a custom code framework: a logic layer that combines object pooling with a Finite State Machine (FSM) system, paired with a presentation layer governed by a strictly defined rendering pipeline.\nGlobal singletons are used throughout to minimize performance overhead and reduce friction in method calls.",
+    contribHeading: "Personal Contributions",
+    pContrib: "Built the game's overall code framework based on DirectX 11, including the rendering pipeline and the management system for game instances.\nCreated a character state machine tool and developed the player character along with six types of basic enemies.\nDeveloped the transformation visual effects for shadows and the skybox.\nParticipated in the initial conceptualization, establishing the game's core resource loop and transformation mechanics.\nFinally integrated all the program code.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
       { title: "Custom Render Pipeline", desc: "Built a rendering pipeline from scratch on DirectX 11, implementing the core 3D elements the game needed — perspective projection, collision detection, lighting, and shadow mapping — as completely as possible." },
@@ -382,6 +402,8 @@ const translations = {
     tags: ["アクション", "コンボシステム", "3D", "変身", "ハイテンポ"],
     h1: "概要",
     p1: "オブジェクトプーリングと有限状態機械（FSM）を組み合わせたロジック層と、厳密に定義されたレンダリングパイプラインによるプレゼンテーション層からなる、自作のコードフレームワーク上に構築。\nグローバルシングルトンを随所で用いることで、パフォーマンスオーバーヘッドとメソッド呼び出し時の手間を最小限に抑えている。",
+    contribHeading: "個人の貢献",
+    pContrib: "DirectX 11をベースに、レンダリングパイプラインやゲームインスタンス管理システムを含む、ゲーム全体のコードフレームワークを構築しました。\n有限状態機械ツールを制作し、プレイヤーキャラクターおよび6種類の基本敵キャラクターを実装しました。\nシャドウとスカイボックスの変身エフェクトの開発を完了させました。\n企画の初期構想に携わり、ゲームの基礎となるリソース循環システムや変身メカニクスの基盤を確立しました。\n最終的に、すべてのプログラムコードを統合しました。",
     techGoalsHeading: "技術目標",
     techGoals: [
       { title: "カスタムレンダリングパイプライン", desc: "DirectX 11 上でレンダリングパイプラインをゼロから構築し、透視投影・衝突判定・ライティング・シャドウマッピングといった3Dゲームに必要な要素を、可能な限り網羅的に実装しました。" },
@@ -396,7 +418,7 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('site-lang') || 'en';
+let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
 function showMediaItem(index) {
