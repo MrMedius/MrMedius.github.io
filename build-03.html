@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.03<small>Unity</small></div>
-  <h1 data-i18n="title">点柴</h1>
-  <p class="lede" data-i18n="lede">一款使用各种枪械同时点燃所有柴火的游戏。</p>
+  <div class="build-tag">BUILD.03<small>DirectX 11</small></div>
+  <h1 data-i18n="title">流沙长方体</h1>
+  <p class="lede" data-i18n="lede">将相同颜色从左到右连通起来。</p>
 
   <div class="stack">
-    <span>C#</span><span>Unity</span><span>Aseprite</span>
+    <span>C++</span><span>DirectX 11</span>
   </div>
 
   <div class="gallery">
@@ -277,14 +277,14 @@
   </div>
 
   <div class="links-row">
-    <a href="https://mrmedius.itch.io/light-the-firewood" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-    <a href="https://unityroom.com/games/light-the-firewood" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+    <a href="https://github.com/MrMedius/SandifyTheCuboid" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
+    <a href="https://mrmedius.itch.io/sandify-the-cuboid" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
   </div>
 
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 技术向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
@@ -298,7 +298,9 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。</p>
+    <p data-i18n="p1">使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。
+加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。
+利用像素搭建一套简单光照模型系统和像素字体系统。</p>
   </section>
 
   <section class="block">
@@ -308,9 +310,9 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。
-将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。
-在unityroom等公共平台上发布后已经有几百人体验过。</p>
+    <p data-i18n="p4">完成了一个流程大约3-5分钟的益智游戏，通过周围的交互UI来代替教程，让玩家一目了然。
+通过绘画模式和排行榜系统展示自己在有限条件下将一个机制尽可能丰富化的能力。
+通过展览模式介绍了我对光照模型阶段性的学习成果。</p>
   </section>
 
 </main>
@@ -318,89 +320,100 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/light_v.mp4', poster: 'asset/light_p_0.png' },
-  { type: 'image', src: 'asset/light_p_1.png' },
-  { type: 'image', src: 'asset/light_p_2.png' },
-  { type: 'image', src: 'asset/light_p_3.png' },
-  { type: 'image', src: 'asset/light_p_4.png' },
-  { type: 'image', src: 'asset/light_p_5.png' }
+  { type: 'video', src: 'asset/sandify_v.mp4', poster: 'asset/sandify_p_0.png' },
+  { type: 'image', src: 'asset/sandify_p_1.png' },
+  { type: 'image', src: 'asset/sandify_p_2.png' },
+  { type: 'image', src: 'asset/sandify_p_3.png' },
+  { type: 'image', src: 'asset/sandify_p_4.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "点柴 · 项目详情",
+    pageTitle: "流沙长方体 · 项目详情",
     back: "← 返回项目列表",
-    title: "点柴",
-    lede: "一款使用各种枪械同时点燃所有柴火的游戏。",
+    title: "流沙长方体",
+    lede: "将相同颜色从左到右连通起来。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 策划向",
+    genreValue: "游戏类 · 技术向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["解谜", "像素风", "2D", "关卡制"],
+    tags: ["解谜", "像素风", "3D", "2D", "消除"],
     h1: "概述",
-    p1: "设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。",
+    p1: "使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。\n加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。\n利用像素搭建一套简单光照模型系统和像素字体系统。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "使用基类和子类的体系", desc: "不仅可以提高代码的易读性，也能降低后续的扩张难度。" },
-      { title: "确保所有预制体的独立性", desc: "方便后续统一管理和提高拼凑关卡时的效率。" },
-      { title: "对象池系统", desc: "反复利用已经生成的子弹等预制体，降低性能开销。" },
-      { title: "可视化教程", desc: "利用简单的动图和文字提示，引导玩家自己理解游戏的设计意图。" }
+      { title: "完成无美术素材的挑战", desc: "在不过多依赖图形API和美术素材的开发环境下，尽可能的将游戏做的有趣且好看。" },
+      { title: "碰撞逻辑", desc: "使用安德鲁算法获取3D长方体在平面上的凸包，然后判断碰撞。" },
+      { title: "消除逻辑", desc: "使用向右探索优先的深度搜索DFS来验证是否需要消除。若不需要则次级就是向上搜索，快速开始下一轮检测。" },
+      { title: "流沙逻辑", desc: "每一次计算流沙都保证是从两侧到中间计算，不然会导致流沙出现向单侧偏斜的情况。" },
+      { title: "排行榜系统", desc: "生成专用的文件用于记录玩家的积分情况。" },
+      { title: "像素字系统", desc: "用二进制来确保一个5×5范围内每个格子是否需要填色，并定制化每个字符的渲染样式。" },
+      { title: "绘画玩法", desc: "让玩家利用流沙下落绘制各种图案的玩法，配置调整流沙流量和截图的功能。" },
+      { title: "简单光照模型系统", desc: "用程序生成11种几何学模型、4种材质、3种旋转方向、3种透视视角、4种渲染样式和4种光照元素的选项。" }
     ],
     h4: "成果",
-    p4: "完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。\n在unityroom等公共平台上发布后已经有几百人体验过。",
-    itchLink: "在 itch.io 试玩 →",
-    unityroomLink: "在 unityroom 试玩 →"
+    p4: "完成了一个流程大约3-5分钟的益智游戏，通过周围的交互UI来代替教程，让玩家一目了然。\n通过绘画模式和排行榜系统展示自己在有限条件下将一个机制尽可能丰富化的能力。\n通过展览模式介绍了我对光照模型阶段性的学习成果。",
+    codeLink: "查看代码仓库 →",
+    itchLink: "在 itch.io 试玩 →"
   },
   en: {
-    pageTitle: "Light the Firewood · Project Detail",
+    pageTitle: "Sandify The Cuboid · Project Detail",
     back: "← Back to projects",
-    title: "Light the Firewood",
-    lede: "A game about igniting all the firewood piles simultaneously using various weapons.",
+    title: "Sandify The Cuboid",
+    lede: "Connect matching colors from left to right.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Design-Focused",
+    genreValue: "Game Project · Engineering-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Pixel Art", "2D", "Level-Based"],
+    tags: ["Puzzle", "Pixel Art", "3D", "2D", "Elimination"],
     h1: "Overview",
-    p1: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
+    p1: "Uses DirectX 11 to set up a rendering canvas for color output, while all other logic runs on the CPU to keep performance stable.\nAdds a quicksand-style drawing mechanic and a leaderboard system to extend replayability.\nBuilds a simple pixel-based lighting model and a custom pixel font system from scratch.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Base Class / Subclass Hierarchy", desc: "Improves code readability and makes future expansion significantly easier." },
-      { title: "Fully Independent Prefabs", desc: "Keeps every prefab self-contained, making unified management and level assembly far more efficient." },
-      { title: "Object Pool System", desc: "Reuses already-instantiated prefabs, such as bullets, instead of creating new ones, cutting down performance overhead." },
-      { title: "Visual Tutorial", desc: "Uses simple animated hints and on-screen text to let players work out the game's mechanics on their own." }
+      { title: "No-Art-Assets Challenge", desc: "Made the game look and feel as engaging as possible without leaning heavily on graphics APIs or external art assets — everything on screen is generated in code." },
+      { title: "Collision Logic", desc: "Used Andrew's monotone chain algorithm to compute the convex hull of a 3D cuboid projected onto a plane, then tested collisions against that hull." },
+      { title: "Elimination Logic", desc: "Used a depth-first search that prioritizes exploring rightward to check whether a match should be cleared; if not, it falls back to searching upward so the next check can start quickly." },
+      { title: "Quicksand Simulation Logic", desc: "Each quicksand update always computes from both sides toward the center — otherwise the sand ends up drifting and piling unevenly to one side." },
+      { title: "Leaderboard System", desc: "Generates a dedicated local file to record and track player scores." },
+      { title: "Pixel Font System", desc: "Uses binary flags to determine which cells within a 5×5 grid should be filled, with a custom rendering style defined for every character." },
+      { title: "Drawing Mode", desc: "Lets players draw patterns using falling quicksand, with adjustable sand flow and a built-in screenshot function." },
+      { title: "Simple Lighting Model Showcase", desc: "Procedurally generates a gallery covering 11 geometric shapes, 4 materials, 3 rotation axes, 3 perspective views, 4 render styles, and 4 lighting options." }
     ],
     h4: "Outcome",
-    p4: "Shipped a simple puzzle game made up of 15 levels, roughly half an hour long from start to finish.\nImplemented a working object pool system that can now be reused in future projects built on my own framework.\nReleased on public platforms like unityroom, where it's already been played by several hundred people.",
-    itchLink: "Play on itch.io →",
-    unityroomLink: "Play on unityroom →"
+    p4: "Shipped a 3–5 minute puzzle game that replaces a traditional tutorial with surrounding interactive UI, so players can pick it up at a glance.\nThe drawing mode and leaderboard system demonstrate how far a single mechanic can be pushed under tight constraints.\nA dedicated showcase mode presents what I learned building the lighting model along the way.",
+    codeLink: "View repository →",
+    itchLink: "Play on itch.io →"
   },
   ja: {
-    pageTitle: "薪を灯す・プロジェクト詳細",
+    pageTitle: "流砂の直方体・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "薪を灯す",
-    lede: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
+    title: "流砂の直方体",
+    lede: "同じ色を左から右へとつなげよう。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 企画重視",
+    genreValue: "ゲーム制作 · 技術重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["パズル", "ドット絵", "2D", "レベル制"],
+    tags: ["パズル", "ドット絵", "3D", "2D", "消去"],
     h1: "概要",
-    p1: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
+    p1: "DirectX 11 で描画用キャンバスを構築しつつ、その他のロジックはすべてCPUで処理することで、安定したパフォーマンスを確保しています。\n「流砂（クイックサンド）」のような描画メカニズムやリーダーボード機能を導入し、ゲームプレイをより魅力的なものにしています。\nピクセル単位で描画するシンプルなライティングモデルと、独自のピクセルフォントシステムを実装しています。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "基底クラス・サブクラス構成", desc: "コードの可読性を高めるだけでなく、今後の機能拡張の難易度も下げられます。" },
-      { title: "プレハブの独立性を確保", desc: "統一的な管理がしやすくなり、レベルを組み立てる際の効率も向上します。" },
-      { title: "オブジェクトプールシステム", desc: "生成済みの弾などのプレハブを使い回すことで、パフォーマンスオーバーヘッドを抑えています。" },
-      { title: "ビジュアルチュートリアル", desc: "シンプルなアニメーションとテキストのヒントを用いて、プレイヤー自身にゲームの設計意図を理解してもらう仕組みです。" }
+      { title: "ノーアートアセットへの挑戦", desc: "グラフィックスAPIや外部のアートアセットに過度に依存せず、可能な限り面白く見栄えのするゲームに仕上げることを目指しました。画面に映るものはすべてコードで生成しています。" },
+      { title: "衝突判定ロジック", desc: "アンドリューのモノトーンチェーン法（Andrew's Monotone Chain）を用いて、3D直方体を平面に投影した際の凸包を求め、それをもとに衝突判定を行いました。" },
+      { title: "消去ロジック", desc: "右方向への探索を優先する深さ優先探索（DFS）で消去の必要性を判定し、該当しない場合は次善として上方向へ探索することで、次の判定へ素早く移れるようにしました。" },
+      { title: "流砂シミュレーションロジック", desc: "流砂の計算は毎回、必ず両端から中央に向かって行っています。そうしないと、流砂が片側に偏って積もってしまうためです。" },
+      { title: "リーダーボードシステム", desc: "プレイヤーのスコアを記録・管理するための専用ファイルを生成します。" },
+      { title: "ピクセルフォントシステム", desc: "5×5マスの各セルを塗りつぶすかどうかをバイナリで管理し、文字ごとにレンダリングスタイルをカスタマイズしています。" },
+      { title: "お絵描きモード", desc: "落下する流砂を使ってプレイヤーが自由に模様を描けるモードで、流砂の流量調整やスクリーンショット機能も用意しています。" },
+      { title: "簡易ライティングモデル展示", desc: "11種類の幾何学モデル、4種類のマテリアル、3方向の回転、3種類の透視視点、4種類のレンダリングスタイル、4種類のライティング要素をプログラムで生成し、切り替えて確認できるようにしています。" }
     ],
     h4: "成果",
-    p4: "15のステージからなる、全体で30分程度のシンプルなパズルゲームを完成させました。\nオブジェクトプール機能を実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nunityroomなどの公開プラットフォームで公開し、すでに数百人にプレイされています。",
-    itchLink: "itch.io でプレイ →",
-    unityroomLink: "unityroom でプレイ →"
+    p4: "チュートリアルの代わりに周囲のインタラクティブUIでルールが直感的に伝わる、3〜5分程度のパズルゲームを完成させました。\nお絵描きモードとリーダーボードシステムを通じて、限られた条件の中で1つのメカニクスをどこまで作り込めるかを示しています。\n展示モードでは、ライティングモデルについて段階的に学んだ成果を紹介しています。",
+    codeLink: "リポジトリを見る →",
+    itchLink: "itch.io でプレイ →"
   }
 };
 

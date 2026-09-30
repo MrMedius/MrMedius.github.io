@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.06<small>Unity</small></div>
-  <h1 data-i18n="title">冲 & 转</h1>
-  <p class="lede" data-i18n="lede">冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！</p>
+  <div class="build-tag">BUILD.06<small>Unreal Engine</small></div>
+  <h1 data-i18n="title">弹 · 反弹</h1>
+  <p class="lede" data-i18n="lede">在枪林弹雨中夹缝求生，然后以牙还牙！</p>
 
   <div class="stack">
-    <span>C#</span><span>Unity</span><span>Aseprite</span>
+    <span>C++</span><span>UE5</span>
   </div>
 
   <div class="gallery">
@@ -277,8 +277,7 @@
   </div>
 
   <div class="links-row">
-    <a href="https://mrmedius.itch.io/dash-spin" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-    <a href="https://unityroom.com/games/dashspin" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+    <a href="https://mrmedius.itch.io/danger" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
   </div>
 
   <div class="info-panel">
@@ -298,7 +297,8 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。</p>
+    <p data-i18n="p1">「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。
+也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。</p>
   </section>
 
   <section class="block">
@@ -308,8 +308,9 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">一款完成度较高的作品，并且在unityroom上制作了网页排行榜。
-在unityroom等公共平台上发布后已经有上百人体验过。</p>
+    <p data-i18n="p4">作为UE5的初学者，我对这款作品还是比较满意的。
+个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。
+但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。</p>
   </section>
 
 </main>
@@ -317,95 +318,95 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/dash_v.mp4', poster: 'asset/dash_p_0.png' },
-  { type: 'image', src: 'asset/dash_p_1.png' },
-  { type: 'image', src: 'asset/dash_p_2.png' },
-  { type: 'image', src: 'asset/dash_p_3.png' },
-  { type: 'image', src: 'asset/dash_p_4.png' },
-  { type: 'image', src: 'asset/dash_p_5.png' }
+  { type: 'video', src: 'asset/danger_v.mp4', poster: 'asset/danger_p_0.png' },
+  { type: 'image', src: 'asset/danger_p_1.png' },
+  { type: 'image', src: 'asset/danger_p_2.png' },
+  { type: 'image', src: 'asset/danger_p_3.png' },
+  { type: 'image', src: 'asset/danger_p_4.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "冲 & 转 · 项目详情",
+    pageTitle: "弹 · 反弹 · 项目详情",
     back: "← 返回项目列表",
-    title: "冲 & 转",
-    lede: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
+    title: "弹 · 反弹",
+    lede: "在枪林弹雨中夹缝求生，然后以牙还牙！",
     genreLabel: "作品类型",
     genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["跳跃", "像素风", "2D"],
+    tags: ["动作", "生存", "3D"],
     h1: "概述",
-    p1: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
+    p1: "「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。\n也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "24小时开发挑战", desc: "围绕跳跃这一个机制设计一系列玩法。" },
-      { title: "保持玩家的新鲜感", desc: "强迫玩家修改颜色，不让玩家的脑子习惯原来的颜色。" },
-      { title: "爽感塑造", desc: "识别玩家身上的颜色，让玩家在位置正确的时候可以自然而然地达到连击。" },
-      { title: "压力机制", desc: "只有通过连击来激发得分倍率和时间奖励。" }
+      { title: "24小时开发挑战", desc: "围绕主题构思玩法并制作，「だん」的话可以是「弾丸」也可以是「弾性」。\n最后为了点题，标题再使用「DANger」。" },
+      { title: "符合参赛作品的玩法", desc: "因为评审需要阅览成百上千的参赛作品，所以玩法必须易于理解，但又不乏趣味性；而且画面也要尽量做到精致但不繁琐。" },
+      { title: "核心机制", desc: "夹缝求生——玩家必须保持移动，否则不仅会被敌人的子弹攻击，也会被脚底的地砖偷袭。\n以牙还牙——玩家可以用面前的挡板反弹敌人的「红」子弹，然后变成自己的「绿」子弹，从而击杀敌人。" },
+      { title: "出其不意的正反馈", desc: "因为与「绿」子弹碰撞的「红」子弹也会被变成「绿」子弹，所以随着局面越加复杂，玩家虽然疲于躲避危险，但不知不觉中也会积累下很多积分和连击，并且看到和听见预料之外的敌人被击中，变成碎块。" }
     ],
     h4: "成果",
-    p4: "一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。",
-    itchLink: "在 itch.io 试玩 →",
-    unityroomLink: "在 unityroom 试玩 →"
+    p4: "作为UE5的初学者，我对这款作品还是比较满意的。\n个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。\n但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。",
+    itchLink: "在 itch.io 试玩 →"
   },
   en: {
-    pageTitle: "Dash & Spin · Project Detail",
+    pageTitle: "DANger · Project Detail",
     back: "← Back to projects",
-    title: "Dash & Spin",
-    lede: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
+    title: "DANger",
+    lede: "Survive the hail of bullets in the gaps—then give as good as you get!",
     genreLabel: "Genre",
     genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Jump", "Pixel Art", "2D"],
+    tags: ["Action", "Survival", "3D"],
     h1: "Overview",
-    p1: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
+    p1: "An entry for the 26th UE5 Petit Contest (第26回UE5ぷちコン), built around the theme 「だん」.\nAlso my first 24-hour mini-game challenge, after about a month of learning UE5 programming.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "24-Hour Dev Challenge", desc: "Designed a whole set of mechanics built entirely around a single action: jumping." },
-      { title: "Keeping Things Fresh", desc: "Forces the player to keep changing colors, so their brain never settles into a fixed color pattern." },
-      { title: "Crafting a Sense of Flow", desc: "Tracks the color currently carried by the player, so landing in the right spot naturally chains into a combo." },
-      { title: "Pressure Mechanic", desc: "Score multipliers and time bonuses can only be triggered by keeping the combo alive." }
+      { title: "24-Hour Dev Challenge", desc: "Designed the gameplay around the contest theme. 「だん」 can read as 「弾丸」 (bullet) or 「弾性」 (elasticity / bounce).\nTo land the pun, the title became 「DANger」." },
+      { title: "Gameplay Fit for a Contest", desc: "Judges have to look through hundreds or thousands of entries, so the game had to be easy to grasp without going dull—and the visuals as polished as possible without getting busy." },
+      { title: "Core Mechanics", desc: "Survive in the gaps — keep moving, or you'll take hits from enemy bullets and from the tiles under your feet.\nTit for tat — bounce enemy \"red\" bullets off the barrier in front of you; they turn into your \"green\" bullets and can take enemies down." },
+      { title: "Unexpected Positive Feedback", desc: "Red bullets that hit a green one also turn green. As the screen gets messier, you're busy dodging—but score and combos pile up without you noticing, and enemies you never aimed at shatter in ways you can see and hear." }
     ],
     h4: "Outcome",
-    p4: "A fairly polished entry, complete with an online leaderboard built on unityroom.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
-    itchLink: "Play on itch.io →",
-    unityroomLink: "Play on unityroom →"
+    p4: "As a UE5 beginner, I'm fairly happy with how this one turned out.\nI think anyone can get the hang of it in one or two runs, with no text tutorial.\nScoring high is another matter—so it still has room to poke at a player's competitive streak.",
+    itchLink: "Play on itch.io →"
   },
   ja: {
-    pageTitle: "ダッシュ＆スピン・プロジェクト詳細",
+    pageTitle: "弾 · リバウンド・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ダッシュ＆スピン",
-    lede: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
+    title: "弾 · リバウンド",
+    lede: "弾雨の隙間を縫って生き延び、牙には牙で報いよ！",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["ジャンプ", "ドット絵", "2D"],
+    tags: ["アクション", "サバイバル", "3D"],
     h1: "概要",
-    p1: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
+    p1: "「第26回UE5ぷちコン」の応募作品。お題は「だん」。\nUE5のプログラム開発を学び始めて約1ヶ月で、初めて24時間のミニゲーム制作に挑戦した作品でもある。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "24時間開発チャレンジ", desc: "ジャンプという一つのアクションだけを軸に、一連の遊び方を設計しました。" },
-      { title: "プレイヤーに新鮮さを保たせる", desc: "プレイヤーに色を変え続けることを強制し、脳が元の色に慣れてしまわないようにしています。" },
-      { title: "爽快感の演出", desc: "プレイヤーが今どの色を持っているかを判定し、正しい位置に着地すれば自然とコンボにつながるようにしています。" },
-      { title: "プレッシャー機構", desc: "スコア倍率やタイムボーナスは、コンボを維持し続けることでしか発動しません。" }
+      { title: "24時間開発チャレンジ", desc: "お題に沿って遊びを考え、作り切ることでした。「だん」は「弾丸」にも「弾性」にも取れます。\n最後に題へ寄せて、タイトルを「DANger」にしました。" },
+      { title: "コンテスト作品としての遊び", desc: "審査員は数百〜数千の応募作に目を通す必要があります。だから遊びは一目で分かること、それでいて面白さを欠かないこと。画面も、丁寧だが煩雑にならないことを目指しました。" },
+      { title: "コアメカニクス", desc: "止まればやられる — 動き続けなければ、敵の弾だけでなく足元の床タイルにも襲われます。\n敵の弾で撃ち返せ — 眼前の盾で敵の「赤」弾を跳ね返すと、自分の「緑」弾に変わり、敵を倒せます。" },
+      { title: "予想外の正のフィードバック", desc: "「緑」弾に当たった「赤」弾も「緑」に変わります。局面が荒れるほど危険を避けるのに必死なのに、いつの間にかスコアとコンボが貯まり、狙ってもいない敵が砕け散る絵と音が入ってきます。" }
     ],
     h4: "成果",
-    p4: "完成度の高い作品に仕上げ、unityroom上にはウェブ版のリーダーボードも用意しました。\nunityroomなどの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
-    itchLink: "itch.io でプレイ →",
-    unityroomLink: "unityroom でプレイ →"
+    p4: "UE5の初心者として、この作品にはそれなりに満足しています。\n文字の説明なしで、1〜2回遊べば誰でも操作を掴めるゲームだと思います。\n高得点を狙うとなると話は別なので、プレイヤーの負けず嫌いを刺激する余地はあります。",
+    itchLink: "itch.io でプレイ →"
   }
 };
 
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
+/**
+ * 在主展示区切换到指定媒体。
+ * @param {number} index 媒体列表下标
+ */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -416,6 +417,7 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
+/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -431,10 +433,16 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
+/**
+ * @param {string[]} tags
+ */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
+/**
+ * @param {{title: string, desc: string}[]} goals
+ */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -448,6 +456,7 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
+/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;

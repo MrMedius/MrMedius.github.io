@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.04<small>OpenGL</small></div>
-  <h1 data-i18n="title">奔跑吧！魔法师！</h1>
-  <p class="lede" data-i18n="lede">使用各种技能组合，从地图的最左侧跑酷到最右侧。</p>
+  <div class="build-tag">BUILD.04<small>Unity</small></div>
+  <h1 data-i18n="title">点柴</h1>
+  <p class="lede" data-i18n="lede">一款使用各种枪械同时点燃所有柴火的游戏。</p>
 
   <div class="stack">
-    <span>C++</span><span>OpenGL</span><span>NSP builder</span><span>GIMP</span>
+    <span>C#</span><span>Unity</span><span>Aseprite</span>
   </div>
 
   <div class="gallery">
@@ -276,10 +276,15 @@
     <div class="gallery-thumbs" id="galleryThumbs"></div>
   </div>
 
+  <div class="links-row">
+    <a href="https://mrmedius.itch.io/light-the-firewood" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://unityroom.com/games/light-the-firewood" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+  </div>
+
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 技术向 · 策划向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
@@ -293,9 +298,7 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。
-设计简易的有限状态机(FSM)系统。
-确保地图要素的独立性，方便量产关卡。</p>
+    <p data-i18n="p1">设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。</p>
   </section>
 
   <section class="block">
@@ -305,89 +308,99 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。
-将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。
-初次体验在Nintendo Switch平台上开发游戏。</p>
+    <p data-i18n="p4">完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。
+将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。
+在unityroom等公共平台上发布后已经有几百人体验过。</p>
   </section>
+
 </main>
 
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/runner_v_1.mp4', poster: 'asset/runner_p_0_1.png' },
-  { type: 'video', src: 'asset/runner_v_2.mp4', poster: 'asset/runner_p_0_2.png' },
-  { type: 'image', src: 'asset/runner_p_1.png' },
-  { type: 'image', src: 'asset/runner_p_2.png' },
-  { type: 'image', src: 'asset/runner_p_3.png' },
-  { type: 'image', src: 'asset/runner_p_4.png' }
+  { type: 'video', src: 'asset/light_v.mp4', poster: 'asset/light_p_0.png' },
+  { type: 'image', src: 'asset/light_p_1.png' },
+  { type: 'image', src: 'asset/light_p_2.png' },
+  { type: 'image', src: 'asset/light_p_3.png' },
+  { type: 'image', src: 'asset/light_p_4.png' },
+  { type: 'image', src: 'asset/light_p_5.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "奔跑吧！魔法师！ · 项目详情",
+    pageTitle: "点柴 · 项目详情",
     back: "← 返回项目列表",
-    title: "奔跑吧！魔法师！",
-    lede: "使用各种技能组合，从地图的最左侧跑酷到最右侧。",
+    title: "点柴",
+    lede: "一款使用各种枪械同时点燃所有柴火的游戏。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 技术向 · 策划向",
+    genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["解谜", "动作", "2D", "关卡制"],
+    tags: ["解谜", "像素风", "2D", "关卡制"],
     h1: "概述",
-    p1: "核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。\n设计简易的有限状态机(FSM)系统。\n确保地图要素的独立性，方便量产关卡。",
+    p1: "设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "简易的有限状态机(FSM)系统", desc: "为玩家和每种怪物都制作了类似于Unity的状态迁移草图，然后模块化每个状态的行为逻辑和状态间的切换条件。" },
-      { title: "确保每一关都有新鲜感", desc: "新关卡保持内容变化的同时，也能做到推出新的技能和技巧，保证玩家能持续获得除了通关以外的正反馈。" },
-      { title: "确保技能间的连携", desc: "移动：基础能力。\n跳跃：落地前无法多次使用。\n攻击：破坏墙壁和攻击敌人。\n冲刺：可以和跳跃连携，移动到更远的位置，落地前无法多次使用。\n火球发射：远距离攻击，破坏墙壁、攻击敌人，落地前无法多次使用。\n火球操作：朝瞄准方向发射，可以在空中拐弯，无法飞出画面。\n慢动作模式：降低高精度操作的难度，但有时间限制。\n传送：玩家和火球交换位置，并重置所有技能的冷却。是连携所有技能的关键，让玩家可以在空中自由移动。\n镜头移动：可以看的更远，并且拓展火球的移动范围。" }
+      { title: "使用基类和子类的体系", desc: "不仅可以提高代码的易读性，也能降低后续的扩张难度。" },
+      { title: "确保所有预制体的独立性", desc: "方便后续统一管理和提高拼凑关卡时的效率。" },
+      { title: "对象池系统", desc: "反复利用已经生成的子弹等预制体，降低性能开销。" },
+      { title: "可视化教程", desc: "利用简单的动图和文字提示，引导玩家自己理解游戏的设计意图。" }
     ],
     h4: "成果",
-    p4: "完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。\n初次体验在Nintendo Switch平台上开发游戏。"
+    p4: "完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。\n在unityroom等公共平台上发布后已经有几百人体验过。",
+    itchLink: "在 itch.io 试玩 →",
+    unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
-    pageTitle: "Runner Wizard · Project Detail",
+    pageTitle: "Light the Firewood · Project Detail",
     back: "← Back to projects",
-    title: "Runner Wizard",
-    lede: "Combine your skills to parkour from the far left of the map all the way to the far right.",
+    title: "Light the Firewood",
+    lede: "A game about igniting all the firewood piles simultaneously using various weapons.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Engineering-Focused · Design-Focused",
+    genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Action", "2D", "Level-Based"],
+    tags: ["Puzzle", "Pixel Art", "2D", "Level-Based"],
     h1: "Overview",
-    p1: "The core design idea was to make sure every skill has some form of synergy with the others, then tie the whole skill framework together through a mechanic that refills how many times each skill can be used.\nDesigned a simple Finite State Machine (FSM) system.\nEnsured map elements stayed fully independent, making it easy to mass-produce levels.",
+    p1: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Simple Finite State Machine (FSM) System", desc: "Sketched out Unity-style state transition diagrams for the player and every enemy type, then modularized each state's behavior logic and the conditions for switching between states." },
-      { title: "Keeping Every Level Feeling Fresh", desc: "Each new level introduces variation while also rolling out new skills and techniques, so players keep getting positive feedback beyond just clearing the stage." },
-      { title: "Ensuring Synergy Between Skills", desc: "Move: the base ability.\nJump: can't be used again until landing.\nAttack: breaks walls and hits enemies.\nDash: chains with jump to cover more distance; can't be used again until landing.\nFireball Shot: a ranged attack that breaks walls and hits enemies; can't be used again until landing.\nFireball Steer: fired toward the aim direction, can curve in mid-air, and can't leave the screen.\nSlow-Motion: eases high-precision inputs, but only lasts for a limited time.\nTeleport: swaps the player's position with the fireball's and resets the cooldown on every skill. This is the key that ties all the skills together, letting the player move freely through the air.\nCamera Pan: lets you see further ahead and extends how far the fireball can travel." }
+      { title: "Base Class / Subclass Hierarchy", desc: "Improves code readability and makes future expansion significantly easier." },
+      { title: "Fully Independent Prefabs", desc: "Keeps every prefab self-contained, making unified management and level assembly far more efficient." },
+      { title: "Object Pool System", desc: "Reuses already-instantiated prefabs, such as bullets, instead of creating new ones, cutting down performance overhead." },
+      { title: "Visual Tutorial", desc: "Uses simple animated hints and on-screen text to let players work out the game's mechanics on their own." }
     ],
     h4: "Outcome",
-    p4: "Shipped a simple puzzle-platformer made up of 10 levels, roughly half an hour long from start to finish.\nGot a working simple state-machine system into production, ready to be reused in future projects built on my own framework.\nMy first experience developing a game for the Nintendo Switch platform."
+    p4: "Shipped a simple puzzle game made up of 15 levels, roughly half an hour long from start to finish.\nImplemented a working object pool system that can now be reused in future projects built on my own framework.\nReleased on public platforms like unityroom, where it's already been played by several hundred people.",
+    itchLink: "Play on itch.io →",
+    unityroomLink: "Play on unityroom →"
   },
   ja: {
-    pageTitle: "ランナー魔法使い・プロジェクト詳細",
+    pageTitle: "薪を灯す・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ランナー魔法使い",
-    lede: "様々なスキルを組み合わせて、マップの左端から右端までパルクールで駆け抜けよう。",
+    title: "薪を灯す",
+    lede: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 技術重視 · 企画重視",
+    genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["パズル", "アクション", "2D", "レベル制"],
+    tags: ["パズル", "ドット絵", "2D", "レベル制"],
     h1: "概要",
-    p1: "すべてのスキルに何らかの連携効果を持たせることを核として設計し、使用回数が回復するメカニズムを通じてスキル体系全体をつなげています。\n簡易な有限状態機械（FSM）システムを設計しました。\nマップ要素の独立性を確保し、レベルを効率よく量産できるようにしています。",
+    p1: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "簡易な有限状態機械（FSM）システム", desc: "プレイヤーと各モンスターについて、Unity風のステート遷移図を作成し、各ステートの挙動ロジックと遷移条件をモジュール化しました。" },
-      { title: "各ステージに新鮮さを持たせる", desc: "新しいステージごとに内容を変化させつつ、新しいスキルやテクニックも投入することで、クリア以外にもプレイヤーが継続的にポジティブなフィードバックを得られるようにしています。" },
-      { title: "スキル間の連携を確保する", desc: "移動：基本アクション。\nジャンプ：着地するまで再使用不可。\n攻撃：壁を破壊し、敵を攻撃する。\nダッシュ：ジャンプと組み合わせてより遠くへ移動できる。着地するまで再使用不可。\n火球発射：遠距離攻撃。壁を破壊し、敵を攻撃する。着地するまで再使用不可。\n火球操作：狙った方向へ発射し、空中で軌道を変えられる。画面外へは出せない。\nスローモーション：高精度な操作の難易度を下げるが、使用時間に制限がある。\nテレポート：プレイヤーと火球の位置を入れ替え、全スキルのクールダウンをリセットする。全スキルを連携させる鍵であり、空中での自由な移動を可能にする。\nカメラ移動：より遠くまで見渡せるようになり、火球の移動範囲も広がる。" }
+      { title: "基底クラス・サブクラス構成", desc: "コードの可読性を高めるだけでなく、今後の機能拡張の難易度も下げられます。" },
+      { title: "プレハブの独立性を確保", desc: "統一的な管理がしやすくなり、レベルを組み立てる際の効率も向上します。" },
+      { title: "オブジェクトプールシステム", desc: "生成済みの弾などのプレハブを使い回すことで、パフォーマンスオーバーヘッドを抑えています。" },
+      { title: "ビジュアルチュートリアル", desc: "シンプルなアニメーションとテキストのヒントを用いて、プレイヤー自身にゲームの設計意図を理解してもらう仕組みです。" }
     ],
     h4: "成果",
-    p4: "10のステージからなる、全体で30分程度のシンプルなパズルアクションゲームを完成させました。\n簡易なステートマシンシステムを実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nNintendo Switch向けにゲームを開発する、初めての経験となりました。"
+    p4: "15のステージからなる、全体で30分程度のシンプルなパズルゲームを完成させました。\nオブジェクトプール機能を実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nunityroomなどの公開プラットフォームで公開し、すでに数百人にプレイされています。",
+    itchLink: "itch.io でプレイ →",
+    unityroomLink: "unityroom でプレイ →"
   }
 };
 

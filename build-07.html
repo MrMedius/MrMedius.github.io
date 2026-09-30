@@ -264,11 +264,11 @@
 
 <main>
   <div class="build-tag">BUILD.07<small>Unity</small></div>
-  <h1 data-i18n="title">都市淘金</h1>
-  <p class="lede" data-i18n="lede">破坏！破坏！破坏！别让自己停下来！</p>
+  <h1 data-i18n="title">冲 & 转</h1>
+  <p class="lede" data-i18n="lede">冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！</p>
 
   <div class="stack">
-    <span>C#</span><span>Unity</span>
+    <span>C#</span><span>Unity</span><span>Aseprite</span>
   </div>
 
   <div class="gallery">
@@ -277,8 +277,8 @@
   </div>
 
   <div class="links-row">
-    <a href="https://mrmedius.itch.io/citys-gold-rush" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-    <a href="https://unityroom.com/games/citysgoldrush" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
+    <a href="https://mrmedius.itch.io/dash-spin" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://unityroom.com/games/dashspin" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
   </div>
 
   <div class="info-panel">
@@ -298,8 +298,7 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">初学Unity程序开发后，第一次尝试独立制作的小游戏。
-参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。</p>
+    <p data-i18n="p1">挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。</p>
   </section>
 
   <section class="block">
@@ -309,7 +308,7 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。
+    <p data-i18n="p4">一款完成度较高的作品，并且在unityroom上制作了网页排行榜。
 在unityroom等公共平台上发布后已经有上百人体验过。</p>
   </section>
 
@@ -318,86 +317,87 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/city_v.mp4', poster: 'asset/city_p_0.png' },
-  { type: 'image', src: 'asset/city_p_1.png' },
-  { type: 'image', src: 'asset/city_p_2.png' },
-  { type: 'image', src: 'asset/city_p_3.png' },
-  { type: 'image', src: 'asset/city_p_4.png' }
+  { type: 'video', src: 'asset/dash_v.mp4', poster: 'asset/dash_p_0.png' },
+  { type: 'image', src: 'asset/dash_p_1.png' },
+  { type: 'image', src: 'asset/dash_p_2.png' },
+  { type: 'image', src: 'asset/dash_p_3.png' },
+  { type: 'image', src: 'asset/dash_p_4.png' },
+  { type: 'image', src: 'asset/dash_p_5.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "都市淘金 · 项目详情",
+    pageTitle: "冲 & 转 · 项目详情",
     back: "← 返回项目列表",
-    title: "都市淘金",
-    lede: "破坏！破坏！破坏！别让自己停下来！",
+    title: "冲 & 转",
+    lede: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
     genreLabel: "作品类型",
     genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["TPS", "生存", "3D"],
+    tags: ["跳跃", "像素风", "2D"],
     h1: "概述",
-    p1: "初学Unity程序开发后，第一次尝试独立制作的小游戏。\n参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。",
+    p1: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "游玩动力——破坏（杀手型玩家）", desc: "对，就是单纯的破坏欲，爆炸、混乱和冲撞。甚至持续的破坏还能获得时间奖励，激励他们延长这次狂欢。" },
-      { title: "游玩动力——都市破坏率（探索型玩家）", desc: "左上角的分数和都市破坏率就是他们获得正反馈的最佳来源，尤其是那些对于全收集有着极强欲望的玩家。" },
-      { title: "游玩动力——游戏内排名（成就型玩家）", desc: "游戏结束后给出的排名是玩家最初的目标，如果能升到第一名，这类玩家应该会很有成就感。" },
-      { title: "游玩动力——游戏外排名（社交型玩家）", desc: "目前只有 unityroom 有在线排名功能，看到自己的名次超越了其他玩家，这类玩家应该会很高兴。" }
+      { title: "24小时开发挑战", desc: "围绕跳跃这一个机制设计一系列玩法。" },
+      { title: "保持玩家的新鲜感", desc: "强迫玩家修改颜色，不让玩家的脑子习惯原来的颜色。" },
+      { title: "爽感塑造", desc: "识别玩家身上的颜色，让玩家在位置正确的时候可以自然而然地达到连击。" },
+      { title: "压力机制", desc: "只有通过连击来激发得分倍率和时间奖励。" }
     ],
     h4: "成果",
-    p4: "对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。\n在unityroom等公共平台上发布后已经有上百人体验过。",
+    p4: "一款完成度较高的作品，并且在unityroom上制作了网页排行榜。\n在unityroom等公共平台上发布后已经有上百人体验过。",
     itchLink: "在 itch.io 试玩 →",
     unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
-    pageTitle: "City's Gold Rush · Project Detail",
+    pageTitle: "Dash & Spin · Project Detail",
     back: "← Back to projects",
-    title: "City's Gold Rush",
-    lede: "Destroy! Destroy! Destroy! Don't you dare stop!",
+    title: "Dash & Spin",
+    lede: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
     genreLabel: "Genre",
     genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["TPS", "Survival", "3D"],
+    tags: ["Jump", "Pixel Art", "2D"],
     h1: "Overview",
-    p1: "After first learning Unity programming, this was my first attempt at making a mini-game on my own.\nDrawing on Richard Bartle's player taxonomy, I thought about what would keep people playing.",
+    p1: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Play Motivation — Destruction (Killers)", desc: "That's right: the urge to smash things. Explosions, chaos, collisions. Keep wrecking and you even get a time bonus, so the rampage lasts longer." },
-      { title: "Play Motivation — City Destruction Rate (Explorers)", desc: "The score and city destruction rate in the top-left are their best source of feedback—especially for players with a strong urge to 100% everything." },
-      { title: "Play Motivation — In-Game Rank (Achievers)", desc: "The rank shown when the run ends is their first goal. Hitting #1 should feel like a real accomplishment for this type." },
-      { title: "Play Motivation — External Leaderboard (Socializers)", desc: "Right now only unityroom has an online leaderboard. Seeing their name climb past other players should make this type happy." }
+      { title: "24-Hour Dev Challenge", desc: "Designed a whole set of mechanics built entirely around a single action: jumping." },
+      { title: "Keeping Things Fresh", desc: "Forces the player to keep changing colors, so their brain never settles into a fixed color pattern." },
+      { title: "Crafting a Sense of Flow", desc: "Tracks the color currently carried by the player, so landing in the right spot naturally chains into a combo." },
+      { title: "Pressure Mechanic", desc: "Score multipliers and time bonuses can only be triggered by keeping the combo alive." }
     ],
     h4: "Outcome",
-    p4: "A fairly meaningful experiment for me—it was designed from theory I'd studied, not just because it seemed fun.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
+    p4: "A fairly polished entry, complete with an online leaderboard built on unityroom.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
     itchLink: "Play on itch.io →",
     unityroomLink: "Play on unityroom →"
   },
   ja: {
-    pageTitle: "町のゴールドラッシュ・プロジェクト詳細",
+    pageTitle: "ダッシュ＆スピン・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "町のゴールドラッシュ",
-    lede: "破壊！破壊！破壊！止まるな！",
+    title: "ダッシュ＆スピン",
+    lede: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["TPS", "サバイバル", "3D"],
+    tags: ["ジャンプ", "ドット絵", "2D"],
     h1: "概要",
-    p1: "Unityのプログラム開発を学び始めたあと、初めて一人で作ったミニゲーム。\nリチャード・バートルのプレイヤータイプ論を参考に、プレイヤーが遊び続けられる動機を考えた。",
+    p1: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "プレイ動機——破壊（キラー型プレイヤー）", desc: "そう、ただ壊したいという欲求です。爆発、混乱、衝突。破壊を続ければタイムボーナスまで入り、この狂騒を長引かせます。" },
-      { title: "プレイ動機——都市破壊率（エクスプローラー型プレイヤー）", desc: "左上のスコアと都市破壊率が、彼らにとって最大の正のフィードバックになります。とくにコンプリート欲の強いプレイヤーには刺さります。" },
-      { title: "プレイ動機——ゲーム内ランク（アチーバー型プレイヤー）", desc: "プレイ終了時に出る順位が最初の目標になります。1位まで上がれたら、このタイプは達成感を得やすいです。" },
-      { title: "プレイ動機——ゲーム外ランキング（ソーシャライザー型プレイヤー）", desc: "現状、オンライン順位があるのは unityroom だけです。自分の順位が他プレイヤーを追い越すのを見れば、このタイプは喜ぶはずです。" }
+      { title: "24時間開発チャレンジ", desc: "ジャンプという一つのアクションだけを軸に、一連の遊び方を設計しました。" },
+      { title: "プレイヤーに新鮮さを保たせる", desc: "プレイヤーに色を変え続けることを強制し、脳が元の色に慣れてしまわないようにしています。" },
+      { title: "爽快感の演出", desc: "プレイヤーが今どの色を持っているかを判定し、正しい位置に着地すれば自然とコンボにつながるようにしています。" },
+      { title: "プレッシャー機構", desc: "スコア倍率やタイムボーナスは、コンボを維持し続けることでしか発動しません。" }
     ],
     h4: "成果",
-    p4: "自分にとっては意味のある試みでした。面白いから作ったのではなく、学んだ理論に基づいて設計したからです。\nunityroom などの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
+    p4: "完成度の高い作品に仕上げ、unityroom上にはウェブ版のリーダーボードも用意しました。\nunityroomなどの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
     itchLink: "itch.io でプレイ →",
     unityroomLink: "unityroom でプレイ →"
   }
@@ -406,10 +406,6 @@ const translations = {
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
-/**
- * 在主展示区切换到指定媒体。
- * @param {number} index 媒体列表下标
- */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -420,7 +416,6 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
-/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -436,16 +431,10 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
-/**
- * @param {string[]} tags
- */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
-/**
- * @param {{title: string, desc: string}[]} goals
- */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -459,7 +448,6 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
-/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;

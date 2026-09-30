@@ -396,92 +396,93 @@ const translations = {
     projects: [
       {
         tag: "BUILD.01", sub: "DirectX11",
+        title: "炼 · 核（制作中）",
+        desc: "类幸存者玩法搭配可视化编程。",
+        overview: "选用自制引擎开发。\n打算不用美术素材，尽可能用几何体和着色器完成整个游戏。",
+        stack: ["C++", "DirectX 11", "HLSL"],
+        hasDetail: true,
+        detailHref: "build-01.html",
+        thumbSrc: "asset/core_p_1.png"
+      },
+      {
+        tag: "BUILD.02", sub: "DirectX11",
         title: "原色战争",
         desc: "通过连击积攒能量，并利用这些能量施展连击。",
         overview: "使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。\n使用全局单例来降低性能开销以及调用方法时的障碍。",
         stack: ["C++", "DirectX 11", "HLSL", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-01.html",
+        detailHref: "build-02.html",
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "DirectX11",
+        tag: "BUILD.03", sub: "DirectX11",
         title: "流沙长方体",
         desc: "将相同颜色从左到右连通起来。",
         overview: "使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。\n加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。\n利用像素搭建一套简单光照模型系统和像素字体系统。",
         stack: ["C++", "DirectX 11"],
         hasDetail: true,
-        detailHref: "build-02.html",
+        detailHref: "build-03.html",
         thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity",
+        tag: "BUILD.04", sub: "Unity",
         title: "点柴",
         desc: "一款使用各种枪械同时点燃所有柴火的游戏。",
         overview: "设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-03.html",
+        detailHref: "build-04.html",
         thumbSrc: "asset/light_p_1.png"
       },
       {
-        tag: "BUILD.04", sub: "OpenGL",
+        tag: "BUILD.05", sub: "OpenGL",
         title: "奔跑吧！魔法师！",
         desc: "使用各种技能组合，从地图的最左侧跑酷到最右侧。",
         overview: "核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。\n设计建议的有限状态机(FSM)系统。\n确保地图要素的独立性，方便量产关卡。",
         stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
         hasDetail: true,
-        detailHref: "build-04.html",
+        detailHref: "build-05.html",
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unreal Engine",
+        tag: "BUILD.06", sub: "Unreal Engine",
         title: "弹 · 反弹",
         desc: "在枪林弹雨中夹缝求生，然后以牙还牙！",
         overview: "「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。\n也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。",
         stack: ["C++", "UE5"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/danger_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "Unity",
         title: "冲 & 转",
         desc: "冲刺、攀爬，不断消除同色方块，切勿让连击中断——顽强奋战到底！",
         overview: "挑战用24小时完成一个小游戏，只用一个操作就能支撑起一个玩法。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-07.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "Unity",
+        tag: "BUILD.08", sub: "Unity",
         title: "都市淘金",
         desc: "破坏！破坏！破坏！别让自己停下来！",
         overview: "初学Unity程序开发后，第一次尝试独立制作的小游戏。\n参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。",
         stack: ["C#", "Unity"],
         hasDetail: true,
-        detailHref: "build-07.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/city_p_1.png"
       },
       {
-        tag: "BUILD.08", sub: "Unity",
+        tag: "BUILD.09", sub: "Unity",
         title: "黄昏森林",
         desc: "战斗、探索、生存，战胜最终Boss逃出生天！",
         overview: "制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。",
         stack: ["Unity", "Visual Scripting", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-08.html",
+        detailHref: "build-09.html",
         thumbSrc: "asset/dusk_p_1.png"
-      },
-      {
-        tag: "BUILD.09", sub: "DirectX11",
-        title: "炼 · 核（制作中）",
-        desc: "类幸存者玩法搭配可视化编程。",
-        overview: "选用自制引擎开发。\n打算不用美术素材，尽可能用几何体和着色器完成整个游戏。",
-        stack: ["C++", "DirectX 11", "HLSL"],
-        hasDetail: false,
-        detailHref: null
       }
     ]
   },
@@ -500,92 +501,93 @@ const translations = {
     projects: [
       {
         tag: "BUILD.01", sub: "DirectX11",
+        title: "Core\u00A0Refiner\u2060（In\u00A0production）",
+        desc: "Survivor-style gameplay combined with visual programming.",
+        overview: "Developed using a custom engine. \nThe plan is to forgo traditional art assets and build the entire game using only geometric primitives and shaders.",
+        stack: ["C++", "DirectX 11", "HLSL"],
+        hasDetail: true,
+        detailHref: "build-01.html",
+        thumbSrc: "asset/core_p_1.png"
+      },
+      {
+        tag: "BUILD.02", sub: "DirectX11",
         title: "Primary",
         desc: "Build up energy through combo attacks, then spend it to unleash even more powerful combo moves.",
         overview: "Built on a custom code framework: a logic layer that combines object pooling with a Finite State Machine (FSM) system, paired with a presentation layer governed by a strictly defined rendering pipeline.\nGlobal singletons are used throughout to minimize performance overhead and reduce friction in method calls.",
         stack: ["C++", "DirectX 11", "HLSL", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-01.html",
+        detailHref: "build-02.html",
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "DirectX11",
+        tag: "BUILD.03", sub: "DirectX11",
         title: "Sandify The Cuboid",
         desc: "Connect matching colors from left to right.",
         overview: "Uses DirectX 11 to set up a rendering canvas for color output, while all other logic runs on the CPU to keep performance stable.\nAdds a quicksand-style drawing mechanic and a leaderboard system to extend replayability.\nBuilds a simple pixel-based lighting model and a custom pixel font system from scratch.",
         stack: ["C++", "DirectX 11"],
         hasDetail: true,
-        detailHref: "build-02.html",
+        detailHref: "build-03.html",
         thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity",
+        tag: "BUILD.04", sub: "Unity",
         title: "Light the Firewood",
         desc: "A game about igniting all the firewood piles simultaneously using various weapons.",
         overview: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-03.html",
+        detailHref: "build-04.html",
         thumbSrc: "asset/light_p_1.png"
       },
       {
-        tag: "BUILD.04", sub: "OpenGL",
+        tag: "BUILD.05", sub: "OpenGL",
         title: "Runner Wizard",
         desc: "Combine your skills to parkour from the far left of the map all the way to the far right.",
         overview: "The core design concept ensures synergy between all skills, linking the entire skill framework through a mechanism that refreshes usage counts.\nImplemented a simple Finite State Machine (FSM) system.\nEnsures the independence of map elements to facilitate efficient level creation.",
         stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
         hasDetail: true,
-        detailHref: "build-04.html",
+        detailHref: "build-05.html",
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unreal Engine",
+        tag: "BUILD.06", sub: "Unreal Engine",
         title: "DANger",
         desc: "Survive the hail of bullets in the gaps—then give as good as you get!",
         overview: "An entry for the 26th UE5 Petit Contest (第26回UE5ぷちコン), built around the theme 「だん」.\nAlso my first 24-hour mini-game challenge, after about a month of learning UE5 programming.",
         stack: ["C++", "UE5"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/danger_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "Unity",
         title: "Dash & Spin",
         desc: "Dash, climb, and keep matching the same colors without letting the chain break—fight tenaciously to the very end!",
         overview: "A challenge to create a mini-game in 24 hours, built around a single, core mechanic.",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-07.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "Unity",
+        tag: "BUILD.08", sub: "Unity",
         title: "City's Gold Rush",
         desc: "Destroy! Destroy! Destroy! Don't you dare stop!",
         overview: "After first learning Unity programming, this was my first attempt at making a mini-game on my own.\nDrawing on Richard Bartle's player taxonomy, I thought about what would keep people playing.",
         stack: ["C#", "Unity"],
         hasDetail: true,
-        detailHref: "build-07.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/city_p_1.png"
       },
       {
-        tag: "BUILD.08", sub: "Unity",
+        tag: "BUILD.09", sub: "Unity",
         title: "Dusk Forest",
         desc: "Combat, exploration, and survival—defeat the final boss and escape!",
         overview: "Developed two levels.\nFirst, completed a questline.\nSecond, created a two-phase boss.",
         stack: ["Unity", "Visual Scripting", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-08.html",
+        detailHref: "build-09.html",
         thumbSrc: "asset/dusk_p_1.png"
-      },
-      {
-        tag: "BUILD.09", sub: "DirectX11",
-        title: "Core Refiner（In production）",
-        desc: "Survivor-style gameplay combined with visual programming.",
-        overview: "Developed using a custom engine. \nThe plan is to forgo traditional art assets and build the entire game using only geometric primitives and shaders.",
-        stack: ["C++", "DirectX 11", "HLSL"],
-        hasDetail: false,
-        detailHref: null
       }
     ]
   },
@@ -604,92 +606,93 @@ const translations = {
     projects: [
       {
         tag: "BUILD.01", sub: "DirectX11",
+        title: "煉 · 核（製作中）",
+        desc: "サバイバー系ゲームプレイとビジュアルプログラミングの融合。",
+        overview: "独自エンジンを使用して開発。\n従来のアートアセットは使用せず、幾何学プリミティブとシェーダーのみでゲーム全体を構築する方針。",
+        stack: ["C++", "DirectX 11", "HLSL"],
+        hasDetail: true,
+        detailHref: "build-01.html",
+        thumbSrc: "asset/core_p_1.png"
+      },
+      {
+        tag: "BUILD.02", sub: "DirectX11",
         title: "プライマリー",
         desc: "コンボによってエネルギーを蓄積し、それを消費してさらなるコンボ技を繰り出す。",
         overview: "オブジェクトプーリングと有限状態機械（FSM）を組み合わせたロジック層と、厳密に定義されたレンダリングパイプラインによるプレゼンテーション層からなる、自作のコードフレームワーク上に構築。\nグローバルシングルトンを随所で用いることで、パフォーマンスオーバーヘッドとメソッド呼び出し時の手間を最小限に抑えている。",
         stack: ["C++", "DirectX 11", "HLSL", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-01.html",
+        detailHref: "build-02.html",
         thumbSrc: "asset/primary_p_1.png"
       },
       {
-        tag: "BUILD.02", sub: "DirectX11",
+        tag: "BUILD.03", sub: "DirectX11",
         title: "流砂の直方体",
         desc: "同じ色を左から右へとつなげよう。",
         overview: "DirectX 11 で描画用キャンバスを構築しつつ、その他のロジックはすべてCPUで処理することで、安定したパフォーマンスを確保しています。\n「流砂（クイックサンド）」のような描画メカニズムやリーダーボード機能を導入し、ゲームプレイをより魅力的なものにしています。\nピクセル単位で描画するシンプルなライティングモデルと、独自のピクセルフォントシステムを実装しています。",
         stack: ["C++", "DirectX 11"],
         hasDetail: true,
-        detailHref: "build-02.html",
+        detailHref: "build-03.html",
         thumbSrc: "asset/sandify_p_1.png"
       },
       {
-        tag: "BUILD.03", sub: "Unity",
+        tag: "BUILD.04", sub: "Unity",
         title: "薪を灯す",
         desc: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
         overview: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-03.html",
+        detailHref: "build-04.html",
         thumbSrc: "asset/light_p_1.png"
       },
       {
-        tag: "BUILD.04", sub: "OpenGL",
+        tag: "BUILD.05", sub: "OpenGL",
         title: "ランナー魔法使い",
         desc: "様々なスキルを組み合わせて、マップの左端から右端までパルクールで駆け抜けよう。",
         overview: "すべてのスキル間にコンビネーションがあるし、使用回数が回復するメカニズムを通じてスキル体系全体を連携させています。\n簡略化された有限状態機械（FSM）システムを実装しています。\nマップ要素の独立性を確保し、効率的なレベル制作を可能にしています。",
         stack: ["C++", "OpenGL", "NSP builder", "GIMP"],
         hasDetail: true,
-        detailHref: "build-04.html",
+        detailHref: "build-05.html",
         thumbSrc: "asset/runner_p_1.png"
       },
       {
-        tag: "BUILD.05", sub: "Unreal Engine",
+        tag: "BUILD.06", sub: "Unreal Engine",
         title: "弾 · リバウンド",
         desc: "弾雨の隙間を縫って生き延び、牙には牙で報いよ！",
         overview: "「第26回UE5ぷちコン」の応募作品。お題は「だん」。\nUE5のプログラム開発を学び始めて約1ヶ月で、初めて24時間のミニゲーム制作に挑戦した作品でもある。",
         stack: ["C++", "UE5"],
         hasDetail: true,
-        detailHref: "build-05.html",
+        detailHref: "build-06.html",
         thumbSrc: "asset/danger_p_1.png"
       },
       {
-        tag: "BUILD.06", sub: "Unity",
+        tag: "BUILD.07", sub: "Unity",
         title: "ダッシュ＆スピン",
         desc: "ダッシュや登り、同じ色を合わせて絶やさず、粘り強く戦い抜こう！",
         overview: "単一のコアメカニクスを軸に、24時間でミニゲームを制作するチャレンジ。",
         stack: ["C#", "Unity", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-06.html",
+        detailHref: "build-07.html",
         thumbSrc: "asset/dash_p_1.png"
       },
       {
-        tag: "BUILD.07", sub: "Unity",
+        tag: "BUILD.08", sub: "Unity",
         title: "町のゴールドラッシュ",
         desc: "破壊！破壊！破壊！止まるな！",
         overview: "Unityのプログラム開発を学び始めたあと、初めて一人で作ったミニゲーム。\nリチャード・バートルのプレイヤータイプ論を参考に、プレイヤーが遊び続けられる動機を考えた。",
         stack: ["C#", "Unity"],
         hasDetail: true,
-        detailHref: "build-07.html",
+        detailHref: "build-08.html",
         thumbSrc: "asset/city_p_1.png"
       },
       {
-        tag: "BUILD.08", sub: "Unity",
+        tag: "BUILD.09", sub: "Unity",
         title: "ダスク フォレスト",
         desc: "戦闘・探索・サバイバル――ラスボスを倒して脱出しよう！",
         overview: "2つのレベルを開発。\n1つ目は、一連のクエストを実装。\n2つ目は、2段階のフェーズを持つボスを作成。",
         stack: ["Unity", "Visual Scripting", "Aseprite"],
         hasDetail: true,
-        detailHref: "build-08.html",
+        detailHref: "build-09.html",
         thumbSrc: "asset/dusk_p_1.png"
-      },
-      {
-        tag: "BUILD.09", sub: "DirectX11",
-        title: "煉 · 核（製作中）",
-        desc: "サバイバー系ゲームプレイとビジュアルプログラミングの融合。",
-        overview: "独自エンジンを使用して開発。\n従来のアートアセットは使用せず、幾何学プリミティブとシェーダーのみでゲーム全体を構築する方針。",
-        stack: ["C++", "DirectX 11", "HLSL"],
-        hasDetail: false,
-        detailHref: null
       }
     ]
   }

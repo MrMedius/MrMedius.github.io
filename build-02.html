@@ -264,11 +264,11 @@
 
 <main>
   <div class="build-tag">BUILD.02<small>DirectX 11</small></div>
-  <h1 data-i18n="title">流沙长方体</h1>
-  <p class="lede" data-i18n="lede">将相同颜色从左到右连通起来。</p>
+  <h1 data-i18n="title">原色战争</h1>
+  <p class="lede" data-i18n="lede">通过连击积攒能量，并利用这些能量施展连击。</p>
 
   <div class="stack">
-    <span>C++</span><span>DirectX 11</span>
+    <span>C++</span><span>DirectX 11</span><span>HLSL</span><span>Aseprite</span>
   </div>
 
   <div class="gallery">
@@ -277,18 +277,17 @@
   </div>
 
   <div class="links-row">
-    <a href="https://github.com/MrMedius/SandifyTheCuboid" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
-    <a href="https://mrmedius.itch.io/sandify-the-cuboid" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://github.com/MrMedius/RIXIS" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
   </div>
 
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 技术向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 技术向 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">个人开发</div>
+      <div class="value" data-i18n="creatorValue">团队开发 · 队长 / 程序 / 策划 / 框架 / TA</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -298,9 +297,17 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。
-加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。
-利用像素搭建一套简单光照模型系统和像素字体系统。</p>
+    <p data-i18n="p1">使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。
+使用全局单例来降低性能开销以及调用方法时的障碍。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
+    <p data-i18n="pContrib">以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。
+制作了角色状态机工具，并开发了玩家角色和六种基础敌人。
+完成了影子和天空盒的变化特效的开发工作。
+参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。
+最终将所有程序代码合到一起。</p>
   </section>
 
   <section class="block">
@@ -310,9 +317,8 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个流程大约3-5分钟的益智游戏，通过周围的交互UI来代替教程，让玩家一目了然。
-通过绘画模式和排行榜系统展示自己在有限条件下将一个机制尽可能丰富化的能力。
-通过展览模式介绍了我对光照模型阶段性的学习成果。</p>
+    <p data-i18n="p4">完成了一个流程大约5-10分钟的游戏，包含教程、生存和Boss战三个阶段，玩家可以自由切换状态和使用技能改变场景布局，并积攒能量开出隐藏变身。
+此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。</p>
   </section>
 
 </main>
@@ -320,100 +326,95 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/sandify_v.mp4', poster: 'asset/sandify_p_0.png' },
-  { type: 'image', src: 'asset/sandify_p_1.png' },
-  { type: 'image', src: 'asset/sandify_p_2.png' },
-  { type: 'image', src: 'asset/sandify_p_3.png' },
-  { type: 'image', src: 'asset/sandify_p_4.png' }
+  { type: 'video', src: 'asset/primary_v.mp4', poster: 'asset/primary_p_0.png' },
+  { type: 'image', src: 'asset/primary_p_1.png' },
+  { type: 'image', src: 'asset/primary_p_2.png' },
+  { type: 'image', src: 'asset/primary_p_3.png' },
+  { type: 'image', src: 'asset/primary_p_4.png' },
+  { type: 'image', src: 'asset/primary_p_5.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "流沙长方体 · 项目详情",
+    pageTitle: "原色战争 · 项目详情",
     back: "← 返回项目列表",
-    title: "流沙长方体",
-    lede: "将相同颜色从左到右连通起来。",
+    title: "原色战争",
+    lede: "通过连击积攒能量，并利用这些能量施展连击。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 技术向",
+    genreValue: "游戏类 · 技术向 · 策划向",
     creatorLabel: "制作者信息",
-    creatorValue: "个人开发",
+    creatorValue: "团队开发 · 队长 / 程序 / 策划 / 框架 / TA",
     tagsLabel: "游戏标签",
-    tags: ["解谜", "像素风", "3D", "2D", "消除"],
+    tags: ["动作", "Combo 系统", "3D", "变身", "快节奏"],
     h1: "概述",
-    p1: "使用DirectX11搭建画布用以绘制颜色，剩下的部分全采用CPU计算，并确保运行稳定。\n加入流沙绘画玩法和排行榜系统拓展游戏的可玩性。\n利用像素搭建一套简单光照模型系统和像素字体系统。",
+    p1: "使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。\n使用全局单例来降低性能开销以及调用方法时的障碍。",
+    contribHeading: "个人贡献",
+    pContrib: "以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。\n制作了角色状态机工具，并开发了玩家角色和六种基础敌人。\n完成了影子和天空盒的变化特效的开发工作。\n参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。\n最终将所有程序代码合到一起。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "完成无美术素材的挑战", desc: "在不过多依赖图形API和美术素材的开发环境下，尽可能的将游戏做的有趣且好看。" },
-      { title: "碰撞逻辑", desc: "使用安德鲁算法获取3D长方体在平面上的凸包，然后判断碰撞。" },
-      { title: "消除逻辑", desc: "使用向右探索优先的深度搜索DFS来验证是否需要消除。若不需要则次级就是向上搜索，快速开始下一轮检测。" },
-      { title: "流沙逻辑", desc: "每一次计算流沙都保证是从两侧到中间计算，不然会导致流沙出现向单侧偏斜的情况。" },
-      { title: "排行榜系统", desc: "生成专用的文件用于记录玩家的积分情况。" },
-      { title: "像素字系统", desc: "用二进制来确保一个5×5范围内每个格子是否需要填色，并定制化每个字符的渲染样式。" },
-      { title: "绘画玩法", desc: "让玩家利用流沙下落绘制各种图案的玩法，配置调整流沙流量和截图的功能。" },
-      { title: "简单光照模型系统", desc: "用程序生成11种几何学模型、4种材质、3种旋转方向、3种透视视角、4种渲染样式和4种光照元素的选项。" }
+      { title: "自定义渲染管线", desc: "基于 DirectX 11 从零搭建渲染流程，尽可能完整地实现透视投影、碰撞检测、光照和阴影贴图等必要的3D游戏元素。" },
+      { title: "参考HD-2D风格", desc: "使2D美术资源能够在3D游戏空间中移动和交互。" },
+      { title: "3D Boss角色", desc: "为最终Boss创建3D模型，并为其定制化有限状态机。" },
+      { title: "大量预制对象池", desc: "为了保持稳定的帧率，我们将最大限度地减少运行时加载和实例生成相关的工作负载。" },
+      { title: "动态UI", desc: "使用动态UI元素来确保视觉上的动态效果。" }
     ],
     h4: "成果",
-    p4: "完成了一个流程大约3-5分钟的益智游戏，通过周围的交互UI来代替教程，让玩家一目了然。\n通过绘画模式和排行榜系统展示自己在有限条件下将一个机制尽可能丰富化的能力。\n通过展览模式介绍了我对光照模型阶段性的学习成果。",
-    codeLink: "查看代码仓库 →",
-    itchLink: "在 itch.io 试玩 →"
+    p4: "完成了一个流程大约5-10分钟的游戏，包含教程、生存和Boss战三个阶段，玩家可以自由切换状态和使用技能改变场景布局，并积攒能量开出隐藏变身。\n此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。",
+    codeLink: "查看代码仓库 →"
   },
   en: {
-    pageTitle: "Sandify The Cuboid · Project Detail",
+    pageTitle: "Primary · Project Detail",
     back: "← Back to projects",
-    title: "Sandify The Cuboid",
-    lede: "Connect matching colors from left to right.",
+    title: "Primary",
+    lede: "Build up energy through combo attacks, then spend it to unleash even more powerful combo moves.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Engineering-Focused",
+    genreValue: "Game Project · Engineering-Focused · Design-Focused",
     creatorLabel: "Creator",
-    creatorValue: "Solo Development",
+    creatorValue: "Team Development · Team Lead / Programming / Game Design / Framework / Technical Artist",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Pixel Art", "3D", "2D", "Elimination"],
+    tags: ["Action", "Combo System", "3D", "Transformation", "Fast-paced"],
     h1: "Overview",
-    p1: "Uses DirectX 11 to set up a rendering canvas for color output, while all other logic runs on the CPU to keep performance stable.\nAdds a quicksand-style drawing mechanic and a leaderboard system to extend replayability.\nBuilds a simple pixel-based lighting model and a custom pixel font system from scratch.",
+    p1: "Built on a custom code framework: a logic layer that combines object pooling with a Finite State Machine (FSM) system, paired with a presentation layer governed by a strictly defined rendering pipeline.\nGlobal singletons are used throughout to minimize performance overhead and reduce friction in method calls.",
+    contribHeading: "Personal Contributions",
+    pContrib: "Built the game's overall code framework based on DirectX 11, including the rendering pipeline and the management system for game instances.\nCreated a character state machine tool and developed the player character along with six types of basic enemies.\nDeveloped the transformation visual effects for shadows and the skybox.\nParticipated in the initial conceptualization, establishing the game's core resource loop and transformation mechanics.\nFinally integrated all the program code.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "No-Art-Assets Challenge", desc: "Made the game look and feel as engaging as possible without leaning heavily on graphics APIs or external art assets — everything on screen is generated in code." },
-      { title: "Collision Logic", desc: "Used Andrew's monotone chain algorithm to compute the convex hull of a 3D cuboid projected onto a plane, then tested collisions against that hull." },
-      { title: "Elimination Logic", desc: "Used a depth-first search that prioritizes exploring rightward to check whether a match should be cleared; if not, it falls back to searching upward so the next check can start quickly." },
-      { title: "Quicksand Simulation Logic", desc: "Each quicksand update always computes from both sides toward the center — otherwise the sand ends up drifting and piling unevenly to one side." },
-      { title: "Leaderboard System", desc: "Generates a dedicated local file to record and track player scores." },
-      { title: "Pixel Font System", desc: "Uses binary flags to determine which cells within a 5×5 grid should be filled, with a custom rendering style defined for every character." },
-      { title: "Drawing Mode", desc: "Lets players draw patterns using falling quicksand, with adjustable sand flow and a built-in screenshot function." },
-      { title: "Simple Lighting Model Showcase", desc: "Procedurally generates a gallery covering 11 geometric shapes, 4 materials, 3 rotation axes, 3 perspective views, 4 render styles, and 4 lighting options." }
+      { title: "Custom Render Pipeline", desc: "Built a rendering pipeline from scratch on DirectX 11, implementing the core 3D elements the game needed — perspective projection, collision detection, lighting, and shadow mapping — as completely as possible." },
+      { title: "HD-2D Style Implementation", desc: "Let 2D art assets move and interact naturally within a 3D game space, following an HD-2D-inspired visual approach." },
+      { title: "3D Boss Character", desc: "Modeled the final boss in 3D and built a dedicated finite state machine to drive its behavior." },
+      { title: "Extensive Prefab Object Pools", desc: "Pre-pooled objects extensively to minimize runtime loading and instantiation overhead, keeping the frame rate stable." },
+      { title: "Dynamic UI", desc: "Used dynamic UI elements throughout to keep the interface feeling responsive and alive." }
     ],
     h4: "Outcome",
-    p4: "Shipped a 3–5 minute puzzle game that replaces a traditional tutorial with surrounding interactive UI, so players can pick it up at a glance.\nThe drawing mode and leaderboard system demonstrate how far a single mechanic can be pushed under tight constraints.\nA dedicated showcase mode presents what I learned building the lighting model along the way.",
-    codeLink: "View repository →",
-    itchLink: "Play on itch.io →"
+    p4: "Shipped a game with a 5–10 minute play loop spanning tutorial, survival, and boss-battle phases. Players can freely switch states, use skills to reshape the environment, and build up energy to trigger a hidden transformation.\nThe framework built for this project has also been kept for reuse — future content can build on top of it, and it's positioned to evolve from a purely object-oriented architecture into a component-oriented one.",
+    codeLink: "View repository →"
   },
   ja: {
-    pageTitle: "流砂の直方体・プロジェクト詳細",
+    pageTitle: "プライマリー・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "流砂の直方体",
-    lede: "同じ色を左から右へとつなげよう。",
+    title: "プライマリー",
+    lede: "コンボによってエネルギーを蓄積し、それを消費してさらなるコンボ技を繰り出す。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 技術重視",
+    genreValue: "ゲーム制作 · 技術重視 · 企画重視",
     creatorLabel: "制作者情報",
-    creatorValue: "個人開発",
+    creatorValue: "チーム開発 · チームリーダー / プログラム / 企画 / フレームワーク / TA",
     tagsLabel: "ゲームタグ",
-    tags: ["パズル", "ドット絵", "3D", "2D", "消去"],
+    tags: ["アクション", "コンボシステム", "3D", "変身", "ハイテンポ"],
     h1: "概要",
-    p1: "DirectX 11 で描画用キャンバスを構築しつつ、その他のロジックはすべてCPUで処理することで、安定したパフォーマンスを確保しています。\n「流砂（クイックサンド）」のような描画メカニズムやリーダーボード機能を導入し、ゲームプレイをより魅力的なものにしています。\nピクセル単位で描画するシンプルなライティングモデルと、独自のピクセルフォントシステムを実装しています。",
+    p1: "オブジェクトプーリングと有限状態機械（FSM）を組み合わせたロジック層と、厳密に定義されたレンダリングパイプラインによるプレゼンテーション層からなる、自作のコードフレームワーク上に構築。\nグローバルシングルトンを随所で用いることで、パフォーマンスオーバーヘッドとメソッド呼び出し時の手間を最小限に抑えている。",
+    contribHeading: "個人の貢献",
+    pContrib: "DirectX 11をベースに、レンダリングパイプラインやゲームインスタンス管理システムを含む、ゲーム全体のコードフレームワークを構築しました。\n有限状態機械ツールを制作し、プレイヤーキャラクターおよび6種類の基本敵キャラクターを実装しました。\nシャドウとスカイボックスの変身エフェクトの開発を完了させました。\n企画の初期構想に携わり、ゲームの基礎となるリソース循環システムや変身メカニクスの基盤を確立しました。\n最終的に、すべてのプログラムコードを統合しました。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "ノーアートアセットへの挑戦", desc: "グラフィックスAPIや外部のアートアセットに過度に依存せず、可能な限り面白く見栄えのするゲームに仕上げることを目指しました。画面に映るものはすべてコードで生成しています。" },
-      { title: "衝突判定ロジック", desc: "アンドリューのモノトーンチェーン法（Andrew's Monotone Chain）を用いて、3D直方体を平面に投影した際の凸包を求め、それをもとに衝突判定を行いました。" },
-      { title: "消去ロジック", desc: "右方向への探索を優先する深さ優先探索（DFS）で消去の必要性を判定し、該当しない場合は次善として上方向へ探索することで、次の判定へ素早く移れるようにしました。" },
-      { title: "流砂シミュレーションロジック", desc: "流砂の計算は毎回、必ず両端から中央に向かって行っています。そうしないと、流砂が片側に偏って積もってしまうためです。" },
-      { title: "リーダーボードシステム", desc: "プレイヤーのスコアを記録・管理するための専用ファイルを生成します。" },
-      { title: "ピクセルフォントシステム", desc: "5×5マスの各セルを塗りつぶすかどうかをバイナリで管理し、文字ごとにレンダリングスタイルをカスタマイズしています。" },
-      { title: "お絵描きモード", desc: "落下する流砂を使ってプレイヤーが自由に模様を描けるモードで、流砂の流量調整やスクリーンショット機能も用意しています。" },
-      { title: "簡易ライティングモデル展示", desc: "11種類の幾何学モデル、4種類のマテリアル、3方向の回転、3種類の透視視点、4種類のレンダリングスタイル、4種類のライティング要素をプログラムで生成し、切り替えて確認できるようにしています。" }
+      { title: "カスタムレンダリングパイプライン", desc: "DirectX 11 上でレンダリングパイプラインをゼロから構築し、透視投影・衝突判定・ライティング・シャドウマッピングといった3Dゲームに必要な要素を、可能な限り網羅的に実装しました。" },
+      { title: "HD-2Dスタイルの実装", desc: "HD-2D的な表現を参考に、2Dアートアセットが3Dゲーム空間内で自然に移動・相互作用できるようにしました。" },
+      { title: "3Dボスキャラクター", desc: "ラスボス用の3Dモデルを作成し、その挙動を制御する専用の有限状態機械を構築しました。" },
+      { title: "豊富なプレハブオブジェクトプール", desc: "オブジェクトを事前に大量プーリングすることで、ランタイムのロードとインスタンス化にかかるオーバーヘッドを最小限に抑え、安定したフレームレートを維持しました。" },
+      { title: "ダイナミックUI", desc: "随所に動的なUI要素を取り入れ、インターフェースに躍動感を持たせました。" }
     ],
     h4: "成果",
-    p4: "チュートリアルの代わりに周囲のインタラクティブUIでルールが直感的に伝わる、3〜5分程度のパズルゲームを完成させました。\nお絵描きモードとリーダーボードシステムを通じて、限られた条件の中で1つのメカニクスをどこまで作り込めるかを示しています。\n展示モードでは、ライティングモデルについて段階的に学んだ成果を紹介しています。",
-    codeLink: "リポジトリを見る →",
-    itchLink: "itch.io でプレイ →"
+    p4: "チュートリアル・サバイバル・ボス戦の各フェーズからなる、5〜10分のプレイループを持つゲームを完成させました。プレイヤーは自由に状態を切り替え、スキルで環境レイアウトを変化させ、エネルギーを蓄積して隠された変身を発動できます。\nまた本作のために構築したフレームワークは今後の再利用を見据えて維持されており、単純なオブジェクト指向からコンポーネント指向アーキテクチャへと発展させていく余地があります。",
+    codeLink: "リポジトリを見る →"
   }
 };
 

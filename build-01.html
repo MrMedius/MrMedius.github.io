@@ -264,11 +264,11 @@
 
 <main>
   <div class="build-tag">BUILD.01<small>DirectX 11</small></div>
-  <h1 data-i18n="title">原色战争</h1>
-  <p class="lede" data-i18n="lede">通过连击积攒能量，并利用这些能量施展连击。</p>
+  <h1 data-i18n="title">炼 · 核（制作中）</h1>
+  <p class="lede" data-i18n="lede">类幸存者玩法搭配可视化编程。</p>
 
   <div class="stack">
-    <span>C++</span><span>DirectX 11</span><span>HLSL</span><span>Aseprite</span>
+    <span>C++</span><span>DirectX 11</span><span>HLSL</span>
   </div>
 
   <div class="gallery">
@@ -277,7 +277,7 @@
   </div>
 
   <div class="links-row">
-    <a href="https://github.com/MrMedius/RIXIS" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
+    <a href="https://github.com/MrMedius/CoreRefiner" target="_blank" rel="noopener" data-i18n="codeLink">查看代码仓库 →</a>
   </div>
 
   <div class="info-panel">
@@ -287,7 +287,7 @@
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">团队开发 · 队长 / 程序 / 策划 / 框架 / TA</div>
+      <div class="value" data-i18n="creatorValue">个人开发</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -297,17 +297,8 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。
-使用全局单例来降低性能开销以及调用方法时的障碍。</p>
-  </section>
-
-  <section class="block">
-    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
-    <p data-i18n="pContrib">以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。
-制作了角色状态机工具，并开发了玩家角色和六种基础敌人。
-完成了影子和天空盒的变化特效的开发工作。
-参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。
-最终将所有程序代码合到一起。</p>
+    <p data-i18n="p1">选用自制引擎开发。
+打算不用美术素材，尽可能用几何体和着色器完成整个游戏。</p>
   </section>
 
   <section class="block">
@@ -317,8 +308,7 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个流程大约5-10分钟的游戏，包含教程、生存和Boss战三个阶段，玩家可以自由切换状态和使用技能改变场景布局，并积攒能量开出隐藏变身。
-此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。</p>
+    <p data-i18n="p4">目前依然在开发中</p>
   </section>
 
 </main>
@@ -326,94 +316,81 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/primary_v.mp4', poster: 'asset/primary_p_0.png' },
-  { type: 'image', src: 'asset/primary_p_1.png' },
-  { type: 'image', src: 'asset/primary_p_2.png' },
-  { type: 'image', src: 'asset/primary_p_3.png' },
-  { type: 'image', src: 'asset/primary_p_4.png' },
-  { type: 'image', src: 'asset/primary_p_5.png' }
+  { type: 'video', src: 'asset/core_v.mp4', poster: 'asset/core_p_0.png' },
+  { type: 'image', src: 'asset/core_p_1.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "原色战争 · 项目详情",
+    pageTitle: "炼 · 核（制作中） · 项目详情",
     back: "← 返回项目列表",
-    title: "原色战争",
-    lede: "通过连击积攒能量，并利用这些能量施展连击。",
+    title: "炼 · 核（制作中）",
+    lede: "类幸存者玩法搭配可视化编程。",
     genreLabel: "作品类型",
     genreValue: "游戏类 · 技术向 · 策划向",
     creatorLabel: "制作者信息",
-    creatorValue: "团队开发 · 队长 / 程序 / 策划 / 框架 / TA",
+    creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["动作", "Combo 系统", "3D", "变身", "快节奏"],
+    tags: ["类幸存者", "空间管理", "资源管理", "解谜", "3D"],
     h1: "概述",
-    p1: "使用自制的代码框架，包括结合对象池和有限状态机(FSM)体系的逻辑层，和严格设置渲染流程的表现层。\n使用全局单例来降低性能开销以及调用方法时的障碍。",
-    contribHeading: "个人贡献",
-    pContrib: "以 DirectX 11 为基础，完成了游戏整体的代码框架，包括渲染管线和游戏实例的管理系统。\n制作了角色状态机工具，并开发了玩家角色和六种基础敌人。\n完成了影子和天空盒的变化特效的开发工作。\n参与了企划的初步构想，奠定了游戏最初的资源循环系统和变身玩法。\n最终将所有程序代码合到一起。",
+    p1: "选用自制引擎开发。\n打算不用美术素材，尽可能用几何体和着色器完成整个游戏。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "自定义渲染管线", desc: "基于 DirectX 11 从零搭建渲染流程，尽可能完整地实现透视投影、碰撞检测、光照和阴影贴图等必要的3D游戏元素。" },
-      { title: "参考HD-2D风格", desc: "使2D美术资源能够在3D游戏空间中移动和交互。" },
-      { title: "3D Boss角色", desc: "为最终Boss创建3D模型，并为其定制化有限状态机。" },
-      { title: "大量预制对象池", desc: "为了保持稳定的帧率，我们将最大限度地减少运行时加载和实例生成相关的工作负载。" },
-      { title: "动态UI", desc: "使用动态UI元素来确保视觉上的动态效果。" }
+      { title: "核心玩法：自定义攻击", desc: "参考现实编程的形式设计机制，玩家可以自定义各种各样的子弹，不同的机制之间会有交叉作用，让每一局游戏都有不一样的体验。" },
+      { title: "辅助玩法：空间复杂度", desc: "在有限的空间内，玩家必须思考要如何塞进更多节点和如何利用现有的资源组装出想要的攻击。" },
+      { title: "辅助玩法：时间复杂度", desc: "在有限的时间内，玩家必须思考如何更加高效的让自己目标的攻击被组装出来。" },
+      { title: "辅助玩法：稳定性和鲁棒性", desc: "此外，玩家还必须考虑如何让自己的这套体系更加稳定的产出自己构思中的攻击，并在遇到意外情况时能保证自己的存活率。" }
     ],
     h4: "成果",
-    p4: "完成了一个流程大约5-10分钟的游戏，包含教程、生存和Boss战三个阶段，玩家可以自由切换状态和使用技能改变场景布局，并积攒能量开出隐藏变身。\n此外，本次开发所使用的框架也可以被留存下来，后续可以填充新的内容，把它从单纯的面向对象升级为面向组件的模式。",
+    p4: "目前依然在开发中",
     codeLink: "查看代码仓库 →"
   },
   en: {
-    pageTitle: "Primary · Project Detail",
+    pageTitle: "Core Refiner（In production） · Project Detail",
     back: "← Back to projects",
-    title: "Primary",
-    lede: "Build up energy through combo attacks, then spend it to unleash even more powerful combo moves.",
+    title: "Core\u00A0Refiner\u2060（In\u00A0production）",
+    lede: "Survivor-style gameplay combined with visual programming.",
     genreLabel: "Genre",
     genreValue: "Game Project · Engineering-Focused · Design-Focused",
     creatorLabel: "Creator",
-    creatorValue: "Team Development · Team Lead / Programming / Game Design / Framework / Technical Artist",
+    creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Action", "Combo System", "3D", "Transformation", "Fast-paced"],
+    tags: ["Survivor-like", "Space Management", "Resource Management", "Puzzle", "3D"],
     h1: "Overview",
-    p1: "Built on a custom code framework: a logic layer that combines object pooling with a Finite State Machine (FSM) system, paired with a presentation layer governed by a strictly defined rendering pipeline.\nGlobal singletons are used throughout to minimize performance overhead and reduce friction in method calls.",
-    contribHeading: "Personal Contributions",
-    pContrib: "Built the game's overall code framework based on DirectX 11, including the rendering pipeline and the management system for game instances.\nCreated a character state machine tool and developed the player character along with six types of basic enemies.\nDeveloped the transformation visual effects for shadows and the skybox.\nParticipated in the initial conceptualization, establishing the game's core resource loop and transformation mechanics.\nFinally integrated all the program code.",
+    p1: "Developed using a custom engine. \nThe plan is to forgo traditional art assets and build the entire game using only geometric primitives and shaders.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Custom Render Pipeline", desc: "Built a rendering pipeline from scratch on DirectX 11, implementing the core 3D elements the game needed — perspective projection, collision detection, lighting, and shadow mapping — as completely as possible." },
-      { title: "HD-2D Style Implementation", desc: "Let 2D art assets move and interact naturally within a 3D game space, following an HD-2D-inspired visual approach." },
-      { title: "3D Boss Character", desc: "Modeled the final boss in 3D and built a dedicated finite state machine to drive its behavior." },
-      { title: "Extensive Prefab Object Pools", desc: "Pre-pooled objects extensively to minimize runtime loading and instantiation overhead, keeping the frame rate stable." },
-      { title: "Dynamic UI", desc: "Used dynamic UI elements throughout to keep the interface feeling responsive and alive." }
+      { title: "Core Gameplay: Custom Attacks", desc: "The mechanic is designed in the form of real programming. Players can customize all kinds of bullets, and different mechanics interact, so every run feels different." },
+      { title: "Supporting Gameplay: Space Complexity", desc: "Within a limited space, the player has to think about how to fit in more nodes and how to assemble the attack they want from the resources on hand." },
+      { title: "Supporting Gameplay: Time Complexity", desc: "Within a limited time, the player has to think about how to assemble their target attack more efficiently." },
+      { title: "Supporting Gameplay: Stability and Robustness", desc: "The player also has to consider how to make this system produce the attack they designed more stably, and how to keep their survival rate up when something unexpected happens." }
     ],
     h4: "Outcome",
-    p4: "Shipped a game with a 5–10 minute play loop spanning tutorial, survival, and boss-battle phases. Players can freely switch states, use skills to reshape the environment, and build up energy to trigger a hidden transformation.\nThe framework built for this project has also been kept for reuse — future content can build on top of it, and it's positioned to evolve from a purely object-oriented architecture into a component-oriented one.",
+    p4: "Still in development.",
     codeLink: "View repository →"
   },
   ja: {
-    pageTitle: "プライマリー・プロジェクト詳細",
+    pageTitle: "煉 · 核（製作中）・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "プライマリー",
-    lede: "コンボによってエネルギーを蓄積し、それを消費してさらなるコンボ技を繰り出す。",
+    title: "煉 · 核（製作中）",
+    lede: "サバイバー系ゲームプレイとビジュアルプログラミングの融合。",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 技術重視 · 企画重視",
     creatorLabel: "制作者情報",
-    creatorValue: "チーム開発 · チームリーダー / プログラム / 企画 / フレームワーク / TA",
+    creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["アクション", "コンボシステム", "3D", "変身", "ハイテンポ"],
+    tags: ["サバイバー系", "空間管理", "リソース管理", "パズル", "3D"],
     h1: "概要",
-    p1: "オブジェクトプーリングと有限状態機械（FSM）を組み合わせたロジック層と、厳密に定義されたレンダリングパイプラインによるプレゼンテーション層からなる、自作のコードフレームワーク上に構築。\nグローバルシングルトンを随所で用いることで、パフォーマンスオーバーヘッドとメソッド呼び出し時の手間を最小限に抑えている。",
-    contribHeading: "個人の貢献",
-    pContrib: "DirectX 11をベースに、レンダリングパイプラインやゲームインスタンス管理システムを含む、ゲーム全体のコードフレームワークを構築しました。\n有限状態機械ツールを制作し、プレイヤーキャラクターおよび6種類の基本敵キャラクターを実装しました。\nシャドウとスカイボックスの変身エフェクトの開発を完了させました。\n企画の初期構想に携わり、ゲームの基礎となるリソース循環システムや変身メカニクスの基盤を確立しました。\n最終的に、すべてのプログラムコードを統合しました。",
+    p1: "独自エンジンを使用して開発。\n従来のアートアセットは使用せず、幾何学プリミティブとシェーダーのみでゲーム全体を構築する方針。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "カスタムレンダリングパイプライン", desc: "DirectX 11 上でレンダリングパイプラインをゼロから構築し、透視投影・衝突判定・ライティング・シャドウマッピングといった3Dゲームに必要な要素を、可能な限り網羅的に実装しました。" },
-      { title: "HD-2Dスタイルの実装", desc: "HD-2D的な表現を参考に、2Dアートアセットが3Dゲーム空間内で自然に移動・相互作用できるようにしました。" },
-      { title: "3Dボスキャラクター", desc: "ラスボス用の3Dモデルを作成し、その挙動を制御する専用の有限状態機械を構築しました。" },
-      { title: "豊富なプレハブオブジェクトプール", desc: "オブジェクトを事前に大量プーリングすることで、ランタイムのロードとインスタンス化にかかるオーバーヘッドを最小限に抑え、安定したフレームレートを維持しました。" },
-      { title: "ダイナミックUI", desc: "随所に動的なUI要素を取り入れ、インターフェースに躍動感を持たせました。" }
+      { title: "コアプレイ：カスタム攻撃", desc: "現実のプログラミングの形を参考にメカニズムを設計しました。プレイヤーはさまざまな弾をカスタマイズでき、異なるメカニズムが互いに作用するため、プレイごとに違う体験になります。" },
+      { title: "補助プレイ：空間計算量", desc: "限られた空間の中で、より多くのノードをどう詰め込むか、手元のリソースでどう狙った攻撃を組み立てるかを考える必要があります。" },
+      { title: "補助プレイ：時間計算量", desc: "限られた時間の中で、目標の攻撃をより効率よく組み立てる方法を考える必要があります。" },
+      { title: "補助プレイ：安定性とロバスト性", desc: "さらに、構想どおりの攻撃をより安定して生み出す方法を考え、想定外の状況でも生存率を保てるようにする必要があります。" }
     ],
     h4: "成果",
-    p4: "チュートリアル・サバイバル・ボス戦の各フェーズからなる、5〜10分のプレイループを持つゲームを完成させました。プレイヤーは自由に状態を切り替え、スキルで環境レイアウトを変化させ、エネルギーを蓄積して隠された変身を発動できます。\nまた本作のために構築したフレームワークは今後の再利用を見据えて維持されており、単純なオブジェクト指向からコンポーネント指向アーキテクチャへと発展させていく余地があります。",
+    p4: "現在も開発中です。",
     codeLink: "リポジトリを見る →"
   }
 };
@@ -421,6 +398,10 @@ const translations = {
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
+/**
+ * 在主展示区切换到指定媒体。
+ * @param {number} index 媒体列表下标
+ */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -431,6 +412,7 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
+/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -446,10 +428,16 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
+/**
+ * @param {string[]} tags
+ */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
+/**
+ * @param {{title: string, desc: string}[]} goals
+ */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -463,6 +451,7 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
+/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;
