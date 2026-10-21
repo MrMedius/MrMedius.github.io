@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.06<small>Unreal Engine</small></div>
-  <h1 data-i18n="title">弹 · 反弹</h1>
-  <p class="lede" data-i18n="lede">在枪林弹雨中夹缝求生，然后以牙还牙！</p>
+  <div class="build-tag">BUILD.06<small>Unity</small></div>
+  <h1 data-i18n="title">咏叹调</h1>
+  <p class="lede" data-i18n="lede">在一座被音乐包裹的城市中，玩家作为侦探追查着繁华下最黑暗的秘密。</p>
 
   <div class="stack">
-    <span>C++</span><span>UE5</span>
+    <span>C#</span><span>Unity</span><span>Excel</span>
   </div>
 
   <div class="gallery">
@@ -276,18 +276,14 @@
     <div class="gallery-thumbs" id="galleryThumbs"></div>
   </div>
 
-  <div class="links-row">
-    <a href="https://mrmedius.itch.io/danger" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-  </div>
-
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 技术向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">个人开发</div>
+      <div class="value" data-i18n="creatorValue">团队开发 · 程序</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -297,8 +293,17 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。
-也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。</p>
+    <p data-i18n="p1">这是参加 TapTap「2026 聚光灯」21 天游戏创作挑战的作品。
+本作目前只完成了序章，是由 2 名程序、1 名策划、3 名美术、1 名音乐组成的 7 人团队在 21 天内完成的。
+主要由驱动整个游戏的故事系统、用于推理真相的记忆宫殿和拓展搜证玩法的聆听功能组成。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
+    <p data-i18n="pContrib">独立完成了整个故事系统的开发，其中包括对话系统和任务系统两个模块。
+此系统的核心是维护了四张 Excel 表格，包括对话表、选择器表、任务表和目标表，易于修改且可拓展性较强。
+在完成表格的编辑后，输出为 csv 类型文件，经由 Unity 读入游戏。
+玩家在每次交互后，系统都会通过交互对象的 ID 来寻找表格中对应的演出。</p>
   </section>
 
   <section class="block">
@@ -308,9 +313,9 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">作为UE5的初学者，我对这款作品还是比较满意的。
-个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。
-但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。</p>
+    <p data-i18n="p4">在 21 天内，我们完成了一个大约 10–15 分钟左右的序章，但可玩的版本暂时只有简体中文的。
+序章包含六个场景、六位可交互人物、数十段不同的对话和五个任务。
+在故事系统开发完成后，即便是没有编程能力的策划，也能通过 Excel 表格轻易地参与到游戏的一线制作中。</p>
   </section>
 
 </main>
@@ -318,95 +323,101 @@
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/danger_v.mp4', poster: 'asset/danger_p_0.png' },
-  { type: 'image', src: 'asset/danger_p_1.png' },
-  { type: 'image', src: 'asset/danger_p_2.png' },
-  { type: 'image', src: 'asset/danger_p_3.png' },
-  { type: 'image', src: 'asset/danger_p_4.png' }
+  { type: 'video', src: 'asset/aria_v.mp4', poster: 'asset/aria_p_0.png' },
+  { type: 'image', src: 'asset/aria_p_1.png' },
+  { type: 'image', src: 'asset/aria_p_2.png' },
+  { type: 'image', src: 'asset/aria_p_3.png' },
+  { type: 'image', src: 'asset/aria_p_4.png' },
+  { type: 'image', src: 'asset/aria_p_5.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "弹 · 反弹 · 项目详情",
+    pageTitle: "咏叹调 · 项目详情",
     back: "← 返回项目列表",
-    title: "弹 · 反弹",
-    lede: "在枪林弹雨中夹缝求生，然后以牙还牙！",
+    title: "咏叹调",
+    lede: "在一座被音乐包裹的城市中，玩家作为侦探追查着繁华下最黑暗的秘密。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 策划向",
+    genreValue: "游戏类 · 技术向",
     creatorLabel: "制作者信息",
-    creatorValue: "个人开发",
+    creatorValue: "团队开发 · 程序",
     tagsLabel: "游戏标签",
-    tags: ["动作", "生存", "3D"],
+    tags: ["文字冒险", "解谜"],
     h1: "概述",
-    p1: "「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。\n也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。",
+    p1: "这是参加 TapTap「2026 聚光灯」21 天游戏创作挑战的作品。\n本作目前只完成了序章，是由 2 名程序、1 名策划、3 名美术、1 名音乐组成的 7 人团队在 21 天内完成的。\n主要由驱动整个游戏的故事系统、用于推理真相的记忆宫殿和拓展搜证玩法的聆听功能组成。",
+    contribHeading: "个人贡献",
+    pContrib: "独立完成了整个故事系统的开发，其中包括对话系统和任务系统两个模块。\n此系统的核心是维护了四张 Excel 表格，包括对话表、选择器表、任务表和目标表，易于修改且可拓展性较强。\n在完成表格的编辑后，输出为 csv 类型文件，经由 Unity 读入游戏。\n玩家在每次交互后，系统都会通过交互对象的 ID 来寻找表格中对应的演出。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "24小时开发挑战", desc: "围绕主题构思玩法并制作，「だん」的话可以是「弾丸」也可以是「弾性」。\n最后为了点题，标题再使用「DANger」。" },
-      { title: "符合参赛作品的玩法", desc: "因为评审需要阅览成百上千的参赛作品，所以玩法必须易于理解，但又不乏趣味性；而且画面也要尽量做到精致但不繁琐。" },
-      { title: "核心机制", desc: "夹缝求生——玩家必须保持移动，否则不仅会被敌人的子弹攻击，也会被脚底的地砖偷袭。\n以牙还牙——玩家可以用面前的挡板反弹敌人的「红」子弹，然后变成自己的「绿」子弹，从而击杀敌人。" },
-      { title: "出其不意的正反馈", desc: "因为与「绿」子弹碰撞的「红」子弹也会被变成「绿」子弹，所以随着局面越加复杂，玩家虽然疲于躲避危险，但不知不觉中也会积累下很多积分和连击，并且看到和听见预料之外的敌人被击中，变成碎块。" }
+      { title: "用四张表驱动整个流程", desc: "选择器表：玩家与对象交互后，按对象 ID、触发条件和优先级选出一段对话。\n对话表：播出台词、选项、分支，并执行其中的动作。\n其中动作包括写标记、开始或完成任务、切换章节、震动屏幕、为下一句配上语音等等。\n任务表：登记任务完成后做什么。\n目标表：登记任务中对应的每一条小目标。" },
+      { title: "实现开发去代码化", desc: "直接在 Excel 里改台词、条件、任务和立绘切换等等内容，导出 csv 后由 Unity 读入。\n只需要确保引擎中的物品 ID 与表格中设置的匹配即可。" },
+      { title: "对话选项功能", desc: "Choice 类对话会把文字分成若干选项，条件不成立的项不会出现。\n玩家点其中一项，对话进入对应的进程。" },
+      { title: "对话分支功能", desc: "Branch 类对话不会被玩家从明面上察觉，它会根据玩家的游玩进度和各种选择，在对应的节点呈现出截然不同的结果。" },
+      { title: "故事系统的纠错工具", desc: "在 Unity 编辑器菜单中增加 Tools/Story/Validate Data 功能，能够检查表格是否存在重复节点、指向不明确、语法错误、无法识别的动作等等问题，并会带上文件名和行号报出来。" },
+      { title: "故事系统的管理员工具", desc: "在 Unity 编辑器菜单中增加 Tools/Story/Story Debug 功能，能够打开一个工具页，用于调试和观察对话和任务的状态和情况。" }
     ],
     h4: "成果",
-    p4: "作为UE5的初学者，我对这款作品还是比较满意的。\n个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。\n但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。",
-    itchLink: "在 itch.io 试玩 →"
+    p4: "在 21 天内，我们完成了一个大约 10–15 分钟左右的序章，但可玩的版本暂时只有简体中文的。\n序章包含六个场景、六位可交互人物、数十段不同的对话和五个任务。\n在故事系统开发完成后，即便是没有编程能力的策划，也能通过 Excel 表格轻易地参与到游戏的一线制作中。"
   },
   en: {
-    pageTitle: "DANger · Project Detail",
+    pageTitle: "Aria: Echoes of Truth · Project Detail",
     back: "← Back to projects",
-    title: "DANger",
-    lede: "Survive the hail of bullets in the gaps—then give as good as you get!",
+    title: "Aria:\u00A0Echoes\u00A0of\u00A0Truth",
+    lede: "In a city wrapped in music, you play a detective chasing the darkest secret beneath the splendor.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Design-Focused",
+    genreValue: "Game Project · Engineering-Focused",
     creatorLabel: "Creator",
-    creatorValue: "Solo Development",
+    creatorValue: "Team Development · Programming",
     tagsLabel: "Tags",
-    tags: ["Action", "Survival", "3D"],
+    tags: ["Text Adventure", "Puzzle"],
     h1: "Overview",
-    p1: "An entry for the 26th UE5 Petit Contest (第26回UE5ぷちコン), built around the theme 「だん」.\nAlso my first 24-hour mini-game challenge, after about a month of learning UE5 programming.",
+    p1: "An entry for TapTap's 2026 Spotlight, a 21-day game jam.\nOnly the prologue is finished so far, made in those 21 days by a team of seven: 2 programmers, 1 designer, 3 artists, and 1 composer.\nIt is built around the story system that drives the game, a memory palace for reasoning out the truth, and a listening feature that extends the investigation.",
+    contribHeading: "Personal Contributions",
+    pContrib: "Independently built the entire story system, including a dialogue module and a quest module.\nIts core is four Excel sheets—dialogue, selector, quest, and objective—easy to revise and straightforward to extend.\nAfter editing, the sheets are exported as CSV and read into the game by Unity.\nAfter each interaction, the system looks up the matching performance in the sheets by the interacted object's ID.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "24-Hour Dev Challenge", desc: "Designed the gameplay around the contest theme. 「だん」 can read as 「弾丸」 (bullet) or 「弾性」 (elasticity / bounce).\nTo land the pun, the title became 「DANger」." },
-      { title: "Gameplay Fit for a Contest", desc: "Judges have to look through hundreds or thousands of entries, so the game had to be easy to grasp without going dull—and the visuals as polished as possible without getting busy." },
-      { title: "Core Mechanics", desc: "Survive in the gaps — keep moving, or you'll take hits from enemy bullets and from the tiles under your feet.\nTit for tat — bounce enemy \"red\" bullets off the barrier in front of you; they turn into your \"green\" bullets and can take enemies down." },
-      { title: "Unexpected Positive Feedback", desc: "Red bullets that hit a green one also turn green. As the screen gets messier, you're busy dodging—but score and combos pile up without you noticing, and enemies you never aimed at shatter in ways you can see and hear." }
+      { title: "Drive the Whole Flow with Four Sheets", desc: "Selector sheet: after the player interacts with an object, pick one dialogue by object ID, trigger conditions, and priority.\nDialogue sheet: play lines, choices, and branches, and run the actions written into them.\nActions include setting flags, starting or completing quests, changing chapters, shaking the screen, and attaching voice to the next line.\nQuest sheet: record what happens when a quest is completed.\nObjective sheet: record each small objective that belongs to a quest." },
+      { title: "Keep Content Work Out of Code", desc: "Lines, conditions, quests, portrait changes, and the like are edited directly in Excel, exported as CSV, and read in by Unity.\nThe item IDs in the engine only need to match the ones set in the sheets." },
+      { title: "Dialogue Choices", desc: "Choice dialogues split the text into several options, and any option whose condition fails stays hidden.\nPicking one sends the dialogue into the matching thread." },
+      { title: "Dialogue Branches", desc: "Branch dialogues stay invisible to the player.\nFrom progress and earlier choices, they present a completely different result at the matching node." },
+      { title: "Story System Validator", desc: "Adds Tools/Story/Validate Data to the Unity editor menu.\nIt checks the sheets for duplicate nodes, ambiguous links, syntax errors, unrecognized actions, and similar problems, and reports them with the file name and line number." },
+      { title: "Story System Admin Tool", desc: "Adds Tools/Story/Story Debug to the Unity editor menu.\nIt opens a tool page for debugging and inspecting the state of dialogues and quests." }
     ],
     h4: "Outcome",
-    p4: "As a UE5 beginner, I'm fairly happy with how this one turned out.\nI think anyone can get the hang of it in one or two runs, with no text tutorial.\nScoring high is another matter—so it still has room to poke at a player's competitive streak.",
-    itchLink: "Play on itch.io →"
+    p4: "In 21 days we finished a prologue of about 10–15 minutes.\nThe playable build is Simplified Chinese only for now.\nThe prologue has six scenes, six interactive characters, dozens of distinct conversations, and five quests.\nOnce the story system was in place, designers without programming experience could take part in day-to-day production directly through the Excel sheets."
   },
   ja: {
-    pageTitle: "弾 · リバウンド・プロジェクト詳細",
+    pageTitle: "アリア：真実の残響・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "弾 · リバウンド",
-    lede: "弾雨の隙間を縫って生き延び、牙には牙で報いよ！",
+    title: "アリア：真実の残響",
+    lede: "音楽に包まれた街で、探偵として華やかさの下に潜む最も暗い秘密を追う。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 企画重視",
+    genreValue: "ゲーム制作 · 技術重視",
     creatorLabel: "制作者情報",
-    creatorValue: "個人開発",
+    creatorValue: "チーム開発 · プログラム",
     tagsLabel: "ゲームタグ",
-    tags: ["アクション", "サバイバル", "3D"],
+    tags: ["テキストアドベンチャー", "パズル"],
     h1: "概要",
-    p1: "「第26回UE5ぷちコン」の応募作品。お題は「だん」。\nUE5のプログラム開発を学び始めて約1ヶ月で、初めて24時間のミニゲーム制作に挑戦した作品でもある。",
+    p1: "TapTap「2026 スポットライト」21日間ゲーム制作チャレンジの参加作品。\n現時点では序章のみが完成しており、プログラム2名、企画1名、アート3名、音楽1名の7人チームが21日で制作した。\nゲーム全体を動かすストーリーシステム、真相を推理する記憶の宮殿、証拠探しを広げる「聴く」機能で構成されている。",
+    contribHeading: "個人の貢献",
+    pContrib: "ストーリーシステム全体を単独で開発しました。\n対話システムとクエストシステムの2つのモジュールを含みます。\n中核となるのは4枚のExcel表で、対話表、セレクター表、クエスト表、目標表です。\n修正しやすく、拡張性も高くなっています。\n表の編集後はCSVとして書き出し、Unityがゲームへ読み込みます。\nプレイヤーがインタラクトするたびに、システムは対象のIDから表の中の対応する演出を探します。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "24時間開発チャレンジ", desc: "お題に沿って遊びを考え、作り切ることでした。「だん」は「弾丸」にも「弾性」にも取れます。\n最後に題へ寄せて、タイトルを「DANger」にしました。" },
-      { title: "コンテスト作品としての遊び", desc: "審査員は数百〜数千の応募作に目を通す必要があります。だから遊びは一目で分かること、それでいて面白さを欠かないこと。画面も、丁寧だが煩雑にならないことを目指しました。" },
-      { title: "コアメカニクス", desc: "止まればやられる — 動き続けなければ、敵の弾だけでなく足元の床タイルにも襲われます。\n敵の弾で撃ち返せ — 眼前の盾で敵の「赤」弾を跳ね返すと、自分の「緑」弾に変わり、敵を倒せます。" },
-      { title: "予想外の正のフィードバック", desc: "「緑」弾に当たった「赤」弾も「緑」に変わります。局面が荒れるほど危険を避けるのに必死なのに、いつの間にかスコアとコンボが貯まり、狙ってもいない敵が砕け散る絵と音が入ってきます。" }
+      { title: "4枚の表で全体の流れを駆動する", desc: "セレクター表：プレイヤーが対象とインタラクトしたあと、対象ID・発動条件・優先度から一つの対話を選びます。\n対話表：セリフ、選択肢、分岐を再生し、そこに書かれたアクションを実行します。\nアクションには、フラグの書き込み、クエストの開始や完了、章の切り替え、画面の振動、次のセリフへの音声付けなどがあります。\nクエスト表：クエスト完了後に何をするかを登録します。\n目標表：クエストに対応する各小目標を登録します。" },
+      { title: "開発の脱コード化", desc: "セリフ、条件、クエスト、立ち絵の切り替えなどをExcel上で直接直し、CSVとして書き出してからUnityが読み込みます。\nエンジン内のアイテムIDが表の設定と一致していれば足ります。" },
+      { title: "対話の選択肢", desc: "Choice型の対話は文章を複数の選択肢に分け、条件を満たさない項目は表示しません。\nプレイヤーが一つを選ぶと、対話は対応する進行へ進みます。" },
+      { title: "対話の分岐", desc: "Branch型の対話はプレイヤーから表向きには見えません。\n進行度やこれまでの選択に応じて、対応する地点でまったく異なる結果を出します。" },
+      { title: "ストーリーシステムの検証ツール", desc: "Unityエディタのメニューに Tools/Story/Validate Data を追加しました。\n重複ノード、参照先の曖昧さ、文法エラー、認識できないアクションなどを検査し、ファイル名と行番号付きで報告します。" },
+      { title: "ストーリーシステムの管理ツール", desc: "Unityエディタのメニューに Tools/Story/Story Debug を追加しました。\n対話とクエストの状態をデバッグし、観察するためのツールページを開けます。" }
     ],
     h4: "成果",
-    p4: "UE5の初心者として、この作品にはそれなりに満足しています。\n文字の説明なしで、1〜2回遊べば誰でも操作を掴めるゲームだと思います。\n高得点を狙うとなると話は別なので、プレイヤーの負けず嫌いを刺激する余地はあります。",
-    itchLink: "itch.io でプレイ →"
+    p4: "21日で、およそ10〜15分の序章を完成させました。\n現時点で遊べる版は簡体字中国語のみです。\n序章には6つのシーン、6人のインタラクト可能な人物、数十の異なる対話、5つのクエストが含まれます。\nストーリーシステムが完成したあとは、プログラミングができない企画者でも、Excelの表を通じて制作の現場に参加できるようになりました。"
   }
 };
 
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
-/**
- * 在主展示区切换到指定媒体。
- * @param {number} index 媒体列表下标
- */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -417,7 +428,6 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
-/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -433,16 +443,10 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
-/**
- * @param {string[]} tags
- */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
-/**
- * @param {{title: string, desc: string}[]} goals
- */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -456,7 +460,6 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
-/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;
