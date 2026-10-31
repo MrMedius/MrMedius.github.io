@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.07<small>Unreal Engine</small></div>
-  <h1 data-i18n="title">弹 · 反弹</h1>
-  <p class="lede" data-i18n="lede">在枪林弹雨中夹缝求生，然后以牙还牙！</p>
+  <div class="build-tag">BUILD.07<small>OpenGL</small></div>
+  <h1 data-i18n="title">奔跑吧！魔法师！</h1>
+  <p class="lede" data-i18n="lede">使用各种技能组合，从地图的最左侧跑酷到最右侧。</p>
 
   <div class="stack">
-    <span>C++</span><span>UE5</span>
+    <span>C++</span><span>OpenGL</span><span>NSP builder</span><span>GIMP</span>
   </div>
 
   <div class="gallery">
@@ -276,14 +276,10 @@
     <div class="gallery-thumbs" id="galleryThumbs"></div>
   </div>
 
-  <div class="links-row">
-    <a href="https://mrmedius.itch.io/danger" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-  </div>
-
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 技术向 · 策划向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
@@ -297,8 +293,9 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。
-也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。</p>
+    <p data-i18n="p1">核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。
+设计简易的有限状态机(FSM)系统。
+确保地图要素的独立性，方便量产关卡。</p>
   </section>
 
   <section class="block">
@@ -308,105 +305,95 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">作为UE5的初学者，我对这款作品还是比较满意的。
-个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。
-但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。</p>
+    <p data-i18n="p4">完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。
+将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。
+初次体验在Nintendo Switch平台上开发游戏。</p>
   </section>
-
 </main>
 
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/danger_v.mp4', poster: 'asset/danger_p_0.png' },
-  { type: 'image', src: 'asset/danger_p_1.png' },
-  { type: 'image', src: 'asset/danger_p_2.png' },
-  { type: 'image', src: 'asset/danger_p_3.png' },
-  { type: 'image', src: 'asset/danger_p_4.png' }
+  { type: 'video', src: 'asset/runner_v_1.mp4', poster: 'asset/runner_p_0_1.png' },
+  { type: 'video', src: 'asset/runner_v_2.mp4', poster: 'asset/runner_p_0_2.png' },
+  { type: 'image', src: 'asset/runner_p_1.png' },
+  { type: 'image', src: 'asset/runner_p_2.png' },
+  { type: 'image', src: 'asset/runner_p_3.png' },
+  { type: 'image', src: 'asset/runner_p_4.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "弹 · 反弹 · 项目详情",
+    pageTitle: "奔跑吧！魔法师！ · 项目详情",
     back: "← 返回项目列表",
-    title: "弹 · 反弹",
-    lede: "在枪林弹雨中夹缝求生，然后以牙还牙！",
+    title: "奔跑吧！魔法师！",
+    lede: "使用各种技能组合，从地图的最左侧跑酷到最右侧。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 策划向",
+    genreValue: "游戏类 · 技术向 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["动作", "生存", "3D"],
+    tags: ["解谜", "动作", "2D", "关卡制"],
     h1: "概述",
-    p1: "「第26回UE5ぷちコン」的参赛作品，以「だん」为题的游戏创作挑战。\n也是初学UE5程序开发1个月左右后，首次挑战24小时完成一个小游戏。",
+    p1: "核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。\n设计简易的有限状态机(FSM)系统。\n确保地图要素的独立性，方便量产关卡。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "24小时开发挑战", desc: "围绕主题构思玩法并制作，「だん」的话可以是「弾丸」也可以是「弾性」。\n最后为了点题，标题再使用「DANger」。" },
-      { title: "符合参赛作品的玩法", desc: "因为评审需要阅览成百上千的参赛作品，所以玩法必须易于理解，但又不乏趣味性；而且画面也要尽量做到精致但不繁琐。" },
-      { title: "核心机制", desc: "夹缝求生——玩家必须保持移动，否则不仅会被敌人的子弹攻击，也会被脚底的地砖偷袭。\n以牙还牙——玩家可以用面前的挡板反弹敌人的「红」子弹，然后变成自己的「绿」子弹，从而击杀敌人。" },
-      { title: "出其不意的正反馈", desc: "因为与「绿」子弹碰撞的「红」子弹也会被变成「绿」子弹，所以随着局面越加复杂，玩家虽然疲于躲避危险，但不知不觉中也会积累下很多积分和连击，并且看到和听见预料之外的敌人被击中，变成碎块。" }
+      { title: "简易的有限状态机(FSM)系统", desc: "为玩家和每种怪物都制作了类似于Unity的状态迁移草图，然后模块化每个状态的行为逻辑和状态间的切换条件。" },
+      { title: "确保每一关都有新鲜感", desc: "新关卡保持内容变化的同时，也能做到推出新的技能和技巧，保证玩家能持续获得除了通关以外的正反馈。" },
+      { title: "确保技能间的连携", desc: "移动：基础能力。\n跳跃：落地前无法多次使用。\n攻击：破坏墙壁和攻击敌人。\n冲刺：可以和跳跃连携，移动到更远的位置，落地前无法多次使用。\n火球发射：远距离攻击，破坏墙壁、攻击敌人，落地前无法多次使用。\n火球操作：朝瞄准方向发射，可以在空中拐弯，无法飞出画面。\n慢动作模式：降低高精度操作的难度，但有时间限制。\n传送：玩家和火球交换位置，并重置所有技能的冷却。是连携所有技能的关键，让玩家可以在空中自由移动。\n镜头移动：可以看的更远，并且拓展火球的移动范围。" }
     ],
     h4: "成果",
-    p4: "作为UE5的初学者，我对这款作品还是比较满意的。\n个人感觉这是一款无需文字指引，只需1-2局便能让所有人熟练掌握的游戏。\n但如果想要获得高分又并不那么轻松，所以有潜力激起玩家的胜负欲。",
-    itchLink: "在 itch.io 试玩 →"
+    p4: "完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。\n初次体验在Nintendo Switch平台上开发游戏。"
   },
   en: {
-    pageTitle: "DANger · Project Detail",
+    pageTitle: "Runner Wizard · Project Detail",
     back: "← Back to projects",
-    title: "DANger",
-    lede: "Survive the hail of bullets in the gaps—then give as good as you get!",
+    title: "Runner Wizard",
+    lede: "Combine your skills to parkour from the far left of the map all the way to the far right.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Design-Focused",
+    genreValue: "Game Project · Engineering-Focused · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Action", "Survival", "3D"],
+    tags: ["Puzzle", "Action", "2D", "Level-Based"],
     h1: "Overview",
-    p1: "An entry for the 26th UE5 Petit Contest (第26回UE5ぷちコン), built around the theme 「だん」.\nAlso my first 24-hour mini-game challenge, after about a month of learning UE5 programming.",
+    p1: "The core design idea was to make sure every skill has some form of synergy with the others, then tie the whole skill framework together through a mechanic that refills how many times each skill can be used.\nDesigned a simple Finite State Machine (FSM) system.\nEnsured map elements stayed fully independent, making it easy to mass-produce levels.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "24-Hour Dev Challenge", desc: "Designed the gameplay around the contest theme. 「だん」 can read as 「弾丸」 (bullet) or 「弾性」 (elasticity / bounce).\nTo land the pun, the title became 「DANger」." },
-      { title: "Gameplay Fit for a Contest", desc: "Judges have to look through hundreds or thousands of entries, so the game had to be easy to grasp without going dull—and the visuals as polished as possible without getting busy." },
-      { title: "Core Mechanics", desc: "Survive in the gaps — keep moving, or you'll take hits from enemy bullets and from the tiles under your feet.\nTit for tat — bounce enemy \"red\" bullets off the barrier in front of you; they turn into your \"green\" bullets and can take enemies down." },
-      { title: "Unexpected Positive Feedback", desc: "Red bullets that hit a green one also turn green. As the screen gets messier, you're busy dodging—but score and combos pile up without you noticing, and enemies you never aimed at shatter in ways you can see and hear." }
+      { title: "Simple Finite State Machine (FSM) System", desc: "Sketched out Unity-style state transition diagrams for the player and every enemy type, then modularized each state's behavior logic and the conditions for switching between states." },
+      { title: "Keeping Every Level Feeling Fresh", desc: "Each new level introduces variation while also rolling out new skills and techniques, so players keep getting positive feedback beyond just clearing the stage." },
+      { title: "Ensuring Synergy Between Skills", desc: "Move: the base ability.\nJump: can't be used again until landing.\nAttack: breaks walls and hits enemies.\nDash: chains with jump to cover more distance; can't be used again until landing.\nFireball Shot: a ranged attack that breaks walls and hits enemies; can't be used again until landing.\nFireball Steer: fired toward the aim direction, can curve in mid-air, and can't leave the screen.\nSlow-Motion: eases high-precision inputs, but only lasts for a limited time.\nTeleport: swaps the player's position with the fireball's and resets the cooldown on every skill. This is the key that ties all the skills together, letting the player move freely through the air.\nCamera Pan: lets you see further ahead and extends how far the fireball can travel." }
     ],
     h4: "Outcome",
-    p4: "As a UE5 beginner, I'm fairly happy with how this one turned out.\nI think anyone can get the hang of it in one or two runs, with no text tutorial.\nScoring high is another matter—so it still has room to poke at a player's competitive streak.",
-    itchLink: "Play on itch.io →"
+    p4: "Shipped a simple puzzle-platformer made up of 10 levels, roughly half an hour long from start to finish.\nGot a working simple state-machine system into production, ready to be reused in future projects built on my own framework.\nMy first experience developing a game for the Nintendo Switch platform."
   },
   ja: {
-    pageTitle: "弾 · リバウンド・プロジェクト詳細",
+    pageTitle: "ランナー魔法使い・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "弾 · リバウンド",
-    lede: "弾雨の隙間を縫って生き延び、牙には牙で報いよ！",
+    title: "ランナー魔法使い",
+    lede: "様々なスキルを組み合わせて、マップの左端から右端までパルクールで駆け抜けよう。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 企画重視",
+    genreValue: "ゲーム制作 · 技術重視 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["アクション", "サバイバル", "3D"],
+    tags: ["パズル", "アクション", "2D", "レベル制"],
     h1: "概要",
-    p1: "「第26回UE5ぷちコン」の応募作品。お題は「だん」。\nUE5のプログラム開発を学び始めて約1ヶ月で、初めて24時間のミニゲーム制作に挑戦した作品でもある。",
+    p1: "すべてのスキルに何らかの連携効果を持たせることを核として設計し、使用回数が回復するメカニズムを通じてスキル体系全体をつなげています。\n簡易な有限状態機械（FSM）システムを設計しました。\nマップ要素の独立性を確保し、レベルを効率よく量産できるようにしています。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "24時間開発チャレンジ", desc: "お題に沿って遊びを考え、作り切ることでした。「だん」は「弾丸」にも「弾性」にも取れます。\n最後に題へ寄せて、タイトルを「DANger」にしました。" },
-      { title: "コンテスト作品としての遊び", desc: "審査員は数百〜数千の応募作に目を通す必要があります。だから遊びは一目で分かること、それでいて面白さを欠かないこと。画面も、丁寧だが煩雑にならないことを目指しました。" },
-      { title: "コアメカニクス", desc: "止まればやられる — 動き続けなければ、敵の弾だけでなく足元の床タイルにも襲われます。\n敵の弾で撃ち返せ — 眼前の盾で敵の「赤」弾を跳ね返すと、自分の「緑」弾に変わり、敵を倒せます。" },
-      { title: "予想外の正のフィードバック", desc: "「緑」弾に当たった「赤」弾も「緑」に変わります。局面が荒れるほど危険を避けるのに必死なのに、いつの間にかスコアとコンボが貯まり、狙ってもいない敵が砕け散る絵と音が入ってきます。" }
+      { title: "簡易な有限状態機械（FSM）システム", desc: "プレイヤーと各モンスターについて、Unity風のステート遷移図を作成し、各ステートの挙動ロジックと遷移条件をモジュール化しました。" },
+      { title: "各ステージに新鮮さを持たせる", desc: "新しいステージごとに内容を変化させつつ、新しいスキルやテクニックも投入することで、クリア以外にもプレイヤーが継続的にポジティブなフィードバックを得られるようにしています。" },
+      { title: "スキル間の連携を確保する", desc: "移動：基本アクション。\nジャンプ：着地するまで再使用不可。\n攻撃：壁を破壊し、敵を攻撃する。\nダッシュ：ジャンプと組み合わせてより遠くへ移動できる。着地するまで再使用不可。\n火球発射：遠距離攻撃。壁を破壊し、敵を攻撃する。着地するまで再使用不可。\n火球操作：狙った方向へ発射し、空中で軌道を変えられる。画面外へは出せない。\nスローモーション：高精度な操作の難易度を下げるが、使用時間に制限がある。\nテレポート：プレイヤーと火球の位置を入れ替え、全スキルのクールダウンをリセットする。全スキルを連携させる鍵であり、空中での自由な移動を可能にする。\nカメラ移動：より遠くまで見渡せるようになり、火球の移動範囲も広がる。" }
     ],
     h4: "成果",
-    p4: "UE5の初心者として、この作品にはそれなりに満足しています。\n文字の説明なしで、1〜2回遊べば誰でも操作を掴めるゲームだと思います。\n高得点を狙うとなると話は別なので、プレイヤーの負けず嫌いを刺激する余地はあります。",
-    itchLink: "itch.io でプレイ →"
+    p4: "10のステージからなる、全体で30分程度のシンプルなパズルアクションゲームを完成させました。\n簡易なステートマシンシステムを実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nNintendo Switch向けにゲームを開発する、初めての経験となりました。"
   }
 };
 
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
-/**
- * 在主展示区切换到指定媒体。
- * @param {number} index 媒体列表下标
- */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -417,7 +404,6 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
-/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -433,16 +419,10 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
-/**
- * @param {string[]} tags
- */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
-/**
- * @param {{title: string, desc: string}[]} goals
- */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -456,7 +436,6 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
-/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;

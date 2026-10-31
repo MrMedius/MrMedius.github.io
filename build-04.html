@@ -224,6 +224,15 @@
   }
   .tech-goal h3 { font-size: 18px; margin-bottom: 8px; }
   .tech-goal p { color: var(--text-dim); font-size: 16px; white-space: pre-line; }
+  .goal-rows {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.75em;
+    row-gap: 0.55em;
+    color: var(--text-dim);
+    font-size: 16px;
+  }
+  .goal-body { white-space: pre-line; }
 
   #techGoals { margin-bottom: 0; }
 
@@ -263,12 +272,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.04<small>Unity</small></div>
-  <h1 data-i18n="title">点柴</h1>
-  <p class="lede" data-i18n="lede">一款使用各种枪械同时点燃所有柴火的游戏。</p>
+  <div class="build-tag">BUILD.04<small>Web</small></div>
+  <h1 data-i18n="title">跳蚤市场</h1>
+  <p class="lede" data-i18n="lede">这是一个采用「跳蚤市场」模式的在线交易平台。</p>
 
   <div class="stack">
-    <span>C#</span><span>Unity</span><span>Aseprite</span>
+    <span>HTML</span><span>JavaScript</span><span>PHP</span><span>SQL</span>
   </div>
 
   <div class="gallery">
@@ -276,29 +285,32 @@
     <div class="gallery-thumbs" id="galleryThumbs"></div>
   </div>
 
-  <div class="links-row">
-    <a href="https://mrmedius.itch.io/light-the-firewood" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
-    <a href="https://unityroom.com/games/light-the-firewood" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
-  </div>
-
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 策划向</div>
+      <div class="value" data-i18n="genreValue">网页类 · 技术向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">个人开发</div>
+      <div class="value" data-i18n="creatorValue">团队开发 · 程序</div>
     </div>
     <div class="info-block">
-      <div class="label" data-i18n="tagsLabel">游戏标签</div>
+      <div class="label" data-i18n="tagsLabel">网页标签</div>
       <div class="tags" id="tagsList"></div>
     </div>
   </div>
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。</p>
+    <p data-i18n="p1">这是在 CSE 株式会社实习期间完成的作品。
+从发布商品、购买、发送发货通知、确认收货，一直到撰写评价，用户可以直观、顺畅地走完整个交易流程。
+此项目由包括我在内的 4 名程序员完成。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
+    <p data-i18n="pContrib">主要负责用户登录、注册、账号发行、信息维护和网页安全。
+目标是让用户在正式使用网站之前就留下不错的第一印象，并让忘记密码的用户能够安全地找回账号。</p>
   </section>
 
   <section class="block">
@@ -308,99 +320,100 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。
-将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。
-在unityroom等公共平台上发布后已经有几百人体验过。</p>
+    <p data-i18n="p4">第一周把网站的全部逻辑跑通。
+第二周持续打磨使用体验，并参考同类产品加入了不少提升体验的设计。
+最终在发表环节得到了相当正面的评价。</p>
   </section>
-
 </main>
 
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/light_v.mp4', poster: 'asset/light_p_0.png' },
-  { type: 'image', src: 'asset/light_p_1.png' },
-  { type: 'image', src: 'asset/light_p_2.png' },
-  { type: 'image', src: 'asset/light_p_3.png' },
-  { type: 'image', src: 'asset/light_p_4.png' },
-  { type: 'image', src: 'asset/light_p_5.png' }
+  { type: 'video', src: 'asset/shop_v.mp4', poster: 'asset/shop_p_0.png' },
+  { type: 'image', src: 'asset/shop_p_1.png' },
+  { type: 'image', src: 'asset/shop_p_2.png' },
+  { type: 'image', src: 'asset/shop_p_3.png' },
+  { type: 'image', src: 'asset/shop_p_4.png' },
+  { type: 'image', src: 'asset/shop_p_5.png' },
+  { type: 'image', src: 'asset/shop_p_6.png' },
+  { type: 'image', src: 'asset/shop_p_7.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "点柴 · 项目详情",
+    pageTitle: "跳蚤市场 · 项目详情",
     back: "← 返回项目列表",
-    title: "点柴",
-    lede: "一款使用各种枪械同时点燃所有柴火的游戏。",
+    title: "跳蚤市场",
+    lede: "这是一个采用「跳蚤市场」模式的在线交易平台。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 策划向",
+    genreValue: "网页类 · 技术向",
     creatorLabel: "制作者信息",
-    creatorValue: "个人开发",
-    tagsLabel: "游戏标签",
-    tags: ["解谜", "像素风", "2D", "关卡制"],
+    creatorValue: "团队开发 · 程序",
+    tagsLabel: "网页标签",
+    tags: ["二手", "C2C"],
     h1: "概述",
-    p1: "设计了7种不同枪械，玩家不断观察和试错，然后在资源有限的情况下同时点燃所有的柴堆。",
+    p1: "这是在 CSE 株式会社实习期间完成的作品。\n从发布商品、购买、发送发货通知、确认收货，一直到撰写评价，用户可以直观、顺畅地走完整个交易流程。\n此项目由包括我在内的 4 名程序员完成。",
+    contribHeading: "个人贡献",
+    pContrib: "主要负责用户登录、注册、账号发行、信息维护和网页安全。\n目标是让用户在正式使用网站之前就留下不错的第一印象，并让忘记密码的用户能够安全地找回账号。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "使用基类和子类的体系", desc: "不仅可以提高代码的易读性，也能降低后续的扩张难度。" },
-      { title: "确保所有预制体的独立性", desc: "方便后续统一管理和提高拼凑关卡时的效率。" },
-      { title: "对象池系统", desc: "反复利用已经生成的子弹等预制体，降低性能开销。" },
-      { title: "可视化教程", desc: "利用简单的动图和文字提示，引导玩家自己理解游戏的设计意图。" }
+      { title: "登录页面", desc: "基本功能：使用用户 ID 和密码登录，并防范 SQL 注入。\n细节处理：说明各种错误的原因。\n可以显示或隐藏密码。\n失败达到一定次数后暂时停用该账号。\n一段时间没有操作时会话超时，并回到登录页面。" },
+      { title: "注册页面", desc: "基本功能：输入并确认密码，收集用户的基本信息，并核对注册内容。\n细节处理：检查密码长度，并拒绝禁用字符。\n显示密码强度。\n记录秘密问题及答案。\n确保邮箱的书写格式正确。\n密码和秘密问题的答案在保存时做哈希化处理。\n根据邮编自动填入地址。\n把发行的用户 ID 自动写入登录页面。" },
+      { title: "密码找回页面", desc: "基本功能：用用户 ID 和秘密问题确认本人。\n新密码的规则与注册时一致。\n细节处理：新密码不能与当前密码相同。" },
+      { title: "404 错误页面", desc: "基本功能：检测要访问的页面是否存在，不存在则显示 404。\n细节处理：提供返回登录页面的按钮。" }
     ],
     h4: "成果",
-    p4: "完成了一个由15个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将对象池功能落地，保证未来可以在自己的代码框架中复现这一功能。\n在unityroom等公共平台上发布后已经有几百人体验过。",
-    itchLink: "在 itch.io 试玩 →",
-    unityroomLink: "在 unityroom 试玩 →"
+    p4: "第一周把网站的全部逻辑跑通。\n第二周持续打磨使用体验，并参考同类产品加入了不少提升体验的设计。\n最终在发表环节得到了相当正面的评价。"
   },
   en: {
-    pageTitle: "Light the Firewood · Project Detail",
+    pageTitle: "FLEA MARKET · Project Detail",
     back: "← Back to projects",
-    title: "Light the Firewood",
-    lede: "A game about igniting all the firewood piles simultaneously using various weapons.",
+    title: "FLEA\u00A0MARKET",
+    lede: "An online marketplace built on a flea-market model.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Design-Focused",
+    genreValue: "Web Project · Engineering-Focused",
     creatorLabel: "Creator",
-    creatorValue: "Solo Development",
+    creatorValue: "Team Development · Programming",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Pixel Art", "2D", "Level-Based"],
+    tags: ["Secondhand", "C2C"],
     h1: "Overview",
-    p1: "Featuring seven distinct firearms, the game challenges players to use observation and trial-and-error to light all the woodpiles at once under limited resource constraints.",
+    p1: "Made during an internship at CSE Co., Ltd.\nFrom listing an item, buying it, sending a shipping notice, and confirming receipt through to writing a review, a user can move through the whole transaction in a clear, smooth flow.\nFour programmers, including me, built the project.",
+    contribHeading: "Personal Contributions",
+    pContrib: "I was mainly responsible for login, registration, account issuance, account information, and web security.\nThe aim was to leave a good first impression before users entered the rest of the site, and to let people who forgot a password recover the account safely.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Base Class / Subclass Hierarchy", desc: "Improves code readability and makes future expansion significantly easier." },
-      { title: "Fully Independent Prefabs", desc: "Keeps every prefab self-contained, making unified management and level assembly far more efficient." },
-      { title: "Object Pool System", desc: "Reuses already-instantiated prefabs, such as bullets, instead of creating new ones, cutting down performance overhead." },
-      { title: "Visual Tutorial", desc: "Uses simple animated hints and on-screen text to let players work out the game's mechanics on their own." }
+      { title: "Login Page", desc: "Basic functions: sign in with a user ID and password, and prevent SQL injection.\nDetails: explain the cause of each error.\nShow or hide the password.\nAfter a certain number of failed attempts, suspend that account.\nWhen the session times out after a period of inactivity, return to the login page." },
+      { title: "Registration Page", desc: "Basic functions: enter and confirm a password, collect the user's basic information, and check the registration details.\nDetails: check the password length and reject disallowed characters.\nShow the password strength.\nStore a secret question and its answer.\nMake sure the email address is written in the correct format.\nHash the password and the secret answer when saving them.\nFill in the address from the postal code.\nWrite the issued user ID into the login page automatically." },
+      { title: "Password Recovery Page", desc: "Basic functions: confirm the person with the user ID and the secret question.\nApply the same password rules as registration.\nDetails: reject a new password that matches the current one." },
+      { title: "404 Error Page", desc: "Basic functions: if the requested page does not exist, show a 404 page.\nDetails: provide a button that returns to the login page." }
     ],
     h4: "Outcome",
-    p4: "Shipped a simple puzzle game made up of 15 levels, roughly half an hour long from start to finish.\nImplemented a working object pool system that can now be reused in future projects built on my own framework.\nReleased on public platforms like unityroom, where it's already been played by several hundred people.",
-    itchLink: "Play on itch.io →",
-    unityroomLink: "Play on unityroom →"
+    p4: "In the first week we got every flow on the site working.\nIn the second week we kept refining how it felt to use, and added a number of experience improvements drawn from similar products.\nThe final presentation received a clearly positive response."
   },
   ja: {
-    pageTitle: "薪を灯す・プロジェクト詳細",
+    pageTitle: "フリーマーケット・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "薪を灯す",
-    lede: "様々な銃で全ての薪を同時に点灯させてレベルクリアするゲームです。",
+    title: "フリーマーケット",
+    lede: "フリーマーケット形式のオンライン取引プラットフォーム。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 企画重視",
+    genreValue: "ウェブ制作 · 技術重視",
     creatorLabel: "制作者情報",
-    creatorValue: "個人開発",
-    tagsLabel: "ゲームタグ",
-    tags: ["パズル", "ドット絵", "2D", "レベル制"],
+    creatorValue: "チーム開発 · プログラム",
+    tagsLabel: "ウェブタグ",
+    tags: ["中古", "C2C"],
     h1: "概要",
-    p1: "7種類の異なる銃器が登場。限られたリソースの中で、観察と試行錯誤を重ね、すべての薪の山に一斉に火を灯すことに挑みます。",
+    p1: "CSE株式会社のインターンシップ期間中に制作した作品。\n商品の出品、購入、発送通知、受取確認からレビューの投稿まで、ユーザーは取引の一連の流れを分かりやすく、スムーズに進めることができる。\nプログラマー4名（私を含む）で制作した。",
+    contribHeading: "個人の貢献",
+    pContrib: "ユーザーログイン、新規登録、アカウント発行、情報の保守、ウェブの安全性を主に担当しました。\nサイトを本格的に使い始める前から良い印象を持ってもらえるようにし、パスワードを忘れたユーザーが安全にアカウントを取り戻せるようにしました。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "基底クラス・サブクラス構成", desc: "コードの可読性を高めるだけでなく、今後の機能拡張の難易度も下げられます。" },
-      { title: "プレハブの独立性を確保", desc: "統一的な管理がしやすくなり、レベルを組み立てる際の効率も向上します。" },
-      { title: "オブジェクトプールシステム", desc: "生成済みの弾などのプレハブを使い回すことで、パフォーマンスオーバーヘッドを抑えています。" },
-      { title: "ビジュアルチュートリアル", desc: "シンプルなアニメーションとテキストのヒントを用いて、プレイヤー自身にゲームの設計意図を理解してもらう仕組みです。" }
+      { title: "ログインページ", desc: "基本機能：ユーザーIDとパスワードでログインし、SQLインジェクションを防ぎます。\n工夫した点：各種エラーの原因を示します。\nパスワードの表示と非表示を切り替えられます。\n失敗が一定回数に達したアカウントは、一時停止します。\n一定時間操作がなければセッションを切り、ログインページへ戻します。" },
+      { title: "新規登録ページ", desc: "基本機能：パスワードの入力と確認、ユーザーの基本情報の収集、登録内容の確認を行います。\n工夫した点：パスワードの長さを確認し、使用できない文字は拒否します。\n強度を表示します。\n秘密の質問と答えを登録します。\nメールアドレスの書式が正しいことを確認します。\nパスワードと秘密の答えは、保存時にハッシュ化処理を行います。\n郵便番号から住所を自動入力します。\n発行されたユーザーIDをログインページへ自動で記入します。" },
+      { title: "パスワード再設定ページ", desc: "基本機能：ユーザーIDと秘密の質問で本人確認を行います。\n新しいパスワードの規則は登録時と同一にします。\n工夫した点：現在のパスワードと同じものは再設定できないようにします。" },
+      { title: "404エラーページ", desc: "基本機能：アクセスしたページが存在しない場合は404を表示します。\n工夫した点：ログインページへ戻るボタンを用意します。" }
     ],
     h4: "成果",
-    p4: "15のステージからなる、全体で30分程度のシンプルなパズルゲームを完成させました。\nオブジェクトプール機能を実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nunityroomなどの公開プラットフォームで公開し、すでに数百人にプレイされています。",
-    itchLink: "itch.io でプレイ →",
-    unityroomLink: "unityroom でプレイ →"
+    p4: "1週目で、サイトの全ロジックを通しました。\n2週目は使用感を磨き続け、同種の製品を参考に、体験を高める設計を多く加えました。\n最終的な発表では、かなり好意的な評価をいただきました。"
   }
 };
 
@@ -418,6 +431,12 @@ function showMediaItem(index) {
 }
 
 function renderGallery() {
+  const gallery = document.querySelector('.gallery');
+  if (mediaItems.length === 0) {
+    gallery.hidden = true;
+    return;
+  }
+  gallery.hidden = false;
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
   mediaItems.forEach((item, i) => {
@@ -436,17 +455,59 @@ function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
+/** 技术目标里的小标题。续行归入上一项，三种语言的正文共用同一列宽。 */
+const goalLabelPattern = /^(基本功能：|细节处理：|Basic functions:|Details:|基本機能：|工夫した点：)\s*(.*)$/;
+
+/**
+ * 把「小标题：正文」排成两列，续行与第一行正文对齐。
+ * @param {string} desc 技术目标说明
+ * @returns {HTMLElement}
+ */
+function renderGoalBody(desc) {
+  const rows = document.createElement('div');
+  rows.className = 'goal-rows';
+  let bodyEl = null;
+  desc.split('\n').forEach((line) => {
+    const match = line.match(goalLabelPattern);
+    if (match) {
+      const label = document.createElement('div');
+      label.className = 'goal-label';
+      label.textContent = match[1];
+      bodyEl = document.createElement('div');
+      bodyEl.className = 'goal-body';
+      bodyEl.textContent = match[2];
+      rows.appendChild(label);
+      rows.appendChild(bodyEl);
+      return;
+    }
+    if (!bodyEl) return;
+    bodyEl.textContent += (bodyEl.textContent ? '\n' : '') + line;
+  });
+  return rows;
+}
+
+/**
+ * 渲染技术目标列表。
+ * @param {{title: string, desc: string}[]} goals 当前语言的技术目标
+ */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
-  wrap.innerHTML = goals.map((g, i) => `
-    <div class="tech-goal">
-      <div class="num">${String(i + 1).padStart(2, '0')}</div>
-      <div>
-        <h3>${g.title}</h3>
-        <p>${g.desc}</p>
-      </div>
-    </div>
-  `).join('');
+  wrap.replaceChildren();
+  goals.forEach((g, i) => {
+    const row = document.createElement('div');
+    row.className = 'tech-goal';
+    const num = document.createElement('div');
+    num.className = 'num';
+    num.textContent = String(i + 1).padStart(2, '0');
+    const main = document.createElement('div');
+    const heading = document.createElement('h3');
+    heading.textContent = g.title;
+    main.appendChild(heading);
+    main.appendChild(renderGoalBody(g.desc));
+    row.appendChild(num);
+    row.appendChild(main);
+    wrap.appendChild(row);
+  });
 }
 
 function render() {

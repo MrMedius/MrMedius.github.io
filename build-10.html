@@ -264,16 +264,21 @@
 
 <main>
   <div class="build-tag">BUILD.10<small>Unity</small></div>
-  <h1 data-i18n="title">黄昏森林</h1>
-  <p class="lede" data-i18n="lede">战斗、探索、生存，战胜最终Boss逃出生天！</p>
+  <h1 data-i18n="title">都市淘金</h1>
+  <p class="lede" data-i18n="lede">破坏！破坏！破坏！别让自己停下来！</p>
 
   <div class="stack">
-    <span>Unity</span><span>Visual Scripting</span><span>Aseprite</span>
+    <span>C#</span><span>Unity</span>
   </div>
 
   <div class="gallery">
     <div class="gallery-main" id="galleryMain"></div>
     <div class="gallery-thumbs" id="galleryThumbs"></div>
+  </div>
+
+  <div class="links-row">
+    <a href="https://mrmedius.itch.io/citys-gold-rush" target="_blank" rel="noopener" data-i18n="itchLink">在 itch.io 试玩 →</a>
+    <a href="https://unityroom.com/games/citysgoldrush" target="_blank" rel="noopener" data-i18n="unityroomLink">在 unityroom 试玩 →</a>
   </div>
 
   <div class="info-panel">
@@ -293,9 +298,8 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">制作了两个关卡。
-其一，完成了一套任务线。
-其二，完成了一个拥有两个阶段的Boss。</p>
+    <p data-i18n="p1">初学Unity程序开发后，第一次尝试独立制作的小游戏。
+参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。</p>
   </section>
 
   <section class="block">
@@ -305,95 +309,107 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。</p>
+    <p data-i18n="p4">对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。
+在unityroom等公共平台上发布后已经有上百人体验过。</p>
   </section>
+
 </main>
 
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/dusk_v.mp4', poster: 'asset/dusk_p_0.png' },
-  { type: 'image', src: 'asset/dusk_p_1.png' },
-  { type: 'image', src: 'asset/dusk_p_2.png' },
-  { type: 'image', src: 'asset/dusk_p_3.png' }
+  { type: 'video', src: 'asset/city_v.mp4', poster: 'asset/city_p_0.png' },
+  { type: 'image', src: 'asset/city_p_1.png' },
+  { type: 'image', src: 'asset/city_p_2.png' },
+  { type: 'image', src: 'asset/city_p_3.png' },
+  { type: 'image', src: 'asset/city_p_4.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "黄昏森林 · 项目详情",
+    pageTitle: "都市淘金 · 项目详情",
     back: "← 返回项目列表",
-    title: "黄昏森林",
-    lede: "战斗、探索、生存，战胜最终Boss逃出生天！",
+    title: "都市淘金",
+    lede: "破坏！破坏！破坏！别让自己停下来！",
     genreLabel: "作品类型",
     genreValue: "游戏类 · 策划向",
     creatorLabel: "制作者信息",
     creatorValue: "个人开发",
     tagsLabel: "游戏标签",
-    tags: ["射击", "像素风", "2D"],
+    tags: ["TPS", "生存", "3D"],
     h1: "概述",
-    p1: "制作了两个关卡。\n其一，完成了一套任务线。\n其二，完成了一个拥有两个阶段的Boss。",
+    p1: "初学Unity程序开发后，第一次尝试独立制作的小游戏。\n参考理查德·巴特尔的玩家分类理论，思考如何让玩家有持续游玩的动力。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "最初的作品", desc: "在正式开始接触编程前，使用可视化工具来撰写代码逻辑。" },
-      { title: "使用Animator制作动画", desc: "尝试用Blend Tree来制作八个方向的移动动画。" },
-      { title: "地图资源最大化", desc: "利用路线引导，先让玩家向上移动，然后利用任务引导玩家向下移动，最后把出口设置在上方。\n如此一来简单的地图就在无形中被重复利用了两次。" },
-      { title: "Boss制作", desc: "制作了一个拥有两个阶段的Boss战。" }
-
+      { title: "游玩动力——破坏（杀手型玩家）", desc: "对，就是单纯的破坏欲，爆炸、混乱和冲撞。甚至持续的破坏还能获得时间奖励，激励他们延长这次狂欢。" },
+      { title: "游玩动力——都市破坏率（探索型玩家）", desc: "左上角的分数和都市破坏率就是他们获得正反馈的最佳来源，尤其是那些对于全收集有着极强欲望的玩家。" },
+      { title: "游玩动力——游戏内排名（成就型玩家）", desc: "游戏结束后给出的排名是玩家最初的目标，如果能升到第一名，这类玩家应该会很有成就感。" },
+      { title: "游玩动力——游戏外排名（社交型玩家）", desc: "目前只有 unityroom 有在线排名功能，看到自己的名次超越了其他玩家，这类玩家应该会很高兴。" }
     ],
     h4: "成果",
-    p4: "第一次尝试独自开发的游戏，其中的人物系统和Animator的使用技巧为我后续的开发积累了不少经验。"
+    p4: "对我来说是一次比较有意义的尝试，因为它是基于我学习的理论知识设计的，而不是单纯因为好玩。\n在unityroom等公共平台上发布后已经有上百人体验过。",
+    itchLink: "在 itch.io 试玩 →",
+    unityroomLink: "在 unityroom 试玩 →"
   },
   en: {
-    pageTitle: "Dusk Forest · Project Detail",
+    pageTitle: "City's Gold Rush · Project Detail",
     back: "← Back to projects",
-    title: "Dusk Forest",
-    lede: "Combat, exploration, and survival—defeat the final boss and escape!",
+    title: "City's Gold Rush",
+    lede: "Destroy! Destroy! Destroy! Don't you dare stop!",
     genreLabel: "Genre",
     genreValue: "Game Project · Design-Focused",
     creatorLabel: "Creator",
     creatorValue: "Solo Development",
     tagsLabel: "Tags",
-    tags: ["Shooting", "Pixel Art", "2D"],
+    tags: ["TPS", "Survival", "3D"],
     h1: "Overview",
-    p1: "Built two levels.\nFirst, put together a full questline.\nSecond, created a two-phase boss fight.",
+    p1: "After first learning Unity programming, this was my first attempt at making a mini-game on my own.\nDrawing on Richard Bartle's player taxonomy, I thought about what would keep people playing.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "First Real Project", desc: "Before formally learning to code, used a visual scripting tool to write out the game logic." },
-      { title: "Animating with Animator", desc: "Experimented with Blend Trees to create eight-directional movement animations." },
-      { title: "Getting the Most Out of the Map", desc: "Used route guidance to first send the player upward, then used the questline to guide them back down, and finally placed the exit up top.\nThat way, a simple map ends up being reused twice without the player noticing." },
-      { title: "Boss Design", desc: "Built a two-phase boss fight." }
+      { title: "Play Motivation — Destruction (Killers)", desc: "That's right: the urge to smash things. Explosions, chaos, collisions. Keep wrecking and you even get a time bonus, so the rampage lasts longer." },
+      { title: "Play Motivation — City Destruction Rate (Explorers)", desc: "The score and city destruction rate in the top-left are their best source of feedback—especially for players with a strong urge to 100% everything." },
+      { title: "Play Motivation — In-Game Rank (Achievers)", desc: "The rank shown when the run ends is their first goal. Hitting #1 should feel like a real accomplishment for this type." },
+      { title: "Play Motivation — External Leaderboard (Socializers)", desc: "Right now only unityroom has an online leaderboard. Seeing their name climb past other players should make this type happy." }
     ],
     h4: "Outcome",
-    p4: "My first solo-developed game. The character system and the Animator techniques I picked up here gave me a lot to carry into later projects."
+    p4: "A fairly meaningful experiment for me—it was designed from theory I'd studied, not just because it seemed fun.\nReleased on public platforms like unityroom, where it's already been played by over a hundred people.",
+    itchLink: "Play on itch.io →",
+    unityroomLink: "Play on unityroom →"
   },
   ja: {
-    pageTitle: "ダスク フォレスト・プロジェクト詳細",
+    pageTitle: "町のゴールドラッシュ・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ダスク フォレスト",
-    lede: "戦闘・探索・サバイバル――ラスボスを倒して脱出しよう！",
+    title: "町のゴールドラッシュ",
+    lede: "破壊！破壊！破壊！止まるな！",
     genreLabel: "作品の種類",
     genreValue: "ゲーム制作 · 企画重視",
     creatorLabel: "制作者情報",
     creatorValue: "個人開発",
     tagsLabel: "ゲームタグ",
-    tags: ["シューティング", "ドット絵", "2D"],
+    tags: ["TPS", "サバイバル", "3D"],
     h1: "概要",
-    p1: "2つのレベルを開発。\n1つ目は、一連のクエストを実装。\n2つ目は、2段階のフェーズを持つボスを作成。",
+    p1: "Unityのプログラム開発を学び始めたあと、初めて一人で作ったミニゲーム。\nリチャード・バートルのプレイヤータイプ論を参考に、プレイヤーが遊び続けられる動機を考えた。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "最初の本格的な作品", desc: "本格的にプログラミングを学ぶ前に、ビジュアルスクリプティングツールを使ってゲームロジックを組みました。" },
-      { title: "Animatorによるアニメーション制作", desc: "Blend Treeを使い、8方向移動のアニメーションを作成しました。" },
-      { title: "マップ素材の使い回し", desc: "まずルート誘導でプレイヤーを上へ進ませ、次にクエストで下へと誘導し、最後に出口を上部に配置しました。\nこうすることで、シンプルなマップをプレイヤーに気づかれずに2回使い回しています。" },
-      { title: "ボス制作", desc: "2段階のフェーズを持つボス戦を制作しました。" }
+      { title: "プレイ動機——破壊（キラー型プレイヤー）", desc: "そう、ただ壊したいという欲求です。爆発、混乱、衝突。破壊を続ければタイムボーナスまで入り、この狂騒を長引かせます。" },
+      { title: "プレイ動機——都市破壊率（エクスプローラー型プレイヤー）", desc: "左上のスコアと都市破壊率が、彼らにとって最大の正のフィードバックになります。とくにコンプリート欲の強いプレイヤーには刺さります。" },
+      { title: "プレイ動機——ゲーム内ランク（アチーバー型プレイヤー）", desc: "プレイ終了時に出る順位が最初の目標になります。1位まで上がれたら、このタイプは達成感を得やすいです。" },
+      { title: "プレイ動機——ゲーム外ランキング（ソーシャライザー型プレイヤー）", desc: "現状、オンライン順位があるのは unityroom だけです。自分の順位が他プレイヤーを追い越すのを見れば、このタイプは喜ぶはずです。" }
     ],
     h4: "成果",
-    p4: "初めて一人で開発したゲームで、ここで得たキャラクターシステムやAnimatorの使い方は、その後の開発に大いに役立ちました。"
+    p4: "自分にとっては意味のある試みでした。面白いから作ったのではなく、学んだ理論に基づいて設計したからです。\nunityroom などの公開プラットフォームで公開し、すでに100人以上にプレイされています。",
+    itchLink: "itch.io でプレイ →",
+    unityroomLink: "unityroom でプレイ →"
   }
 };
 
 let currentLang = localStorage.getItem('site-lang') || 'ja';
 let activeMediaIndex = 0;
 
+/**
+ * 在主展示区切换到指定媒体。
+ * @param {number} index 媒体列表下标
+ */
 function showMediaItem(index) {
   activeMediaIndex = index;
   const item = mediaItems[index];
@@ -404,6 +420,7 @@ function showMediaItem(index) {
   document.querySelectorAll('.thumb-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
 }
 
+/** 根据 mediaItems 生成缩略图条并显示当前项。 */
 function renderGallery() {
   const thumbs = document.getElementById('galleryThumbs');
   thumbs.innerHTML = '';
@@ -419,10 +436,16 @@ function renderGallery() {
   showMediaItem(activeMediaIndex);
 }
 
+/**
+ * @param {string[]} tags
+ */
 function renderTags(tags) {
   document.getElementById('tagsList').innerHTML = tags.map(tag => `<span>${tag}</span>`).join('');
 }
 
+/**
+ * @param {{title: string, desc: string}[]} goals
+ */
 function renderTechGoals(goals) {
   const wrap = document.getElementById('techGoals');
   wrap.innerHTML = goals.map((g, i) => `
@@ -436,6 +459,7 @@ function renderTechGoals(goals) {
   `).join('');
 }
 
+/** 按当前语言刷新文案、标签与技术目标。空字符串也会写入，避免占位底稿残留。 */
 function render() {
   const t = translations[currentLang];
   document.title = t.pageTitle;

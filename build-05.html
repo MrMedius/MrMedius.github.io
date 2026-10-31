@@ -263,12 +263,12 @@
 </header>
 
 <main>
-  <div class="build-tag">BUILD.05<small>OpenGL</small></div>
-  <h1 data-i18n="title">奔跑吧！魔法师！</h1>
-  <p class="lede" data-i18n="lede">使用各种技能组合，从地图的最左侧跑酷到最右侧。</p>
+  <div class="build-tag">BUILD.05<small>Unity</small></div>
+  <h1 data-i18n="title">咏叹调</h1>
+  <p class="lede" data-i18n="lede">在一座被音乐包裹的城市中，玩家作为侦探追查着繁华下最黑暗的秘密。</p>
 
   <div class="stack">
-    <span>C++</span><span>OpenGL</span><span>NSP builder</span><span>GIMP</span>
+    <span>C#</span><span>Unity</span><span>Excel</span>
   </div>
 
   <div class="gallery">
@@ -279,11 +279,11 @@
   <div class="info-panel">
     <div class="info-block">
       <div class="label" data-i18n="genreLabel">作品类型</div>
-      <div class="value" data-i18n="genreValue">游戏类 · 技术向 · 策划向</div>
+      <div class="value" data-i18n="genreValue">游戏类 · 技术向</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="creatorLabel">制作者信息</div>
-      <div class="value" data-i18n="creatorValue">个人开发</div>
+      <div class="value" data-i18n="creatorValue">团队开发 · 程序</div>
     </div>
     <div class="info-block">
       <div class="label" data-i18n="tagsLabel">游戏标签</div>
@@ -293,9 +293,17 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h1">概述</h2>
-    <p data-i18n="p1">核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。
-设计简易的有限状态机(FSM)系统。
-确保地图要素的独立性，方便量产关卡。</p>
+    <p data-i18n="p1">这是参加 TapTap「2026 聚光灯」21 天游戏创作挑战的作品。
+本作目前只完成了序章，是由 2 名程序、1 名策划、3 名美术、1 名音乐组成的 7 人团队在 21 天内完成的。
+主要由驱动整个游戏的故事系统、用于推理真相的记忆宫殿和拓展搜证玩法的聆听功能组成。</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-heading" data-i18n="contribHeading">个人贡献</h2>
+    <p data-i18n="pContrib">独立完成了整个故事系统的开发，其中包括对话系统和任务系统两个模块。
+此系统的核心是维护了四张 Excel 表格，包括对话表、选择器表、任务表和目标表，易于修改且可拓展性较强。
+在完成表格的编辑后，输出为 csv 类型文件，经由 Unity 读入游戏。
+玩家在每次交互后，系统都会通过交互对象的 ID 来寻找表格中对应的演出。</p>
   </section>
 
   <section class="block">
@@ -305,89 +313,106 @@
 
   <section class="block">
     <h2 class="section-heading" data-i18n="h4">成果</h2>
-    <p data-i18n="p4">完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。
-将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。
-初次体验在Nintendo Switch平台上开发游戏。</p>
+    <p data-i18n="p4">在 21 天内，我们完成了一个大约 10–15 分钟左右的序章，但可玩的版本暂时只有简体中文的。
+序章包含六个场景、六位可交互人物、数十段不同的对话和五个任务。
+在故事系统开发完成后，即便是没有编程能力的策划，也能通过 Excel 表格轻易地参与到游戏的一线制作中。</p>
   </section>
+
 </main>
 
 <script>
 /** 媒体素材：第一项是视频，之后是截图 */
 const mediaItems = [
-  { type: 'video', src: 'asset/runner_v_1.mp4', poster: 'asset/runner_p_0_1.png' },
-  { type: 'video', src: 'asset/runner_v_2.mp4', poster: 'asset/runner_p_0_2.png' },
-  { type: 'image', src: 'asset/runner_p_1.png' },
-  { type: 'image', src: 'asset/runner_p_2.png' },
-  { type: 'image', src: 'asset/runner_p_3.png' },
-  { type: 'image', src: 'asset/runner_p_4.png' }
+  { type: 'video', src: 'asset/aria_v.mp4', poster: 'asset/aria_p_0.png' },
+  { type: 'image', src: 'asset/aria_p_1.png' },
+  { type: 'image', src: 'asset/aria_p_2.png' },
+  { type: 'image', src: 'asset/aria_p_3.png' },
+  { type: 'image', src: 'asset/aria_p_4.png' },
+  { type: 'image', src: 'asset/aria_p_5.png' },
+  { type: 'image', src: 'asset/aria_p_6.png' }
 ];
 
 const translations = {
   zh: {
-    pageTitle: "奔跑吧！魔法师！ · 项目详情",
+    pageTitle: "咏叹调 · 项目详情",
     back: "← 返回项目列表",
-    title: "奔跑吧！魔法师！",
-    lede: "使用各种技能组合，从地图的最左侧跑酷到最右侧。",
+    title: "咏叹调",
+    lede: "在一座被音乐包裹的城市中，玩家作为侦探追查着繁华下最黑暗的秘密。",
     genreLabel: "作品类型",
-    genreValue: "游戏类 · 技术向 · 策划向",
+    genreValue: "游戏类 · 技术向",
     creatorLabel: "制作者信息",
-    creatorValue: "个人开发",
+    creatorValue: "团队开发 · 程序",
     tagsLabel: "游戏标签",
-    tags: ["解谜", "动作", "2D", "关卡制"],
+    tags: ["文字冒险", "解谜"],
     h1: "概述",
-    p1: "核心设计思路是保证所有的技能都存在连携的效果，然后通过刷新使用次数的机制将整个技能框架串联起来。\n设计简易的有限状态机(FSM)系统。\n确保地图要素的独立性，方便量产关卡。",
+    p1: "这是参加 TapTap「2026 聚光灯」21 天游戏创作挑战的作品。\n本作目前只完成了序章，是由 2 名程序、1 名策划、3 名美术、1 名音乐组成的 7 人团队在 21 天内完成的。\n主要由驱动整个游戏的故事系统、用于推理真相的记忆宫殿和拓展搜证玩法的聆听功能组成。",
+    contribHeading: "个人贡献",
+    pContrib: "独立完成了整个故事系统的开发，其中包括对话系统和任务系统两个模块。\n此系统的核心是维护了四张 Excel 表格，包括对话表、选择器表、任务表和目标表，易于修改且可拓展性较强。\n在完成表格的编辑后，输出为 csv 类型文件，经由 Unity 读入游戏。\n玩家在每次交互后，系统都会通过交互对象的 ID 来寻找表格中对应的演出。",
     techGoalsHeading: "技术目标",
     techGoals: [
-      { title: "简易的有限状态机(FSM)系统", desc: "为玩家和每种怪物都制作了类似于Unity的状态迁移草图，然后模块化每个状态的行为逻辑和状态间的切换条件。" },
-      { title: "确保每一关都有新鲜感", desc: "新关卡保持内容变化的同时，也能做到推出新的技能和技巧，保证玩家能持续获得除了通关以外的正反馈。" },
-      { title: "确保技能间的连携", desc: "移动：基础能力。\n跳跃：落地前无法多次使用。\n攻击：破坏墙壁和攻击敌人。\n冲刺：可以和跳跃连携，移动到更远的位置，落地前无法多次使用。\n火球发射：远距离攻击，破坏墙壁、攻击敌人，落地前无法多次使用。\n火球操作：朝瞄准方向发射，可以在空中拐弯，无法飞出画面。\n慢动作模式：降低高精度操作的难度，但有时间限制。\n传送：玩家和火球交换位置，并重置所有技能的冷却。是连携所有技能的关键，让玩家可以在空中自由移动。\n镜头移动：可以看的更远，并且拓展火球的移动范围。" }
+      { title: "用四张表驱动整个流程", desc: "选择器表：玩家与对象交互后，按对象 ID、触发条件和优先级选出一段对话。\n对话表：播出台词、选项、分支，并执行其中的动作。\n其中动作包括写标记、开始或完成任务、切换章节、震动屏幕、为下一句配上语音等等。\n任务表：登记任务完成后做什么。\n目标表：登记任务中对应的每一条小目标。" },
+      { title: "实现开发去代码化", desc: "直接在 Excel 里改台词、条件、任务和立绘切换等等内容，导出 csv 后由 Unity 读入。\n只需要确保引擎中的物品 ID 与表格中设置的匹配即可。" },
+      { title: "对话选项功能", desc: "Choice 类对话会把文字分成若干选项，条件不成立的项不会出现。\n玩家点其中一项，对话进入对应的进程。" },
+      { title: "对话分支功能", desc: "Branch 类对话不会被玩家从明面上察觉，它会根据玩家的游玩进度和各种选择，在对应的节点呈现出截然不同的结果。" },
+      { title: "故事系统的纠错工具", desc: "在 Unity 编辑器菜单中增加 Tools/Story/Validate Data 功能，能够检查表格是否存在重复节点、指向不明确、语法错误、无法识别的动作等等问题，并会带上文件名和行号报出来。" },
+      { title: "故事系统的管理员工具", desc: "在 Unity 编辑器菜单中增加 Tools/Story/Story Debug 功能，能够打开一个工具页，用于调试和观察对话和任务的状态和情况。" }
     ],
     h4: "成果",
-    p4: "完成了一个由10个关卡组成的，全程大约半个小时的简单益智类小游戏。\n将简易的状态机系统落地，保证未来可以在自己的代码框架中复现这一功能。\n初次体验在Nintendo Switch平台上开发游戏。"
+    p4: "在 21 天内，我们完成了一个大约 10–15 分钟左右的序章，但可玩的版本暂时只有简体中文的。\n序章包含六个场景、六位可交互人物、数十段不同的对话和五个任务。\n在故事系统开发完成后，即便是没有编程能力的策划，也能通过 Excel 表格轻易地参与到游戏的一线制作中。"
   },
   en: {
-    pageTitle: "Runner Wizard · Project Detail",
+    pageTitle: "Aria: Echoes of Truth · Project Detail",
     back: "← Back to projects",
-    title: "Runner Wizard",
-    lede: "Combine your skills to parkour from the far left of the map all the way to the far right.",
+    title: "Aria:\u00A0Echoes\u00A0of\u00A0Truth",
+    lede: "In a city wrapped in music, you play a detective chasing the darkest secret beneath the splendor.",
     genreLabel: "Genre",
-    genreValue: "Game Project · Engineering-Focused · Design-Focused",
+    genreValue: "Game Project · Engineering-Focused",
     creatorLabel: "Creator",
-    creatorValue: "Solo Development",
+    creatorValue: "Team Development · Programming",
     tagsLabel: "Tags",
-    tags: ["Puzzle", "Action", "2D", "Level-Based"],
+    tags: ["Text Adventure", "Puzzle"],
     h1: "Overview",
-    p1: "The core design idea was to make sure every skill has some form of synergy with the others, then tie the whole skill framework together through a mechanic that refills how many times each skill can be used.\nDesigned a simple Finite State Machine (FSM) system.\nEnsured map elements stayed fully independent, making it easy to mass-produce levels.",
+    p1: "An entry for TapTap's 2026 Spotlight, a 21-day game jam.\nOnly the prologue is finished so far, made in those 21 days by a team of seven: 2 programmers, 1 designer, 3 artists, and 1 composer.\nIt is built around the story system that drives the game, a memory palace for reasoning out the truth, and a listening feature that extends the investigation.",
+    contribHeading: "Personal Contributions",
+    pContrib: "Independently built the entire story system, including a dialogue module and a quest module.\nIts core is four Excel sheets—dialogue, selector, quest, and objective—easy to revise and straightforward to extend.\nAfter editing, the sheets are exported as CSV and read into the game by Unity.\nAfter each interaction, the system looks up the matching performance in the sheets by the interacted object's ID.",
     techGoalsHeading: "Technical Goals",
     techGoals: [
-      { title: "Simple Finite State Machine (FSM) System", desc: "Sketched out Unity-style state transition diagrams for the player and every enemy type, then modularized each state's behavior logic and the conditions for switching between states." },
-      { title: "Keeping Every Level Feeling Fresh", desc: "Each new level introduces variation while also rolling out new skills and techniques, so players keep getting positive feedback beyond just clearing the stage." },
-      { title: "Ensuring Synergy Between Skills", desc: "Move: the base ability.\nJump: can't be used again until landing.\nAttack: breaks walls and hits enemies.\nDash: chains with jump to cover more distance; can't be used again until landing.\nFireball Shot: a ranged attack that breaks walls and hits enemies; can't be used again until landing.\nFireball Steer: fired toward the aim direction, can curve in mid-air, and can't leave the screen.\nSlow-Motion: eases high-precision inputs, but only lasts for a limited time.\nTeleport: swaps the player's position with the fireball's and resets the cooldown on every skill. This is the key that ties all the skills together, letting the player move freely through the air.\nCamera Pan: lets you see further ahead and extends how far the fireball can travel." }
+      { title: "Drive the Whole Flow with Four Sheets", desc: "Selector sheet: after the player interacts with an object, pick one dialogue by object ID, trigger conditions, and priority.\nDialogue sheet: play lines, choices, and branches, and run the actions written into them.\nActions include setting flags, starting or completing quests, changing chapters, shaking the screen, and attaching voice to the next line.\nQuest sheet: record what happens when a quest is completed.\nObjective sheet: record each small objective that belongs to a quest." },
+      { title: "Keep Content Work Out of Code", desc: "Lines, conditions, quests, portrait changes, and the like are edited directly in Excel, exported as CSV, and read in by Unity.\nThe item IDs in the engine only need to match the ones set in the sheets." },
+      { title: "Dialogue Choices", desc: "Choice dialogues split the text into several options, and any option whose condition fails stays hidden.\nPicking one sends the dialogue into the matching thread." },
+      { title: "Dialogue Branches", desc: "Branch dialogues stay invisible to the player.\nFrom progress and earlier choices, they present a completely different result at the matching node." },
+      { title: "Story System Validator", desc: "Adds Tools/Story/Validate Data to the Unity editor menu.\nIt checks the sheets for duplicate nodes, ambiguous links, syntax errors, unrecognized actions, and similar problems, and reports them with the file name and line number." },
+      { title: "Story System Admin Tool", desc: "Adds Tools/Story/Story Debug to the Unity editor menu.\nIt opens a tool page for debugging and inspecting the state of dialogues and quests." }
     ],
     h4: "Outcome",
-    p4: "Shipped a simple puzzle-platformer made up of 10 levels, roughly half an hour long from start to finish.\nGot a working simple state-machine system into production, ready to be reused in future projects built on my own framework.\nMy first experience developing a game for the Nintendo Switch platform."
+    p4: "In 21 days we finished a prologue of about 10–15 minutes.\nThe playable build is Simplified Chinese only for now.\nThe prologue has six scenes, six interactive characters, dozens of distinct conversations, and five quests.\nOnce the story system was in place, designers without programming experience could take part in day-to-day production directly through the Excel sheets."
   },
   ja: {
-    pageTitle: "ランナー魔法使い・プロジェクト詳細",
+    pageTitle: "アリア：真実の残響・プロジェクト詳細",
     back: "← プロジェクト一覧に戻る",
-    title: "ランナー魔法使い",
-    lede: "様々なスキルを組み合わせて、マップの左端から右端までパルクールで駆け抜けよう。",
+    title: "アリア：真実の残響",
+    lede: "音楽に包まれた街で、探偵として華やかさの下に潜む最も暗い秘密を追う。",
     genreLabel: "作品の種類",
-    genreValue: "ゲーム制作 · 技術重視 · 企画重視",
+    genreValue: "ゲーム制作 · 技術重視",
     creatorLabel: "制作者情報",
-    creatorValue: "個人開発",
+    creatorValue: "チーム開発 · プログラム",
     tagsLabel: "ゲームタグ",
-    tags: ["パズル", "アクション", "2D", "レベル制"],
+    tags: ["テキストアドベンチャー", "パズル"],
     h1: "概要",
-    p1: "すべてのスキルに何らかの連携効果を持たせることを核として設計し、使用回数が回復するメカニズムを通じてスキル体系全体をつなげています。\n簡易な有限状態機械（FSM）システムを設計しました。\nマップ要素の独立性を確保し、レベルを効率よく量産できるようにしています。",
+    p1: "TapTap「2026 スポットライト」21日間ゲーム制作チャレンジの参加作品。\n現時点では序章のみが完成しており、プログラム2名、企画1名、アート3名、音楽1名の7人チームが21日で制作した。\nゲーム全体を動かすストーリーシステム、真相を推理する記憶の宮殿、証拠探しを広げる「聴く」機能で構成されている。",
+    contribHeading: "個人の貢献",
+    pContrib: "ストーリーシステム全体を単独で開発しました。\n対話システムとクエストシステムの2つのモジュールを含みます。\n中核となるのは4枚のExcel表で、対話表、セレクター表、クエスト表、目標表です。\n修正しやすく、拡張性も高くなっています。\n表の編集後はCSVとして書き出し、Unityがゲームへ読み込みます。\nプレイヤーがインタラクトするたびに、システムは対象のIDから表の中の対応する演出を探します。",
     techGoalsHeading: "技術目標",
     techGoals: [
-      { title: "簡易な有限状態機械（FSM）システム", desc: "プレイヤーと各モンスターについて、Unity風のステート遷移図を作成し、各ステートの挙動ロジックと遷移条件をモジュール化しました。" },
-      { title: "各ステージに新鮮さを持たせる", desc: "新しいステージごとに内容を変化させつつ、新しいスキルやテクニックも投入することで、クリア以外にもプレイヤーが継続的にポジティブなフィードバックを得られるようにしています。" },
-      { title: "スキル間の連携を確保する", desc: "移動：基本アクション。\nジャンプ：着地するまで再使用不可。\n攻撃：壁を破壊し、敵を攻撃する。\nダッシュ：ジャンプと組み合わせてより遠くへ移動できる。着地するまで再使用不可。\n火球発射：遠距離攻撃。壁を破壊し、敵を攻撃する。着地するまで再使用不可。\n火球操作：狙った方向へ発射し、空中で軌道を変えられる。画面外へは出せない。\nスローモーション：高精度な操作の難易度を下げるが、使用時間に制限がある。\nテレポート：プレイヤーと火球の位置を入れ替え、全スキルのクールダウンをリセットする。全スキルを連携させる鍵であり、空中での自由な移動を可能にする。\nカメラ移動：より遠くまで見渡せるようになり、火球の移動範囲も広がる。" }
+      { title: "4枚の表で全体の流れを駆動する", desc: "セレクター表：プレイヤーが対象とインタラクトしたあと、対象ID・発動条件・優先度から一つの対話を選びます。\n対話表：セリフ、選択肢、分岐を再生し、そこに書かれたアクションを実行します。\nアクションには、フラグの書き込み、クエストの開始や完了、章の切り替え、画面の振動、次のセリフへの音声付けなどがあります。\nクエスト表：クエスト完了後に何をするかを登録します。\n目標表：クエストに対応する各小目標を登録します。" },
+      { title: "開発の脱コード化", desc: "セリフ、条件、クエスト、立ち絵の切り替えなどをExcel上で直接直し、CSVとして書き出してからUnityが読み込みます。\nエンジン内のアイテムIDが表の設定と一致していれば足ります。" },
+      { title: "対話の選択肢", desc: "Choice型の対話は文章を複数の選択肢に分け、条件を満たさない項目は表示しません。\nプレイヤーが一つを選ぶと、対話は対応する進行へ進みます。" },
+      { title: "対話の分岐", desc: "Branch型の対話はプレイヤーから表向きには見えません。\n進行度やこれまでの選択に応じて、対応する地点でまったく異なる結果を出します。" },
+      { title: "ストーリーシステムの検証ツール", desc: "Unityエディタのメニューに Tools/Story/Validate Data を追加しました。\n重複ノード、参照先の曖昧さ、文法エラー、認識できないアクションなどを検査し、ファイル名と行番号付きで報告します。" },
+      { title: "ストーリーシステムの管理ツール", desc: "Unityエディタのメニューに Tools/Story/Story Debug を追加しました。\n対話とクエストの状態をデバッグし、観察するためのツールページを開けます。" }
     ],
     h4: "成果",
-    p4: "10のステージからなる、全体で30分程度のシンプルなパズルアクションゲームを完成させました。\n簡易なステートマシンシステムを実装し、今後は自分のフレームワークの中でこの仕組みを再利用できるようにしています。\nNintendo Switch向けにゲームを開発する、初めての経験となりました。"
+    p4: "21日で、およそ10〜15分の序章を完成させました。\n現時点で遊べる版は簡体字中国語のみです。\n序章には6つのシーン、6人のインタラクト可能な人物、数十の異なる対話、5つのクエストが含まれます。\nストーリーシステムが完成したあとは、プログラミングができない企画者でも、Excelの表を通じて制作の現場に参加できるようになりました。"
   }
 };
 
